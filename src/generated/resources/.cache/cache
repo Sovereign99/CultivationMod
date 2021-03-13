@@ -1,0 +1,17 @@
+cef2987f912d6a085144fc9b98e960ee38d4efa7 assets/cultivation/blockstates/silver_block.json
+b97c948dace1702d2a159345f6d8629644f33cfd assets/cultivation/blockstates/silver_ore.json
+4b315639557b2c2492cf709f1687144756a82832 assets/cultivation/models/block/silver_block.json
+1d1ee00d294e965ff9f5c8251b535ef2fda80780 assets/cultivation/models/block/silver_ore.json
+e6d6c237c9138a46e01db51d0400187b148348a7 assets/cultivation/models/item/silver_block.json
+1c6d44f062d34845765b420feae9f55ffb6c16af assets/cultivation/models/item/silver_ingot.json
+61b326c539f43aafeee2cd0021cf944b2929cf4f assets/cultivation/models/item/silver_ore.json
+0d1d401bdc2282349b66f841d5febee4c074cabb data/forge/tags/blocks/ores.json
+b4c938b4aa0e0dc11482d2eddd498613ea6db37f data/forge/tags/blocks/ores/silver.json
+a68c6de6ef36f81f3f3b18740c79b09583ed31f1 data/forge/tags/blocks/storage_blocks.json
+c8e14b560f3e9c5d808ed95728119b61c5db51b7 data/forge/tags/blocks/storage_blocks/silver.json
+6aca82e8ad81198ae376ca71b9429dcaa8ebf33b data/forge/tags/items/ingots.json
+6f02309522a4bcfa5dbade4c0a153ad9791b59c2 data/forge/tags/items/ingots/silver.json
+0d1d401bdc2282349b66f841d5febee4c074cabb data/forge/tags/items/ores.json
+b4c938b4aa0e0dc11482d2eddd498613ea6db37f data/forge/tags/items/ores/silver.json
+a68c6de6ef36f81f3f3b18740c79b09583ed31f1 data/forge/tags/items/storage_blocks.json
+c8e14b560f3e9c5d808ed95728119b61c5db51b7 data/forge/tags/items/storage_blocks/silver.json
