@@ -14,7 +14,7 @@ import java.util.function.Supplier;
 
 public class ModBlocks {
     public static final RegistryObject<Block> CELESTIAL_SILVER_ORE = register("celestial_silver_ore", () ->
-            new Block(AbstractBlock.Properties.create(Material.ROCK).hardnessAndResistance(3, 10).harvestLevel(3).sound(SoundType.STONE).harvestTool(ToolType.PICKAXE)));
+            new Block(AbstractBlock.Properties.create(Material.ROCK).hardnessAndResistance(50, 10).harvestLevel(3).sound(SoundType.STONE).harvestTool(ToolType.PICKAXE)));
     public static final RegistryObject<Block> CELESTIAL_SILVER_BLOCK = register("celestial_silver_block", () ->
             new Block(AbstractBlock.Properties.create(Material.IRON).hardnessAndResistance(3, 10).sound(SoundType.METAL).harvestTool(ToolType.PICKAXE)));
 
