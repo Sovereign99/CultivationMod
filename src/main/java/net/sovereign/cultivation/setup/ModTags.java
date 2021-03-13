@@ -23,6 +23,7 @@ public class ModTags {
         public static final ITag.INamedTag<Item> STORAGE_BLOCKS_SILVER = forge("storage_blocks/silver");
 
         public static final ITag.INamedTag<Item> INGOTS_SILVER = forge("ingots/silver");
+        public static final ITag.INamedTag<Item> SWORDS_SILVER = forge("swords/silver");
 
         private static ITag.INamedTag<Item> forge(String path) {
             return ItemTags.makeWrapperTag(new ResourceLocation("forge", path).toString());

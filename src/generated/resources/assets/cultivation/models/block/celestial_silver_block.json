@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/cube_all",
   "textures": {
-    "all": "cultivation:block/silver_block"
+    "all": "cultivation:block/celestial_silver_block"
   }
 }

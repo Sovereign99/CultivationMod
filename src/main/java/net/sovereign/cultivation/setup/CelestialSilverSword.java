@@ -1,21 +1,26 @@
 package net.sovereign.cultivation.setup;
 
-import net.minecraft.item.IItemTier;
-import net.minecraft.item.ItemTier;
-import net.minecraft.item.SwordItem;
+import net.minecraft.item.*;
 import net.minecraft.item.crafting.Ingredient;
 
 public class CelestialSilverSword extends SwordItem {
+    private final IItemTier tier;
+    private final int attackDamage;
+    private final float attackSpeed;
 
-    public CelestialSilverSword(IItemTier tier, int attackDamageIn, float attackSpeedIn, Properties builderIn) {
-        super(tier, attackDamageIn, attackSpeedIn, builderIn);
+    public CelestialSilverSword() {
+        super(new CelestialSilverSword.ItemTier(), 3, -1.2F, new Item.Properties().group(ItemGroup.COMBAT));
+
+        tier = getTier();
+        attackDamage = (int) (3.0F + tier.getAttackDamage());
+        attackSpeed = -1.2F;
     }
 
     public static class ItemTier implements IItemTier {
 
         @Override
         public int getMaxUses() {
-            return 300;
+            return 1700;
         }
 
         @Override
@@ -25,7 +30,7 @@ public class CelestialSilverSword extends SwordItem {
 
         @Override
         public float getAttackDamage() {
-            return 1.0F;
+            return 2.0F;
         }
 
         @Override
@@ -35,12 +40,12 @@ public class CelestialSilverSword extends SwordItem {
 
         @Override
         public int getEnchantability() {
-            return 15;
+            return 25;
         }
 
         @Override
         public Ingredient getRepairMaterial() {
-            return Ingredient.fromItems(ModItems.CELESTIAL_SILVER_INGOT);
+            return Ingredient.fromTag(ModTags.Items.INGOTS_SILVER);
         }
     }
 }
