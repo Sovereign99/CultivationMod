@@ -30,7 +30,7 @@ public class CelestialSilverSword extends SwordItem {
 
         @Override
         public float getAttackDamage() {
-            return 2.0F;
+            return 8.0F;
         }
 
         @Override

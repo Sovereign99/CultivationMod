@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "cultivation:celestial_silver_ore"
+  },
+  "result": "cultivation:celestial_silver_ingot",
+  "experience": 10,
+  "cookingtime": 400,
+
+  "type": "minecraft:blasting",
+  "ingredient": {
+    "item": "cultivation:celestial_silver_ore"
+  },
+  "result": "cultivation:celestial_silver_ingot",
+  "experience": 10,
+  "cookingtime": 200
+}
