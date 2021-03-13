@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "cultivation:celestial_silver_block"
+    }
+  ],
+  "result": {
+    "item": "cultivation:celestial_silver_ingot",
+    "count": 9
+  }
+}

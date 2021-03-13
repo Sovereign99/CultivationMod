@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:blasting",
+  "ingredient": {
+    "item": "cultivation:celestial_silver_ore"
+  },
+  "result": "cultivation:celestial_silver_ingot",
+  "experience": 50.0,
+  "cookingtime": 400
+}
