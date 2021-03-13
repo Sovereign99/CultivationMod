@@ -13,12 +13,12 @@ public class ModItemModelProvider extends ItemModelProvider {
 
     @Override
     protected void registerModels() {
-        withExistingParent("silver_block", modLoc("block/silver_block"));
-        withExistingParent("silver_ore", modLoc("block/silver_ore"));
+        withExistingParent("celestial_silver_block", modLoc("block/celestial_silver_block"));
+        withExistingParent("celestial_silver_ore", modLoc("block/celestial_silver_ore"));
 
         ModelFile itemGenerated = getExistingFile(mcLoc("item/generated"));
 
-        builder(itemGenerated, "silver_ingot");
+        builder(itemGenerated, "celestial_silver_ingot");
     }
 
     private void builder(ModelFile itemGenerated, String name) {
