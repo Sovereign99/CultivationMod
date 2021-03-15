@@ -12,6 +12,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.sovereign.cultivation.CultivationMod;
 import net.sovereign.cultivation.capabilities.CultivationFactory;
 import net.sovereign.cultivation.capabilities.CultivationStorage;
+import net.sovereign.cultivation.cultivation.Cultivation;
 import net.sovereign.cultivation.cultivation.ICultivation;
 import net.sovereign.cultivation.world.OreGeneration;
 

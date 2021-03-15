@@ -18,7 +18,7 @@ public class CultivationStorage implements Capability.IStorage<ICultivation> {
         CompoundNBT tag = new CompoundNBT();
         tag.putString("levelBody", instance.getCultivationLevel().levelName);
         tag.putDouble("bodyProgress", instance.getBaseProgress());
-        return null;
+        return tag;
     }
 
     @Override
