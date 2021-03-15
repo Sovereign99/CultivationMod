@@ -29,5 +29,9 @@ public class ModItemTagsProvider extends ItemTagsProvider {
         getOrCreateBuilder(ModTags.Items.PICKAXE_SILVER).add(ModItems.CELESTIAL_SILVER_PICKAXE.get());
         getOrCreateBuilder(ModTags.Items.AXE_SILVER).add(ModItems.CELESTIAL_SILVER_AXE.get());
         getOrCreateBuilder(ModTags.Items.SHOVEL_SILVER).add(ModItems.CELESTIAL_SILVER_SHOVEL.get());
+        getOrCreateBuilder(ModTags.Items.HELMET_SILVER).add(ModItems.CELESTIAL_SILVER_HELMET.get());
+        getOrCreateBuilder(ModTags.Items.CHESTPLATE_SILVER).add(ModItems.CELESTIAL_SILVER_CHESTPLATE.get());
+        getOrCreateBuilder(ModTags.Items.LEGGINGS_SILVER).add(ModItems.CELESTIAL_SILVER_LEGGINGS.get());
+        getOrCreateBuilder(ModTags.Items.BOOTS_SILVER).add(ModItems.CELESTIAL_SILVER_BOOTS.get());
     }
 }

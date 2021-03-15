@@ -58,6 +58,58 @@ public class ModRecipeProvider extends RecipeProvider {
                 .patternLine(" / ")
                 .addCriterion("has_item", hasItem(ModItems.CELESTIAL_SILVER_INGOT.get()))
                 .build(consumer);
+
+        //Axe recipe
+        ShapedRecipeBuilder.shapedRecipe(ModItems.CELESTIAL_SILVER_AXE.get())
+                .key('#', ModItems.CELESTIAL_SILVER_INGOT.get())
+                .key('/', Items.STICK)
+                .patternLine("## ")
+                .patternLine("#/ ")
+                .patternLine(" / ")
+                .addCriterion("has_item", hasItem(ModItems.CELESTIAL_SILVER_INGOT.get()))
+                .build(consumer);
+
+        //Shovel recipe
+        ShapedRecipeBuilder.shapedRecipe(ModItems.CELESTIAL_SILVER_SHOVEL.get())
+                .key('#', ModItems.CELESTIAL_SILVER_INGOT.get())
+                .key('/', Items.STICK)
+                .patternLine(" # ")
+                .patternLine(" / ")
+                .patternLine(" / ")
+                .addCriterion("has_item", hasItem(ModItems.CELESTIAL_SILVER_INGOT.get()))
+                .build(consumer);
+
+        ShapedRecipeBuilder.shapedRecipe(ModItems.CELESTIAL_SILVER_HELMET.get())
+                .key('#', ModItems.CELESTIAL_SILVER_INGOT.get())
+                .patternLine("###")
+                .patternLine("# #")
+                .patternLine("   ")
+                .addCriterion("has_item", hasItem(ModItems.CELESTIAL_SILVER_INGOT.get()))
+                .build(consumer);
+
+        ShapedRecipeBuilder.shapedRecipe(ModItems.CELESTIAL_SILVER_CHESTPLATE.get())
+                .key('#', ModItems.CELESTIAL_SILVER_INGOT.get())
+                .patternLine("# #")
+                .patternLine("###")
+                .patternLine("###")
+                .addCriterion("has_item", hasItem(ModItems.CELESTIAL_SILVER_INGOT.get()))
+                .build(consumer);
+
+        ShapedRecipeBuilder.shapedRecipe(ModItems.CELESTIAL_SILVER_LEGGINGS.get())
+                .key('#', ModItems.CELESTIAL_SILVER_INGOT.get())
+                .patternLine("###")
+                .patternLine("# #")
+                .patternLine("# #")
+                .addCriterion("has_item", hasItem(ModItems.CELESTIAL_SILVER_INGOT.get()))
+                .build(consumer);
+
+        ShapedRecipeBuilder.shapedRecipe(ModItems.CELESTIAL_SILVER_BOOTS.get())
+                .key('#', ModItems.CELESTIAL_SILVER_INGOT.get())
+                .patternLine("# #")
+                .patternLine("# #")
+                .patternLine("   ")
+                .addCriterion("has_item", hasItem(ModItems.CELESTIAL_SILVER_INGOT.get()))
+                .build(consumer);
     }
 
     private static ResourceLocation modId(String path) {

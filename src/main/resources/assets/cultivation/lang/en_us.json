@@ -3,5 +3,11 @@
   "block.cultivation.celestial_silver_ore": "Celestial Silver Ore",
   "block.cultivation.celestial_silver_block": "Block of Celestial Silver",
   "item.cultivation.celestial_silver_sword": "Celestial Silver Sword",
-  "item.cultivation.celestial_silver_pickaxe": "Celestial Silver Pickaxe"
+  "item.cultivation.celestial_silver_axe": "Celestial Silver Axe",
+  "item.cultivation.celestial_silver_pickaxe": "Celestial Silver Pickaxe",
+  "item.cultivation.celestial_silver_shovel": "Celestial Silver Shovel",
+  "item.cultivation.celestial_silver_helmet": "Celestial Silver Helmet",
+  "item.cultivation.celestial_silver_chestplate": "Celestial Silver Chestplate",
+  "item.cultivation.celestial_silver_leggings": "Celestial Silver Leggings",
+  "item.cultivation.celestial_silver_boots": "Celestial Silver Boots"
 }
