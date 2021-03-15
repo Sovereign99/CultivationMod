@@ -3,14 +3,13 @@ package net.sovereign.cultivation.setup.ModTools;
 import net.minecraft.item.IItemTier;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
-import net.minecraft.item.PickaxeItem;
+import net.minecraft.item.ShovelItem;
 import net.minecraft.item.crafting.Ingredient;
 import net.sovereign.cultivation.setup.ModTags;
 
-public class CelestialSilverPickaxe extends PickaxeItem {
-
-    public CelestialSilverPickaxe() {
-        super(new CelestialSilverPickaxe.ItemTier(), 2, -1.2f, new Item.Properties().group(ItemGroup.TOOLS));
+public class CelestialSilverShovel extends ShovelItem {
+    public CelestialSilverShovel() {
+        super(new CelestialSilverShovel.ItemTier(), 4, -1.2F, new Item.Properties().group(ItemGroup.TOOLS));
     }
 
     public static class ItemTier implements IItemTier {
@@ -27,7 +26,7 @@ public class CelestialSilverPickaxe extends PickaxeItem {
 
         @Override
         public float getAttackDamage() {
-            return 8.0F;
+            return 4.0F;
         }
 
         @Override

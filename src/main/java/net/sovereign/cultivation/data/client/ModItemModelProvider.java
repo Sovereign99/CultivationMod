@@ -20,6 +20,9 @@ public class ModItemModelProvider extends ItemModelProvider {
 
         builder(itemGenerated, "celestial_silver_ingot");
         builder(itemGenerated, "celestial_silver_sword");
+        builder(itemGenerated, "celestial_silver_pickaxe");
+        builder(itemGenerated, "celestial_silver_axe");
+        builder(itemGenerated, "celestial_silver_shovel");
     }
 
     private void builder(ModelFile itemGenerated, String name) {
