@@ -49,6 +49,6 @@ public class CelestialSilverMaterial implements IArmorMaterial {
 
     @Override
     public float getKnockbackResistance() {
-        return 15.0f;
+        return 1.5f;
     }
 }
