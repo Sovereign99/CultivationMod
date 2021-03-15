@@ -47,7 +47,17 @@ public class ModRecipeProvider extends RecipeProvider {
                 .patternLine(" # ")
                 .patternLine(" / ")
                 .addCriterion("has_item", hasItem(ModItems.CELESTIAL_SILVER_INGOT.get()))
-                .build(consumer, modId("silver_sword"));
+                .build(consumer);
+
+        //Pickaxe recipe
+        ShapedRecipeBuilder.shapedRecipe(ModItems.CELESTIAL_SILVER_PICKAXE.get())
+                .key('#', ModItems.CELESTIAL_SILVER_INGOT.get())
+                .key('/', Items.STICK)
+                .patternLine("###")
+                .patternLine(" / ")
+                .patternLine(" / ")
+                .addCriterion("has_item", hasItem(ModItems.CELESTIAL_SILVER_INGOT.get()))
+                .build(consumer);
     }
 
     private static ResourceLocation modId(String path) {

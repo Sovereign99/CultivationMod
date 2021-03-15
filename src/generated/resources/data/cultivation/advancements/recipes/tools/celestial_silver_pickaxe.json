@@ -2,7 +2,7 @@
   "parent": "minecraft:recipes/root",
   "rewards": {
     "recipes": [
-      "cultivation:silver_sword"
+      "cultivation:celestial_silver_pickaxe"
     ]
   },
   "criteria": {
@@ -19,7 +19,7 @@
     "has_the_recipe": {
       "trigger": "minecraft:recipe_unlocked",
       "conditions": {
-        "recipe": "cultivation:silver_sword"
+        "recipe": "cultivation:celestial_silver_pickaxe"
       }
     }
   },
