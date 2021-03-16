@@ -9,6 +9,7 @@ import net.minecraftforge.common.capabilities.ICapabilitySerializable;
 import net.minecraftforge.common.util.LazyOptional;
 import net.minecraftforge.common.util.NonNullLazy;
 import net.minecraftforge.common.util.NonNullSupplier;
+import net.sovereign.cultivation.cultivation.Cultivation;
 import net.sovereign.cultivation.cultivation.ICultivation;
 
 import javax.annotation.Nonnull;
@@ -17,9 +18,7 @@ import javax.annotation.Nullable;
 public class CultivationProvider implements ICapabilitySerializable<INBT> {
     @CapabilityInject(ICultivation.class)
     public static final Capability<ICultivation> CULTIVATION_CAP = null;
-
-    @SuppressWarnings({"ConstantConditions", "FieldMayBeFinal"})
-    private ICultivation instance = CULTIVATION_CAP.getDefaultInstance();
+    private LazyOptional<ICultivation> instance = LazyOptional.of(CULTIVATION_CAP::getDefaultInstance);
 
     public boolean hasCapability(@Nonnull Capability<?> capability, @Nullable Direction side) {
         return capability == CULTIVATION_CAP;
@@ -28,12 +27,12 @@ public class CultivationProvider implements ICapabilitySerializable<INBT> {
     @Nonnull
     @Override
     public <T> LazyOptional<T> getCapability(@Nonnull Capability<T> cap, @Nullable Direction side) {
-        return cap == CULTIVATION_CAP ? LazyOptional.of((NonNullSupplier<T>) Optional.fromNullable(this.instance)) : null;
+        return cap == CULTIVATION_CAP ? instance.cast() : LazyOptional.empty();
     }
 
     @Override
     public INBT serializeNBT() {
-        return CULTIVATION_CAP.getStorage().writeNBT(CULTIVATION_CAP, this.instance, null);
+        return CULTIVATION_CAP.getStorage().writeNBT(CULTIVATION_CAP, instance.cast(), null);
     }
 
     @Override
