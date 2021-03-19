@@ -5,7 +5,7 @@ import java.util.LinkedList;
 
 public class CultivationLevel {
     public static final LinkedList<CultivationLevel> DEFAULTS = new LinkedList<>();
-    static {
+    public static void initializeLevels() {
         DEFAULTS.add(new CultivationLevel("mortal_body", "Mortal", 1, 0, 10, 1.00F, 1.00F, false, false));
         DEFAULTS.add(new CultivationLevel("body_cleansing", "Body Cleansing", 2, 10, 80, 1.20F, 3.00F, false, false));
         DEFAULTS.add(new CultivationLevel("body_refinement", "Body Refinement", 3, 80, 640, 1.46F, 6.00F, false, false));
