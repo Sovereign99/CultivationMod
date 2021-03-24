@@ -18,23 +18,25 @@ public interface ICultivation {
     CultivationLevel getCultivationLevel();
 
 
-    double getSpeedModifier();
+    float getMaxSpeed();
 
 
-    void setSpeedModifier(double amount);
+    void setMaxSpeed(float amount);
 
 
-    double getStrengthModifier();
+    float getJumpLimit();
 
 
-    void setStrengthModifier(double amount);
+    void setJumpLimit(float amount);
 
+    float getStepAssistLimit();
 
-    double getJumpLimit();
-
-
-    void setJumpLimit(double amount);
+    void setStepAssistLimit(float stepAssistLimit);
 
 
     int getUpdateTimer();
+
+    void resetTimer();
+
+    void advTimer();
 }
