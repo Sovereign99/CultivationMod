@@ -9,24 +9,24 @@ import net.sovereign.cultivation.setup.ModTags;
 
 public class CelestialSilverAxe extends AxeItem {
     public CelestialSilverAxe() {
-        super(new CelestialSilverAxe.ItemTier(), 3, -2.0F, new Item.Properties().group(ItemGroup.TOOLS));
+        super(new CelestialSilverAxe.ItemTier(), 3, -2.5F, new Item.Properties().group(ItemGroup.TOOLS));
     }
 
     public static class ItemTier implements IItemTier {
 
         @Override
         public int getMaxUses() {
-            return 2000;
+            return 2500;
         }
 
         @Override
         public float getEfficiency() {
-            return 20.0F;
+            return 10.0F;
         }
 
         @Override
         public float getAttackDamage() {
-            return 12.0F;
+            return 5.2F;
         }
 
         @Override
@@ -36,7 +36,7 @@ public class CelestialSilverAxe extends AxeItem {
 
         @Override
         public int getEnchantability() {
-            return 25;
+            return 20;
         }
 
         @Override

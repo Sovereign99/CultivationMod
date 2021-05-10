@@ -7,7 +7,7 @@ import net.sovereign.cultivation.setup.ModTags;
 public class CelestialSilverSword extends SwordItem {
 
     public CelestialSilverSword() {
-        super(new CelestialSilverSword.ItemTier(), 3, -1.2f, new Item.Properties().group(ItemGroup.COMBAT));
+        super(new CelestialSilverSword.ItemTier(), 3, -2.4F, new Item.Properties().group(ItemGroup.COMBAT));
     }
 
 
@@ -15,17 +15,17 @@ public class CelestialSilverSword extends SwordItem {
 
         @Override
         public int getMaxUses() {
-            return 2000;
+            return 2500;
         }
 
         @Override
         public float getEfficiency() {
-            return 20.0F;
+            return 10.0F;
         }
 
         @Override
         public float getAttackDamage() {
-            return 10.0F;
+            return 5.0F;
         }
 
         @Override
@@ -35,7 +35,7 @@ public class CelestialSilverSword extends SwordItem {
 
         @Override
         public int getEnchantability() {
-            return 25;
+            return 20;
         }
 
         @Override

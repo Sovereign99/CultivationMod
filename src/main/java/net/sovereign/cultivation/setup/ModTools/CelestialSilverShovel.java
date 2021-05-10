@@ -9,19 +9,19 @@ import net.sovereign.cultivation.setup.ModTags;
 
 public class CelestialSilverShovel extends ShovelItem {
     public CelestialSilverShovel() {
-        super(new CelestialSilverShovel.ItemTier(), 4, -1.2F, new Item.Properties().group(ItemGroup.TOOLS));
+        super(new CelestialSilverShovel.ItemTier(), 1.5F, -2.8F, new Item.Properties().group(ItemGroup.TOOLS));
     }
 
     public static class ItemTier implements IItemTier {
 
         @Override
         public int getMaxUses() {
-            return 2000;
+            return 2500;
         }
 
         @Override
         public float getEfficiency() {
-            return 20.0F;
+            return 10.0F;
         }
 
         @Override
@@ -36,7 +36,7 @@ public class CelestialSilverShovel extends ShovelItem {
 
         @Override
         public int getEnchantability() {
-            return 25;
+            return 20;
         }
 
         @Override

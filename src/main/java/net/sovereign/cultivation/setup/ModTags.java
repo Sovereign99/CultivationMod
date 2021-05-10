@@ -6,7 +6,6 @@ import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ITag;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.util.ResourceLocation;
-import net.sovereign.cultivation.CultivationMod;
 
 public class ModTags {
     public static final class Blocks {

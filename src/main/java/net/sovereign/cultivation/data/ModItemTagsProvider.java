@@ -9,7 +9,6 @@ import net.sovereign.cultivation.CultivationMod;
 import net.sovereign.cultivation.setup.ModItems;
 import net.sovereign.cultivation.setup.ModTags;
 
-import javax.annotation.Nullable;
 
 public class ModItemTagsProvider extends ItemTagsProvider {
     public ModItemTagsProvider(DataGenerator dataGenerator, BlockTagsProvider blockTagProvider, ExistingFileHelper existingFileHelper) {

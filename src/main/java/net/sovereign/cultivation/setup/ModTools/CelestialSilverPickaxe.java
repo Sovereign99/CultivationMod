@@ -10,24 +10,24 @@ import net.sovereign.cultivation.setup.ModTags;
 public class CelestialSilverPickaxe extends PickaxeItem {
 
     public CelestialSilverPickaxe() {
-        super(new CelestialSilverPickaxe.ItemTier(), 2, -1.2f, new Item.Properties().group(ItemGroup.TOOLS));
+        super(new CelestialSilverPickaxe.ItemTier(), 2, -2.8F, new Item.Properties().group(ItemGroup.TOOLS));
     }
 
     public static class ItemTier implements IItemTier {
 
         @Override
         public int getMaxUses() {
-            return 2000;
+            return 2500;
         }
 
         @Override
         public float getEfficiency() {
-            return 20.0F;
+            return 10.0F;
         }
 
         @Override
         public float getAttackDamage() {
-            return 8.0F;
+            return 4.0F;
         }
 
         @Override
@@ -37,7 +37,7 @@ public class CelestialSilverPickaxe extends PickaxeItem {
 
         @Override
         public int getEnchantability() {
-            return 25;
+            return 20;
         }
 
         @Override
