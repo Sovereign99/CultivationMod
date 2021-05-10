@@ -2,6 +2,12 @@
   "replace": false,
   "values": [
     "cultivation:inferior_rock",
-    "cultivation:inferior_immortal_rock"
+    "cultivation:basic_rock",
+    "cultivation:enhanced_rock",
+    "cultivation:superior_rock",
+    "cultivation:inferior_immortal_rock",
+    "cultivation:basic_immortal_rock",
+    "cultivation:enhanced_immortal_rock",
+    "cultivation:superior_immortal_rock"
   ]
 }

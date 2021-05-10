@@ -2,6 +2,12 @@
   "replace": false,
   "values": [
     "cultivation:inferior_water_bead",
-    "cultivation:inferior_celestial_ice"
+    "cultivation:basic_water_bead",
+    "cultivation:enhanced_water_bead",
+    "cultivation:superior_water_bead",
+    "cultivation:inferior_celestial_ice",
+    "cultivation:basic_celestial_ice",
+    "cultivation:enhanced_celestial_ice",
+    "cultivation:superior_celestial_ice"
   ]
 }

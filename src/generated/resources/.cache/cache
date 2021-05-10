@@ -48,10 +48,10 @@ a68c6de6ef36f81f3f3b18740c79b09583ed31f1 data/forge/tags/blocks/storage_blocks.j
 127f71089aaf0f7c0d2ceec353b967092afea63f data/forge/tags/items/armor/silver/helmet.json
 c55aa541b6249e32a267fc6ededa44bd1a1a03f6 data/forge/tags/items/armor/silver/leggings.json
 ad2c9aba492a043766d9b3f2d30dcde6fc2cc07b data/forge/tags/items/axe/silver.json
-bfb63fe87460fe41ddfdfbce6e7d1599782e067f data/forge/tags/items/enhancement/air.json
-0c9c6a36363d1cf99a67542bd02e67d51a7e24e9 data/forge/tags/items/enhancement/earth.json
-21efbcc0f0fe251b3c2f8ed73ce7a233a2770db2 data/forge/tags/items/enhancement/lava.json
-6eb598cd13f8e1a12803a7d09ca1982d5bb7cdb0 data/forge/tags/items/enhancement/water.json
+30d682c563fc5ace7b02f311d30cc01480432730 data/forge/tags/items/enhancement/air.json
+b491be46a6583e96190da56f3dfac22c76db4523 data/forge/tags/items/enhancement/earth.json
+8eec18060ead0862813f21e359f20d4f9ffba51b data/forge/tags/items/enhancement/lava.json
+cd696ee65ee6d4899d8e2b568f2c0353157b436e data/forge/tags/items/enhancement/water.json
 6aca82e8ad81198ae376ca71b9429dcaa8ebf33b data/forge/tags/items/ingots.json
 f3f49041ac36fdabe8b34f74dbc14232dc6659c0 data/forge/tags/items/ingots/silver.json
 0d1d401bdc2282349b66f841d5febee4c074cabb data/forge/tags/items/ores.json

@@ -2,6 +2,12 @@
   "replace": false,
   "values": [
     "cultivation:inferior_wind_essence",
-    "cultivation:inferior_ethereal_gale"
+    "cultivation:basic_wind_essence",
+    "cultivation:enhanced_wind_essence",
+    "cultivation:superior_wind_essence",
+    "cultivation:inferior_ethereal_gale",
+    "cultivation:basic_ethereal_gale",
+    "cultivation:enhanced_ethereal_gale",
+    "cultivation:superior_ethereal_gale"
   ]
 }

@@ -47,7 +47,7 @@ public class ModItems {
             () -> new Item(new Item.Properties().group(ItemGroup.MATERIALS)));
     public static final RegistryObject<Item> SUPERIOR_CELESTIAL_ICE = Registration.ITEMS.register("superior_celestial_ice",
             () -> new Item(new Item.Properties().group(ItemGroup.MATERIALS)));
-    // Essence of Wind (Inferior, Basic, Enhanced, Superior)
+    // Wind Essence (Inferior, Basic, Enhanced, Superior)
     public static final RegistryObject<Item> INFERIOR_WIND_ESSENCE = Registration.ITEMS.register("inferior_wind_essence",
             () -> new Item(new Item.Properties().group(ItemGroup.MATERIALS)));
     public static final RegistryObject<Item> BASIC_WIND_ESSENCE = Registration.ITEMS.register("basic_wind_essence",

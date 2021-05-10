@@ -2,6 +2,12 @@
   "replace": false,
   "values": [
     "cultivation:inferior_lava_crystal",
-    "cultivation:inferior_hell_bead"
+    "cultivation:basic_lava_crystal",
+    "cultivation:enhanced_lava_crystal",
+    "cultivation:superior_lava_crystal",
+    "cultivation:inferior_hell_bead",
+    "cultivation:basic_hell_bead",
+    "cultivation:enhanced_hell_bead",
+    "cultivation:superior_hell_bead"
   ]
 }
