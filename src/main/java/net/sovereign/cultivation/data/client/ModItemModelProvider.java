@@ -18,6 +18,38 @@ public class ModItemModelProvider extends ItemModelProvider {
 
         ModelFile itemGenerated = getExistingFile(mcLoc("item/generated"));
 
+        builder(itemGenerated, "inferior_lava_crystal");
+        builder(itemGenerated, "basic_lava_crystal");
+        builder(itemGenerated, "enhanced_lava_crystal");
+        builder(itemGenerated, "superior_lava_crystal");
+        builder(itemGenerated, "inferior_hell_bead");
+        builder(itemGenerated, "basic_hell_bead");
+        builder(itemGenerated, "enhanced_hell_bead");
+        builder(itemGenerated, "superior_hell_bead");
+        builder(itemGenerated, "inferior_water_bead");
+        builder(itemGenerated, "basic_water_bead");
+        builder(itemGenerated, "enhanced_water_bead");
+        builder(itemGenerated, "superior_water_bead");
+        builder(itemGenerated, "inferior_celestial_ice");
+        builder(itemGenerated, "basic_celestial_ice");
+        builder(itemGenerated, "enhanced_celestial_ice");
+        builder(itemGenerated, "superior_celestial_ice");
+        builder(itemGenerated, "inferior_wind_essence");
+        builder(itemGenerated, "basic_wind_essence");
+        builder(itemGenerated, "enhanced_wind_essence");
+        builder(itemGenerated, "superior_wind_essence");
+        builder(itemGenerated, "inferior_ethereal_gale");
+        builder(itemGenerated, "basic_ethereal_gale");
+        builder(itemGenerated, "enhanced_ethereal_gale");
+        builder(itemGenerated, "superior_ethereal_gale");
+        builder(itemGenerated, "inferior_rock");
+        builder(itemGenerated, "basic_rock");
+        builder(itemGenerated, "enhanced_rock");
+        builder(itemGenerated, "superior_rock");
+        builder(itemGenerated, "inferior_immortal_rock");
+        builder(itemGenerated, "basic_immortal_rock");
+        builder(itemGenerated, "enhanced_immortal_rock");
+        builder(itemGenerated, "superior_immortal_rock");
         builder(itemGenerated, "celestial_silver_ingot");
         builder(itemGenerated, "celestial_silver_sword");
         builder(itemGenerated, "celestial_silver_pickaxe");
