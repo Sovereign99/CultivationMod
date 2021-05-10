@@ -3,6 +3,7 @@ package net.sovereign.cultivation.setup.ModWeapons;
 import net.minecraft.item.*;
 import net.minecraft.item.crafting.Ingredient;
 import net.sovereign.cultivation.setup.ModTags;
+import org.jetbrains.annotations.NotNull;
 
 public class CelestialSilverSword extends SwordItem {
 
@@ -39,7 +40,7 @@ public class CelestialSilverSword extends SwordItem {
         }
 
         @Override
-        public Ingredient getRepairMaterial() {
+        public @NotNull Ingredient getRepairMaterial() {
             return Ingredient.fromTag(ModTags.Items.INGOTS_SILVER);
         }
     }

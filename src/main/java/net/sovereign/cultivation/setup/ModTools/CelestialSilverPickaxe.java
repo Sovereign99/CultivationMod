@@ -6,6 +6,7 @@ import net.minecraft.item.ItemGroup;
 import net.minecraft.item.PickaxeItem;
 import net.minecraft.item.crafting.Ingredient;
 import net.sovereign.cultivation.setup.ModTags;
+import org.jetbrains.annotations.NotNull;
 
 public class CelestialSilverPickaxe extends PickaxeItem {
 
@@ -41,7 +42,7 @@ public class CelestialSilverPickaxe extends PickaxeItem {
         }
 
         @Override
-        public Ingredient getRepairMaterial() {
+        public @NotNull Ingredient getRepairMaterial() {
             return Ingredient.fromTag(ModTags.Items.INGOTS_SILVER);
         }
     }

@@ -6,6 +6,7 @@ import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ShovelItem;
 import net.minecraft.item.crafting.Ingredient;
 import net.sovereign.cultivation.setup.ModTags;
+import org.jetbrains.annotations.NotNull;
 
 public class CelestialSilverShovel extends ShovelItem {
     public CelestialSilverShovel() {
@@ -40,7 +41,7 @@ public class CelestialSilverShovel extends ShovelItem {
         }
 
         @Override
-        public Ingredient getRepairMaterial() {
+        public @NotNull Ingredient getRepairMaterial() {
             return Ingredient.fromTag(ModTags.Items.INGOTS_SILVER);
         }
     }

@@ -6,10 +6,11 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.crafting.Ingredient;
 import net.sovereign.cultivation.setup.ModTags;
+import org.jetbrains.annotations.NotNull;
 
 public class CelestialSilverAxe extends AxeItem {
     public CelestialSilverAxe() {
-        super(new CelestialSilverAxe.ItemTier(), 3, -2.5F, new Item.Properties().group(ItemGroup.TOOLS));
+        super(new CelestialSilverAxe.ItemTier(), 5.2F, -2.5F, new Item.Properties().group(ItemGroup.TOOLS));
     }
 
     public static class ItemTier implements IItemTier {
@@ -40,7 +41,7 @@ public class CelestialSilverAxe extends AxeItem {
         }
 
         @Override
-        public Ingredient getRepairMaterial() {
+        public @NotNull Ingredient getRepairMaterial() {
             return Ingredient.fromTag(ModTags.Items.INGOTS_SILVER);
         }
     }
