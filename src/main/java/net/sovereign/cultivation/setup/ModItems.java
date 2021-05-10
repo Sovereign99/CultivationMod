@@ -12,21 +12,77 @@ import net.sovereign.cultivation.setup.ModWeapons.CelestialSilverSword;
 
 public class ModItems {
     // Lava Crystals (Inferior, Basic, Enhanced, Superior)
-
+    public static final RegistryObject<Item> INFERIOR_LAVA_CRYSTAL = Registration.ITEMS.register("inferior_lava_crystal",
+            () -> new Item(new Item.Properties().group(ItemGroup.MATERIALS)));
+    public static final RegistryObject<Item> BASIC_LAVA_CRYSTAL = Registration.ITEMS.register("basic_lava_crystal",
+            () -> new Item(new Item.Properties().group(ItemGroup.MATERIALS)));
+    public static final RegistryObject<Item> ENHANCED_LAVA_CRYSTAL = Registration.ITEMS.register("enhanced_lava_crystal",
+            () -> new Item(new Item.Properties().group(ItemGroup.MATERIALS)));
+    public static final RegistryObject<Item> SUPERIOR_LAVA_CRYSTAL = Registration.ITEMS.register("superior_lava_crystal",
+            () -> new Item(new Item.Properties().group(ItemGroup.MATERIALS)));
     // Hell Bead (Inferior, Basic, Enhanced, Superior)
-
+    public static final RegistryObject<Item> INFERIOR_HELL_BEAD = Registration.ITEMS.register("inferior_hell_bead",
+            () -> new Item(new Item.Properties().group(ItemGroup.MATERIALS)));
+    public static final RegistryObject<Item> BASIC_HELL_BEAD = Registration.ITEMS.register("basic_hell_bead",
+            () -> new Item(new Item.Properties().group(ItemGroup.MATERIALS)));
+    public static final RegistryObject<Item> ENHANCED_HELL_BEAD = Registration.ITEMS.register("enhanced_hell_bead",
+            () -> new Item(new Item.Properties().group(ItemGroup.MATERIALS)));
+    public static final RegistryObject<Item> SUPERIOR_HELL_BEAD = Registration.ITEMS.register("superior_hell_bead",
+            () -> new Item(new Item.Properties().group(ItemGroup.MATERIALS)));
     // Water Bead (Inferior, Basic, Enhanced, Superior)
-
+    public static final RegistryObject<Item> INFERIOR_WATER_BEAD = Registration.ITEMS.register("inferior_water_bead",
+            () -> new Item(new Item.Properties().group(ItemGroup.MATERIALS)));
+    public static final RegistryObject<Item> BASIC_WATER_BEAD = Registration.ITEMS.register("basic_water_bead",
+            () -> new Item(new Item.Properties().group(ItemGroup.MATERIALS)));
+    public static final RegistryObject<Item> ENHANCED_WATER_BEAD = Registration.ITEMS.register("enhanced_water_bead",
+            () -> new Item(new Item.Properties().group(ItemGroup.MATERIALS)));
+    public static final RegistryObject<Item> SUPERIOR_WATER_BEAD = Registration.ITEMS.register("superior_water_bead",
+            () -> new Item(new Item.Properties().group(ItemGroup.MATERIALS)));
     // Celestial Ice (Inferior, Basic, Enhanced, Superior)
-
+    public static final RegistryObject<Item> INFERIOR_CELESTIAL_ICE = Registration.ITEMS.register("inferior_celestial_ice",
+            () -> new Item(new Item.Properties().group(ItemGroup.MATERIALS)));
+    public static final RegistryObject<Item> BASIC_CELESTIAL_ICE = Registration.ITEMS.register("basic_celestial_ice",
+            () -> new Item(new Item.Properties().group(ItemGroup.MATERIALS)));
+    public static final RegistryObject<Item> ENHANCED_CELESTIAL_ICE = Registration.ITEMS.register("enhanced_celestial_ice",
+            () -> new Item(new Item.Properties().group(ItemGroup.MATERIALS)));
+    public static final RegistryObject<Item> SUPERIOR_CELESTIAL_ICE = Registration.ITEMS.register("superior_celestial_ice",
+            () -> new Item(new Item.Properties().group(ItemGroup.MATERIALS)));
     // Essence of Wind (Inferior, Basic, Enhanced, Superior)
-
+    public static final RegistryObject<Item> INFERIOR_WIND_ESSENCE = Registration.ITEMS.register("inferior_wind_essence",
+            () -> new Item(new Item.Properties().group(ItemGroup.MATERIALS)));
+    public static final RegistryObject<Item> BASIC_WIND_ESSENCE = Registration.ITEMS.register("basic_wind_essence",
+            () -> new Item(new Item.Properties().group(ItemGroup.MATERIALS)));
+    public static final RegistryObject<Item> ENHANCED_WIND_ESSENCE = Registration.ITEMS.register("enhanced_wind_essence",
+            () -> new Item(new Item.Properties().group(ItemGroup.MATERIALS)));
+    public static final RegistryObject<Item> SUPERIOR_WIND_ESSENCE = Registration.ITEMS.register("superior_wind_essence",
+            () -> new Item(new Item.Properties().group(ItemGroup.MATERIALS)));
     // Ethereal Gale (Inferior, Basic, Enhanced, Superior)
-
+    public static final RegistryObject<Item> INFERIOR_ETHEREAL_GALE = Registration.ITEMS.register("inferior_ethereal_gale",
+            () -> new Item(new Item.Properties().group(ItemGroup.MATERIALS)));
+    public static final RegistryObject<Item> BASIC_ETHEREAL_GALE = Registration.ITEMS.register("basic_ethereal_gale",
+            () -> new Item(new Item.Properties().group(ItemGroup.MATERIALS)));
+    public static final RegistryObject<Item> ENHANCED_ETHEREAL_GALE = Registration.ITEMS.register("enhanced_ethereal_gale",
+            () -> new Item(new Item.Properties().group(ItemGroup.MATERIALS)));
+    public static final RegistryObject<Item> SUPERIOR_ETHEREAL_GALE = Registration.ITEMS.register("superior_ethereal_gale",
+            () -> new Item(new Item.Properties().group(ItemGroup.MATERIALS)));
     // Rock (Inferior, Basic, Enhanced, Superior)
-
+    public static final RegistryObject<Item> INFERIOR_ROCK = Registration.ITEMS.register("inferior_rock",
+            () -> new Item(new Item.Properties().group(ItemGroup.MATERIALS)));
+    public static final RegistryObject<Item> BASIC_ROCK = Registration.ITEMS.register("basic_rock",
+            () -> new Item(new Item.Properties().group(ItemGroup.MATERIALS)));
+    public static final RegistryObject<Item> ENHANCED_ROCK = Registration.ITEMS.register("enhanced_rock",
+            () -> new Item(new Item.Properties().group(ItemGroup.MATERIALS)));
+    public static final RegistryObject<Item> SUPERIOR_ROCK = Registration.ITEMS.register("superior_rock",
+            () -> new Item(new Item.Properties().group(ItemGroup.MATERIALS)));
     // Immortal Rock (Inferior, Basic, Enhanced, Superior)
-
+    public static final RegistryObject<Item> INFERIOR_IMMORTAL_ROCK = Registration.ITEMS.register("inferior_immortal_rock",
+            () -> new Item(new Item.Properties().group(ItemGroup.MATERIALS)));
+    public static final RegistryObject<Item> BASIC_IMMORTAL_ROCK = Registration.ITEMS.register("basic_immortal_rock",
+            () -> new Item(new Item.Properties().group(ItemGroup.MATERIALS)));
+    public static final RegistryObject<Item> ENHANCED_IMMORTAL_ROCK = Registration.ITEMS.register("enhanced_immortal_rock",
+            () -> new Item(new Item.Properties().group(ItemGroup.MATERIALS)));
+    public static final RegistryObject<Item> SUPERIOR_IMMORTAL_ROCK = Registration.ITEMS.register("superior_immortal_rock",
+            () -> new Item(new Item.Properties().group(ItemGroup.MATERIALS)));
     // Celestial Silver
     public static final RegistryObject<Item> CELESTIAL_SILVER_INGOT = Registration.ITEMS.register("celestial_silver_ingot",
             () -> new Item(new Item.Properties().group(ItemGroup.MATERIALS)));
