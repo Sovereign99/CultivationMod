@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " # ",
+    "/#/",
+    " # "
+  ],
+  "key": {
+    "#": {
+      "item": "cultivation:inferior_wind_essence"
+    },
+    "/": {
+      "item": "cultivation:air_celestial_silver_ingot"
+    }
+  },
+  "result": {
+    "item": "cultivation:basic_wind_essence"
+  }
+}

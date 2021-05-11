@@ -56,6 +56,10 @@ public class ModItemTagsProvider extends ItemTagsProvider {
         getOrCreateBuilder(ModTags.Items.ENHANCEMENT_EARTH).add(ModItems.SUPERIOR_IMMORTAL_ROCK.get());
         getOrCreateBuilder(ModTags.Items.INGOTS_SILVER).add(ModItems.CELESTIAL_SILVER_INGOT.get());
         getOrCreateBuilder(ModTags.Items.INGOTS_SILVER).add(ModItems.LAVA_CELESTIAL_SILVER_INGOT.get());
+        getOrCreateBuilder(ModTags.Items.INGOTS_SILVER).add(ModItems.WATER_CELESTIAL_SILVER_INGOT.get());
+        getOrCreateBuilder(ModTags.Items.INGOTS_SILVER).add(ModItems.AIR_CELESTIAL_SILVER_INGOT.get());
+        getOrCreateBuilder(ModTags.Items.INGOTS_SILVER).add(ModItems.EARTH_CELESTIAL_SILVER_INGOT.get());
+        getOrCreateBuilder(ModTags.Items.INGOTS_STEEL).add(ModItems.EMPYREAN_STEEL_INGOT.get());
         getOrCreateBuilder(Tags.Items.INGOTS).addTag(ModTags.Items.INGOTS_SILVER);
         getOrCreateBuilder(ModTags.Items.SWORDS_SILVER).add(ModItems.CELESTIAL_SILVER_SWORD.get());
         getOrCreateBuilder(ModTags.Items.PICKAXE_SILVER).add(ModItems.CELESTIAL_SILVER_PICKAXE.get());

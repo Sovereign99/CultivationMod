@@ -50,6 +50,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         builder(itemGenerated, "basic_immortal_rock");
         builder(itemGenerated, "enhanced_immortal_rock");
         builder(itemGenerated, "superior_immortal_rock");
+
         builder(itemGenerated, "celestial_silver_ingot");
         builder(itemGenerated, "celestial_silver_sword");
         builder(itemGenerated, "celestial_silver_pickaxe");
@@ -59,6 +60,13 @@ public class ModItemModelProvider extends ItemModelProvider {
         builder(itemGenerated, "celestial_silver_chestplate");
         builder(itemGenerated, "celestial_silver_leggings");
         builder(itemGenerated, "celestial_silver_boots");
+
+        builder(itemGenerated, "lava_celestial_silver_ingot");
+        builder(itemGenerated, "water_celestial_silver_ingot");
+        builder(itemGenerated, "air_celestial_silver_ingot");
+        builder(itemGenerated, "earth_celestial_silver_ingot");
+
+        builder(itemGenerated, "empyrean_steel_ingot");
     }
 
     private void builder(ModelFile itemGenerated, String name) {

@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "cultivation:celestial_silver_ingot"
+    },
+    {
+      "item": "cultivation:inferior_wind_essence"
+    }
+  ],
+  "result": {
+    "item": "cultivation:air_celestial_silver_ingot"
+  }
+}

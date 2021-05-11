@@ -3,12 +3,12 @@ package net.sovereign.cultivation.setup;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.*;
 import net.minecraftforge.fml.RegistryObject;
-import net.sovereign.cultivation.setup.ModArmors.ModArmor;
-import net.sovereign.cultivation.setup.ModArmors.CelestialSilverMaterial;
-import net.sovereign.cultivation.setup.ModTools.CelestialSilverAxe;
-import net.sovereign.cultivation.setup.ModTools.CelestialSilverPickaxe;
-import net.sovereign.cultivation.setup.ModTools.CelestialSilverShovel;
-import net.sovereign.cultivation.setup.ModWeapons.CelestialSilverSword;
+import net.sovereign.cultivation.setup.mod_armors.ModArmor;
+import net.sovereign.cultivation.setup.mod_armors.CelestialSilverMaterial;
+import net.sovereign.cultivation.setup.mod_tools.CelestialSilverAxe;
+import net.sovereign.cultivation.setup.mod_tools.CelestialSilverPickaxe;
+import net.sovereign.cultivation.setup.mod_tools.CelestialSilverShovel;
+import net.sovereign.cultivation.setup.mod_weapons.CelestialSilverSword;
 
 public class ModItems {
     // Lava Crystals (Inferior, Basic, Enhanced, Superior)
@@ -104,11 +104,18 @@ public class ModItems {
     public static final RegistryObject<ArmorItem> CELESTIAL_SILVER_BOOTS = Registration.ITEMS.register("celestial_silver_boots",
             () -> new ModArmor(CELESTIAL_SILVER_ARMOR_MATERIAL, EquipmentSlotType.FEET));
     // Empyrean Steel
-
+    public static final RegistryObject<Item> EMPYREAN_STEEL_INGOT = Registration.ITEMS.register("empyrean_steel_ingot",
+            () -> new Item(new Item.Properties().group(ItemGroup.MATERIALS)));
     // Ghost Diamond
 
     // Infused Metals
     public static final RegistryObject<Item> LAVA_CELESTIAL_SILVER_INGOT = Registration.ITEMS.register("lava_celestial_silver_ingot",
+            () -> new Item(new Item.Properties().group(ItemGroup.MATERIALS)));
+    public static final RegistryObject<Item> WATER_CELESTIAL_SILVER_INGOT = Registration.ITEMS.register("water_celestial_silver_ingot",
+            () -> new Item(new Item.Properties().group(ItemGroup.MATERIALS)));
+    public static final RegistryObject<Item> AIR_CELESTIAL_SILVER_INGOT = Registration.ITEMS.register("air_celestial_silver_ingot",
+            () -> new Item(new Item.Properties().group(ItemGroup.MATERIALS)));
+    public static final RegistryObject<Item> EARTH_CELESTIAL_SILVER_INGOT = Registration.ITEMS.register("earth_celestial_silver_ingot",
             () -> new Item(new Item.Properties().group(ItemGroup.MATERIALS)));
 
     static void register() {}

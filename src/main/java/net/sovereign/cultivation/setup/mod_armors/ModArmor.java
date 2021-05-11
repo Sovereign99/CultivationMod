@@ -1,4 +1,4 @@
-package net.sovereign.cultivation.setup.ModArmors;
+package net.sovereign.cultivation.setup.mod_armors;
 
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.*;

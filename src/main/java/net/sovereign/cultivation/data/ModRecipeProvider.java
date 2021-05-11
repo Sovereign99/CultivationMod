@@ -7,6 +7,7 @@ import net.minecraft.util.ResourceLocation;
 import net.sovereign.cultivation.CultivationMod;
 import net.sovereign.cultivation.setup.ModBlocks;
 import net.sovereign.cultivation.setup.ModItems;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.function.Consumer;
 
@@ -16,7 +17,7 @@ public class ModRecipeProvider extends RecipeProvider {
     }
 
     @Override
-    protected void registerRecipes(Consumer<IFinishedRecipe> consumer) {
+    protected void registerRecipes(@NotNull Consumer<IFinishedRecipe> consumer) {
         //Storage block to ingot
         ShapelessRecipeBuilder.shapelessRecipe(ModItems.CELESTIAL_SILVER_INGOT.get(), 9)
                 .addIngredient(ModBlocks.CELESTIAL_SILVER_BLOCK.get()).addCriterion("has_item",
@@ -118,10 +119,167 @@ public class ModRecipeProvider extends RecipeProvider {
         //Inferior Lava Crystal
         ShapedRecipeBuilder.shapedRecipe(ModItems.INFERIOR_LAVA_CRYSTAL.get())
                 .key('#', Items.LAVA_BUCKET)
-                .patternLine("###")
-                .patternLine("###")
-                .patternLine("###")
+                .patternLine(" # ")
+                .patternLine("# #")
+                .patternLine(" # ")
                 .addCriterion("has_item", hasItem(Items.LAVA_BUCKET))
+                .build(consumer);
+
+        //Basic Lava Crystal
+        ShapedRecipeBuilder.shapedRecipe(ModItems.BASIC_LAVA_CRYSTAL.get())
+                .key('#', ModItems.INFERIOR_LAVA_CRYSTAL.get())
+                .key('/', ModItems.LAVA_CELESTIAL_SILVER_INGOT.get())
+                .patternLine(" # ")
+                .patternLine("/#/")
+                .patternLine(" # ")
+                .addCriterion("has_item", hasItem(ModItems.INFERIOR_LAVA_CRYSTAL.get()))
+                .build(consumer);
+
+        //Enhanced Lava Crystal
+        ShapedRecipeBuilder.shapedRecipe(ModItems.ENHANCED_LAVA_CRYSTAL.get())
+                .key('#', ModItems.BASIC_LAVA_CRYSTAL.get())
+                .key('/', ModItems.LAVA_CELESTIAL_SILVER_INGOT.get())
+                .patternLine(" / ")
+                .patternLine("###")
+                .patternLine(" / ")
+                .addCriterion("has_item", hasItem(ModItems.BASIC_LAVA_CRYSTAL.get()))
+                .build(consumer);
+
+        //Superior Lava Crystal
+        ShapedRecipeBuilder.shapedRecipe(ModItems.SUPERIOR_LAVA_CRYSTAL.get())
+                .key('#', ModItems.ENHANCED_LAVA_CRYSTAL.get())
+                .key('/', ModItems.LAVA_CELESTIAL_SILVER_INGOT.get())
+                .patternLine(" # ")
+                .patternLine("#/#")
+                .patternLine(" # ")
+                .addCriterion("has_item", hasItem(ModItems.ENHANCED_LAVA_CRYSTAL.get()))
+                .build(consumer);
+
+        //Inferior Hell Bead
+        ShapedRecipeBuilder.shapedRecipe(ModItems.INFERIOR_HELL_BEAD.get())
+                .key('#', ModItems.SUPERIOR_LAVA_CRYSTAL.get())
+                .key('*', Items.BLAZE_POWDER)
+                .patternLine("*#*")
+                .patternLine("#*#")
+                .patternLine("*#*")
+                .addCriterion("has_item", hasItem(ModItems.SUPERIOR_LAVA_CRYSTAL.get()))
+                .build(consumer);
+
+        //Inferior Water Bead
+        ShapedRecipeBuilder.shapedRecipe(ModItems.INFERIOR_WATER_BEAD.get())
+                .key('#', Items.WATER_BUCKET)
+                .patternLine(" # ")
+                .patternLine("# #")
+                .patternLine(" # ")
+                .addCriterion("has_item", hasItem(Items.WATER_BUCKET))
+                .build(consumer);
+
+        //Basic Water Bead
+        ShapedRecipeBuilder.shapedRecipe(ModItems.BASIC_WATER_BEAD.get())
+                .key('#', ModItems.INFERIOR_WATER_BEAD.get())
+                .key('/', ModItems.WATER_CELESTIAL_SILVER_INGOT.get())
+                .patternLine(" # ")
+                .patternLine("/#/")
+                .patternLine(" # ")
+                .addCriterion("has_item", hasItem(ModItems.INFERIOR_WATER_BEAD.get()))
+                .build(consumer);
+
+        //Enhanced Water Bead
+        ShapedRecipeBuilder.shapedRecipe(ModItems.ENHANCED_WATER_BEAD.get())
+                .key('#', ModItems.BASIC_WATER_BEAD.get())
+                .key('/', ModItems.WATER_CELESTIAL_SILVER_INGOT.get())
+                .patternLine(" / ")
+                .patternLine("###")
+                .patternLine(" / ")
+                .addCriterion("has_item", hasItem(ModItems.BASIC_WATER_BEAD.get()))
+                .build(consumer);
+
+        //Superior Water Bead
+        ShapedRecipeBuilder.shapedRecipe(ModItems.SUPERIOR_WATER_BEAD.get())
+                .key('#', ModItems.ENHANCED_WATER_BEAD.get())
+                .key('/', ModItems.WATER_CELESTIAL_SILVER_INGOT.get())
+                .patternLine(" # ")
+                .patternLine("#/#")
+                .patternLine(" # ")
+                .addCriterion("has_item", hasItem(ModItems.ENHANCED_WATER_BEAD.get()))
+                .build(consumer);
+
+        //Inferior Wind Essence
+        ShapedRecipeBuilder.shapedRecipe(ModItems.INFERIOR_WIND_ESSENCE.get())
+                .key('#', Items.FEATHER)
+                .patternLine(" # ")
+                .patternLine("# #")
+                .patternLine(" # ")
+                .addCriterion("has_item", hasItem(Items.FEATHER))
+                .build(consumer);
+
+        //Basic Wind Essence
+        ShapedRecipeBuilder.shapedRecipe(ModItems.BASIC_WIND_ESSENCE.get())
+                .key('#', ModItems.INFERIOR_WIND_ESSENCE.get())
+                .key('/', ModItems.AIR_CELESTIAL_SILVER_INGOT.get())
+                .patternLine(" # ")
+                .patternLine("/#/")
+                .patternLine(" # ")
+                .addCriterion("has_item", hasItem(ModItems.INFERIOR_WIND_ESSENCE.get()))
+                .build(consumer);
+
+        //Enhanced Wind Essence
+        ShapedRecipeBuilder.shapedRecipe(ModItems.ENHANCED_WIND_ESSENCE.get())
+                .key('#', ModItems.BASIC_WIND_ESSENCE.get())
+                .key('/', ModItems.AIR_CELESTIAL_SILVER_INGOT.get())
+                .patternLine(" / ")
+                .patternLine("###")
+                .patternLine(" / ")
+                .addCriterion("has_item", hasItem(ModItems.BASIC_WIND_ESSENCE.get()))
+                .build(consumer);
+
+        //Superior Wind Essence
+        ShapedRecipeBuilder.shapedRecipe(ModItems.SUPERIOR_WIND_ESSENCE.get())
+                .key('#', ModItems.ENHANCED_WIND_ESSENCE.get())
+                .key('/', ModItems.AIR_CELESTIAL_SILVER_INGOT.get())
+                .patternLine(" # ")
+                .patternLine("#/#")
+                .patternLine(" # ")
+                .addCriterion("has_item", hasItem(ModItems.ENHANCED_WIND_ESSENCE.get()))
+                .build(consumer);
+
+        //Inferior Rock
+        ShapedRecipeBuilder.shapedRecipe(ModItems.INFERIOR_ROCK.get())
+                .key('#', Items.STONE)
+                .patternLine(" # ")
+                .patternLine("# #")
+                .patternLine(" # ")
+                .addCriterion("has_item", hasItem(Items.STONE))
+                .build(consumer);
+
+        //Basic Rock
+        ShapedRecipeBuilder.shapedRecipe(ModItems.BASIC_ROCK.get())
+                .key('#', ModItems.INFERIOR_ROCK.get())
+                .key('/', ModItems.EARTH_CELESTIAL_SILVER_INGOT.get())
+                .patternLine(" # ")
+                .patternLine("/#/")
+                .patternLine(" # ")
+                .addCriterion("has_item", hasItem(ModItems.INFERIOR_ROCK.get()))
+                .build(consumer);
+
+        //Enhanced Rock
+        ShapedRecipeBuilder.shapedRecipe(ModItems.ENHANCED_ROCK.get())
+                .key('#', ModItems.BASIC_ROCK.get())
+                .key('/', ModItems.EARTH_CELESTIAL_SILVER_INGOT.get())
+                .patternLine(" / ")
+                .patternLine("###")
+                .patternLine(" / ")
+                .addCriterion("has_item", hasItem(ModItems.BASIC_ROCK.get()))
+                .build(consumer);
+
+        //Superior Rock
+        ShapedRecipeBuilder.shapedRecipe(ModItems.SUPERIOR_ROCK.get())
+                .key('#', ModItems.ENHANCED_ROCK.get())
+                .key('/', ModItems.EARTH_CELESTIAL_SILVER_INGOT.get())
+                .patternLine(" # ")
+                .patternLine("#/#")
+                .patternLine(" # ")
+                .addCriterion("has_item", hasItem(ModItems.ENHANCED_ROCK.get()))
                 .build(consumer);
 
         //Lava Infused Celestial Silver
@@ -129,6 +287,24 @@ public class ModRecipeProvider extends RecipeProvider {
                 .addIngredient(ModItems.CELESTIAL_SILVER_INGOT.get())
                 .addIngredient(ModItems.INFERIOR_LAVA_CRYSTAL.get())
                 .addCriterion("has_item", hasItem(ModItems.INFERIOR_LAVA_CRYSTAL.get())).build(consumer);
+
+        //Water Infused Celestial Silver
+        ShapelessRecipeBuilder.shapelessRecipe(ModItems.WATER_CELESTIAL_SILVER_INGOT.get(), 1)
+                .addIngredient(ModItems.CELESTIAL_SILVER_INGOT.get())
+                .addIngredient(ModItems.INFERIOR_WATER_BEAD.get())
+                .addCriterion("has_item", hasItem(ModItems.INFERIOR_WATER_BEAD.get())).build(consumer);
+
+        //Air Infused Celestial Silver
+        ShapelessRecipeBuilder.shapelessRecipe(ModItems.AIR_CELESTIAL_SILVER_INGOT.get(), 1)
+                .addIngredient(ModItems.CELESTIAL_SILVER_INGOT.get())
+                .addIngredient(ModItems.INFERIOR_WIND_ESSENCE.get())
+                .addCriterion("has_item", hasItem(ModItems.INFERIOR_WIND_ESSENCE.get())).build(consumer);
+
+        //Earth Infused Celestial Silver
+        ShapelessRecipeBuilder.shapelessRecipe(ModItems.EARTH_CELESTIAL_SILVER_INGOT.get(), 1)
+                .addIngredient(ModItems.CELESTIAL_SILVER_INGOT.get())
+                .addIngredient(ModItems.INFERIOR_ROCK.get())
+                .addCriterion("has_item", hasItem(ModItems.INFERIOR_ROCK.get())).build(consumer);
     }
 
     private static ResourceLocation modId(String path) {

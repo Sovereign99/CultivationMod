@@ -47,5 +47,10 @@
   "item.cultivation.celestial_silver_leggings": "Celestial Silver Leggings",
   "item.cultivation.celestial_silver_boots": "Celestial Silver Boots",
 
-  "item.cultivation.lava_celestial_silver_ingot": "Lava-Infused Celestial Silver Ingot"
+  "item.cultivation.lava_celestial_silver_ingot": "Lava-Infused Celestial Silver Ingot",
+  "item.cultivation.water_celestial_silver_ingot": "Water-Infused Celestial Silver Ingot",
+  "item.cultivation.air_celestial_silver_ingot": "Air-Infused Celestial Silver Ingot",
+  "item.cultivation.earth_celestial_silver_ingot": "Earth-Infused Celestial Silver Ingot",
+
+  "item.cultivation.empyrean_steel_ingot": "Empyrean Steel Ingot"
 }

@@ -1,16 +1,16 @@
-package net.sovereign.cultivation.setup.ModTools;
+package net.sovereign.cultivation.setup.mod_tools;
 
+import net.minecraft.item.AxeItem;
 import net.minecraft.item.IItemTier;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
-import net.minecraft.item.ShovelItem;
 import net.minecraft.item.crafting.Ingredient;
 import net.sovereign.cultivation.setup.ModTags;
 import org.jetbrains.annotations.NotNull;
 
-public class CelestialSilverShovel extends ShovelItem {
-    public CelestialSilverShovel() {
-        super(new CelestialSilverShovel.ItemTier(), 1.5F, -2.8F, new Item.Properties().group(ItemGroup.TOOLS));
+public class CelestialSilverAxe extends AxeItem {
+    public CelestialSilverAxe() {
+        super(new CelestialSilverAxe.ItemTier(), 5.2F, -2.5F, new Item.Properties().group(ItemGroup.TOOLS));
     }
 
     public static class ItemTier implements IItemTier {
@@ -27,7 +27,7 @@ public class CelestialSilverShovel extends ShovelItem {
 
         @Override
         public float getAttackDamage() {
-            return 4.0F;
+            return 5.2F;
         }
 
         @Override

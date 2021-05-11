@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "cultivation:celestial_silver_ingot"
+    },
+    {
+      "item": "cultivation:inferior_water_bead"
+    }
+  ],
+  "result": {
+    "item": "cultivation:water_celestial_silver_ingot"
+  }
+}

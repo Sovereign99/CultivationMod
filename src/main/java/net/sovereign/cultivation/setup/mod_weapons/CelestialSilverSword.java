@@ -1,4 +1,4 @@
-package net.sovereign.cultivation.setup.ModWeapons;
+package net.sovereign.cultivation.setup.mod_weapons;
 
 import net.minecraft.item.*;
 import net.minecraft.item.crafting.Ingredient;

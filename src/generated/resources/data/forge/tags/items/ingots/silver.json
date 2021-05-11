@@ -2,6 +2,9 @@
   "replace": false,
   "values": [
     "cultivation:celestial_silver_ingot",
-    "cultivation:lava_celestial_silver_ingot"
+    "cultivation:lava_celestial_silver_ingot",
+    "cultivation:water_celestial_silver_ingot",
+    "cultivation:air_celestial_silver_ingot",
+    "cultivation:earth_celestial_silver_ingot"
   ]
 }

@@ -9,23 +9,34 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraftforge.common.ToolType;
 import net.minecraftforge.fml.RegistryObject;
+import net.sovereign.cultivation.data.block.mystic_forge.MysticForgeBlock;
 
+import javax.tools.Tool;
 import java.util.function.Supplier;
 
 public class ModBlocks {
     public static final RegistryObject<Block> CELESTIAL_SILVER_ORE = register("celestial_silver_ore", () ->
             new Block(AbstractBlock.Properties.create(Material.ROCK)
-                    .hardnessAndResistance(50, 10)
-                    .harvestLevel(3)
-                    .sound(SoundType.STONE)
-                    .setRequiresTool()
-                    .harvestTool(ToolType.PICKAXE)));
+                .hardnessAndResistance(50, 10)
+                .harvestLevel(3)
+                .sound(SoundType.STONE)
+                .setRequiresTool()
+                .harvestTool(ToolType.PICKAXE)));
+
     public static final RegistryObject<Block> CELESTIAL_SILVER_BLOCK = register("celestial_silver_block", () ->
             new Block(AbstractBlock.Properties.create(Material.IRON)
-                    .hardnessAndResistance(3, 10)
-                    .sound(SoundType.METAL)
-                    .setRequiresTool()
-                    .harvestTool(ToolType.PICKAXE)));
+                .hardnessAndResistance(3, 10)
+                .sound(SoundType.METAL)
+                .setRequiresTool()
+                .harvestTool(ToolType.PICKAXE)));
+
+    public static final RegistryObject<MysticForgeBlock> MYSTIC_FORGE = register("mystic_forge", () ->
+            new MysticForgeBlock(AbstractBlock.Properties.create(Material.IRON)
+                .hardnessAndResistance(4, 20)
+                .sound(SoundType.METAL)
+                .harvestLevel(3)
+                .setRequiresTool()
+                .harvestTool(ToolType.PICKAXE)));
 
     static void register() {}
 

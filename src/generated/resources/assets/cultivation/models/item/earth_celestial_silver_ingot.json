@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "cultivation:item/earth_celestial_silver_ingot"
+  }
+}

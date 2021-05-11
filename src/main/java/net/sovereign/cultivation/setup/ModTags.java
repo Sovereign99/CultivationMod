@@ -26,6 +26,7 @@ public class ModTags {
         public static final ITag.INamedTag<Item> ENHANCEMENT_AIR = forge("enhancement/air");
         public static final ITag.INamedTag<Item> ENHANCEMENT_EARTH = forge("enhancement/earth");
         public static final ITag.INamedTag<Item> INGOTS_SILVER = forge("ingots/silver");
+        public static final ITag.INamedTag<Item> INGOTS_STEEL = forge("ingots/steel");
         public static final ITag.INamedTag<Item> SWORDS_SILVER = forge("swords/silver");
         public static final ITag.INamedTag<Item> PICKAXE_SILVER = forge("pickaxe/silver");
         public static final ITag.INamedTag<Item> AXE_SILVER = forge("axe/silver");

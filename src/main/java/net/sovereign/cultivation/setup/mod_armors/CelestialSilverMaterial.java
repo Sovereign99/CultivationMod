@@ -1,4 +1,4 @@
-package net.sovereign.cultivation.setup.ModArmors;
+package net.sovereign.cultivation.setup.mod_armors;
 
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.IArmorMaterial;
@@ -7,6 +7,7 @@ import net.minecraft.util.SoundEvent;
 import net.minecraft.util.SoundEvents;
 import net.sovereign.cultivation.CultivationMod;
 import net.sovereign.cultivation.setup.ModTags;
+import org.jetbrains.annotations.NotNull;
 
 public class CelestialSilverMaterial implements IArmorMaterial {
     private static final int[] BASE_DURABILITY = new int[] {13, 15, 16, 11};
@@ -28,17 +29,17 @@ public class CelestialSilverMaterial implements IArmorMaterial {
     }
 
     @Override
-    public SoundEvent getSoundEvent() {
+    public @NotNull SoundEvent getSoundEvent() {
         return SoundEvents.ITEM_ARMOR_EQUIP_IRON;
     }
 
     @Override
-    public Ingredient getRepairMaterial() {
+    public @NotNull Ingredient getRepairMaterial() {
         return Ingredient.fromTag(ModTags.Items.INGOTS_SILVER);
     }
 
     @Override
-    public String getName() {
+    public @NotNull String getName() {
         return CultivationMod.MOD_ID + ":" + "celestial_silver_armor";
     }
 
