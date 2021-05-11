@@ -1,6 +1,10 @@
 {
   "replace": false,
   "values": [
-    "cultivation:celestial_silver_helmet"
+    "cultivation:celestial_silver_helmet",
+    "cultivation:lava_celestial_silver_helmet",
+    "cultivation:water_celestial_silver_helmet",
+    "cultivation:earth_celestial_silver_helmet",
+    "cultivation:air_celestial_silver_helmet"
   ]
 }

@@ -41,6 +41,7 @@ public class ModLootTableProvider extends LootTableProvider {
         protected void addTables() {
             registerDropSelfLootTable(ModBlocks.CELESTIAL_SILVER_BLOCK.get());
             registerDropSelfLootTable(ModBlocks.CELESTIAL_SILVER_ORE.get());
+            registerDropSelfLootTable(ModBlocks.MYSTIC_FORGE.get());
         }
 
         @Override

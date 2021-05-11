@@ -1,6 +1,10 @@
 {
   "replace": false,
   "values": [
-    "cultivation:celestial_silver_chestplate"
+    "cultivation:celestial_silver_chestplate",
+    "cultivation:lava_celestial_silver_chestplate",
+    "cultivation:water_celestial_silver_chestplate",
+    "cultivation:earth_celestial_silver_chestplate",
+    "cultivation:air_celestial_silver_chestplate"
   ]
 }

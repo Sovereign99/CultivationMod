@@ -24,10 +24,10 @@ public class ModRecipeProvider extends RecipeProvider {
                 hasItem(ModItems.CELESTIAL_SILVER_INGOT.get())).build(consumer);
 
         //Ore to ingot, for furnace and blast furnace
-        CookingRecipeBuilder.smeltingRecipe(Ingredient.fromItems(ModBlocks.CELESTIAL_SILVER_ORE.get()), ModItems.CELESTIAL_SILVER_INGOT.get(), 50.0f, 800)
+        CookingRecipeBuilder.smeltingRecipe(Ingredient.fromItems(ModBlocks.CELESTIAL_SILVER_ORE.get()), ModItems.CELESTIAL_SILVER_INGOT.get(), 10.0f, 300)
                 .addCriterion("has_item", hasItem(ModBlocks.CELESTIAL_SILVER_ORE.get()))
                 .build(consumer, modId("silver_ingot_smelting"));
-        CookingRecipeBuilder.blastingRecipe(Ingredient.fromItems(ModBlocks.CELESTIAL_SILVER_ORE.get()), ModItems.CELESTIAL_SILVER_INGOT.get(), 50.0f, 400)
+        CookingRecipeBuilder.blastingRecipe(Ingredient.fromItems(ModBlocks.CELESTIAL_SILVER_ORE.get()), ModItems.CELESTIAL_SILVER_INGOT.get(), 10.0f, 150)
                 .addCriterion("has_item", hasItem(ModBlocks.CELESTIAL_SILVER_ORE.get()))
                 .build(consumer, modId("silver_ingot_blasting"));
 
@@ -80,7 +80,7 @@ public class ModRecipeProvider extends RecipeProvider {
                 .addCriterion("has_item", hasItem(ModItems.CELESTIAL_SILVER_INGOT.get()))
                 .build(consumer);
 
-        //Helmet Recipe
+        //Celestial Silver Helmet Recipe
         ShapedRecipeBuilder.shapedRecipe(ModItems.CELESTIAL_SILVER_HELMET.get())
                 .key('#', ModItems.CELESTIAL_SILVER_INGOT.get())
                 .patternLine("###")
@@ -89,7 +89,7 @@ public class ModRecipeProvider extends RecipeProvider {
                 .addCriterion("has_item", hasItem(ModItems.CELESTIAL_SILVER_INGOT.get()))
                 .build(consumer);
 
-        //Chestplate Recipe
+        //Celestial Silver Chestplate Recipe
         ShapedRecipeBuilder.shapedRecipe(ModItems.CELESTIAL_SILVER_CHESTPLATE.get())
                 .key('#', ModItems.CELESTIAL_SILVER_INGOT.get())
                 .patternLine("# #")
@@ -98,7 +98,7 @@ public class ModRecipeProvider extends RecipeProvider {
                 .addCriterion("has_item", hasItem(ModItems.CELESTIAL_SILVER_INGOT.get()))
                 .build(consumer);
 
-        //Leggings Recipe
+        //Celestial Silver Leggings Recipe
         ShapedRecipeBuilder.shapedRecipe(ModItems.CELESTIAL_SILVER_LEGGINGS.get())
                 .key('#', ModItems.CELESTIAL_SILVER_INGOT.get())
                 .patternLine("###")
@@ -107,7 +107,7 @@ public class ModRecipeProvider extends RecipeProvider {
                 .addCriterion("has_item", hasItem(ModItems.CELESTIAL_SILVER_INGOT.get()))
                 .build(consumer);
 
-        //Boots Recipe
+        //Celestial Silver Boots Recipe
         ShapedRecipeBuilder.shapedRecipe(ModItems.CELESTIAL_SILVER_BOOTS.get())
                 .key('#', ModItems.CELESTIAL_SILVER_INGOT.get())
                 .patternLine("# #")
@@ -115,6 +115,12 @@ public class ModRecipeProvider extends RecipeProvider {
                 .patternLine("   ")
                 .addCriterion("has_item", hasItem(ModItems.CELESTIAL_SILVER_INGOT.get()))
                 .build(consumer);
+
+        //Lava Infused Celestial Silver
+        ShapelessRecipeBuilder.shapelessRecipe(ModItems.LAVA_CELESTIAL_SILVER_INGOT.get(), 1)
+                .addIngredient(ModItems.CELESTIAL_SILVER_INGOT.get())
+                .addIngredient(ModItems.INFERIOR_LAVA_CRYSTAL.get())
+                .addCriterion("has_item", hasItem(ModItems.INFERIOR_LAVA_CRYSTAL.get())).build(consumer);
 
         //Inferior Lava Crystal
         ShapedRecipeBuilder.shapedRecipe(ModItems.INFERIOR_LAVA_CRYSTAL.get())
@@ -165,6 +171,48 @@ public class ModRecipeProvider extends RecipeProvider {
                 .addCriterion("has_item", hasItem(ModItems.SUPERIOR_LAVA_CRYSTAL.get()))
                 .build(consumer);
 
+        //Lava Celestial Silver Helmet Recipe
+        ShapedRecipeBuilder.shapedRecipe(ModItems.LAVA_CELESTIAL_SILVER_HELMET.get())
+                .key('#', ModItems.LAVA_CELESTIAL_SILVER_INGOT.get())
+                .patternLine("###")
+                .patternLine("# #")
+                .patternLine("   ")
+                .addCriterion("has_item", hasItem(ModItems.LAVA_CELESTIAL_SILVER_INGOT.get()))
+                .build(consumer);
+
+        //Lava Celestial Silver Chestplate Recipe
+        ShapedRecipeBuilder.shapedRecipe(ModItems.LAVA_CELESTIAL_SILVER_CHESTPLATE.get())
+                .key('#', ModItems.LAVA_CELESTIAL_SILVER_INGOT.get())
+                .patternLine("# #")
+                .patternLine("###")
+                .patternLine("###")
+                .addCriterion("has_item", hasItem(ModItems.LAVA_CELESTIAL_SILVER_INGOT.get()))
+                .build(consumer);
+
+        //Lava Celestial Silver Leggings Recipe
+        ShapedRecipeBuilder.shapedRecipe(ModItems.LAVA_CELESTIAL_SILVER_LEGGINGS.get())
+                .key('#', ModItems.LAVA_CELESTIAL_SILVER_INGOT.get())
+                .patternLine("###")
+                .patternLine("# #")
+                .patternLine("# #")
+                .addCriterion("has_item", hasItem(ModItems.LAVA_CELESTIAL_SILVER_INGOT.get()))
+                .build(consumer);
+
+        //Lava Celestial Silver Boots Recipe
+        ShapedRecipeBuilder.shapedRecipe(ModItems.LAVA_CELESTIAL_SILVER_BOOTS.get())
+                .key('#', ModItems.LAVA_CELESTIAL_SILVER_INGOT.get())
+                .patternLine("# #")
+                .patternLine("# #")
+                .patternLine("   ")
+                .addCriterion("has_item", hasItem(ModItems.LAVA_CELESTIAL_SILVER_INGOT.get()))
+                .build(consumer);
+
+        //Water Infused Celestial Silver
+        ShapelessRecipeBuilder.shapelessRecipe(ModItems.WATER_CELESTIAL_SILVER_INGOT.get(), 1)
+                .addIngredient(ModItems.CELESTIAL_SILVER_INGOT.get())
+                .addIngredient(ModItems.INFERIOR_WATER_BEAD.get())
+                .addCriterion("has_item", hasItem(ModItems.INFERIOR_WATER_BEAD.get())).build(consumer);
+
         //Inferior Water Bead
         ShapedRecipeBuilder.shapedRecipe(ModItems.INFERIOR_WATER_BEAD.get())
                 .key('#', Items.WATER_BUCKET)
@@ -203,6 +251,48 @@ public class ModRecipeProvider extends RecipeProvider {
                 .patternLine(" # ")
                 .addCriterion("has_item", hasItem(ModItems.ENHANCED_WATER_BEAD.get()))
                 .build(consumer);
+
+        //Water Celestial Silver Helmet Recipe
+        ShapedRecipeBuilder.shapedRecipe(ModItems.WATER_CELESTIAL_SILVER_HELMET.get())
+                .key('#', ModItems.WATER_CELESTIAL_SILVER_INGOT.get())
+                .patternLine("###")
+                .patternLine("# #")
+                .patternLine("   ")
+                .addCriterion("has_item", hasItem(ModItems.WATER_CELESTIAL_SILVER_INGOT.get()))
+                .build(consumer);
+
+        //Water Celestial Silver Chestplate Recipe
+        ShapedRecipeBuilder.shapedRecipe(ModItems.WATER_CELESTIAL_SILVER_CHESTPLATE.get())
+                .key('#', ModItems.WATER_CELESTIAL_SILVER_INGOT.get())
+                .patternLine("# #")
+                .patternLine("###")
+                .patternLine("###")
+                .addCriterion("has_item", hasItem(ModItems.WATER_CELESTIAL_SILVER_INGOT.get()))
+                .build(consumer);
+
+        //Water Celestial Silver Leggings Recipe
+        ShapedRecipeBuilder.shapedRecipe(ModItems.WATER_CELESTIAL_SILVER_LEGGINGS.get())
+                .key('#', ModItems.WATER_CELESTIAL_SILVER_INGOT.get())
+                .patternLine("###")
+                .patternLine("# #")
+                .patternLine("# #")
+                .addCriterion("has_item", hasItem(ModItems.WATER_CELESTIAL_SILVER_INGOT.get()))
+                .build(consumer);
+
+        //Water Celestial Silver Boots Recipe
+        ShapedRecipeBuilder.shapedRecipe(ModItems.WATER_CELESTIAL_SILVER_BOOTS.get())
+                .key('#', ModItems.WATER_CELESTIAL_SILVER_INGOT.get())
+                .patternLine("# #")
+                .patternLine("# #")
+                .patternLine("   ")
+                .addCriterion("has_item", hasItem(ModItems.WATER_CELESTIAL_SILVER_INGOT.get()))
+                .build(consumer);
+
+        //Air Infused Celestial Silver
+        ShapelessRecipeBuilder.shapelessRecipe(ModItems.AIR_CELESTIAL_SILVER_INGOT.get(), 1)
+                .addIngredient(ModItems.CELESTIAL_SILVER_INGOT.get())
+                .addIngredient(ModItems.INFERIOR_WIND_ESSENCE.get())
+                .addCriterion("has_item", hasItem(ModItems.INFERIOR_WIND_ESSENCE.get())).build(consumer);
 
         //Inferior Wind Essence
         ShapedRecipeBuilder.shapedRecipe(ModItems.INFERIOR_WIND_ESSENCE.get())
@@ -243,6 +333,48 @@ public class ModRecipeProvider extends RecipeProvider {
                 .addCriterion("has_item", hasItem(ModItems.ENHANCED_WIND_ESSENCE.get()))
                 .build(consumer);
 
+        //Air Celestial Silver Helmet Recipe
+        ShapedRecipeBuilder.shapedRecipe(ModItems.AIR_CELESTIAL_SILVER_HELMET.get())
+                .key('#', ModItems.AIR_CELESTIAL_SILVER_INGOT.get())
+                .patternLine("###")
+                .patternLine("# #")
+                .patternLine("   ")
+                .addCriterion("has_item", hasItem(ModItems.AIR_CELESTIAL_SILVER_INGOT.get()))
+                .build(consumer);
+
+        //Air Celestial Silver Chestplate Recipe
+        ShapedRecipeBuilder.shapedRecipe(ModItems.AIR_CELESTIAL_SILVER_CHESTPLATE.get())
+                .key('#', ModItems.AIR_CELESTIAL_SILVER_INGOT.get())
+                .patternLine("# #")
+                .patternLine("###")
+                .patternLine("###")
+                .addCriterion("has_item", hasItem(ModItems.AIR_CELESTIAL_SILVER_INGOT.get()))
+                .build(consumer);
+
+        //Air Celestial Silver Leggings Recipe
+        ShapedRecipeBuilder.shapedRecipe(ModItems.AIR_CELESTIAL_SILVER_LEGGINGS.get())
+                .key('#', ModItems.AIR_CELESTIAL_SILVER_INGOT.get())
+                .patternLine("###")
+                .patternLine("# #")
+                .patternLine("# #")
+                .addCriterion("has_item", hasItem(ModItems.AIR_CELESTIAL_SILVER_INGOT.get()))
+                .build(consumer);
+
+        //Air Celestial Silver Boots Recipe
+        ShapedRecipeBuilder.shapedRecipe(ModItems.AIR_CELESTIAL_SILVER_BOOTS.get())
+                .key('#', ModItems.AIR_CELESTIAL_SILVER_INGOT.get())
+                .patternLine("# #")
+                .patternLine("# #")
+                .patternLine("   ")
+                .addCriterion("has_item", hasItem(ModItems.AIR_CELESTIAL_SILVER_INGOT.get()))
+                .build(consumer);
+
+        //Earth Infused Celestial Silver
+        ShapelessRecipeBuilder.shapelessRecipe(ModItems.EARTH_CELESTIAL_SILVER_INGOT.get(), 1)
+                .addIngredient(ModItems.CELESTIAL_SILVER_INGOT.get())
+                .addIngredient(ModItems.INFERIOR_ROCK.get())
+                .addCriterion("has_item", hasItem(ModItems.INFERIOR_ROCK.get())).build(consumer);
+
         //Inferior Rock
         ShapedRecipeBuilder.shapedRecipe(ModItems.INFERIOR_ROCK.get())
                 .key('#', Items.STONE)
@@ -282,29 +414,41 @@ public class ModRecipeProvider extends RecipeProvider {
                 .addCriterion("has_item", hasItem(ModItems.ENHANCED_ROCK.get()))
                 .build(consumer);
 
-        //Lava Infused Celestial Silver
-        ShapelessRecipeBuilder.shapelessRecipe(ModItems.LAVA_CELESTIAL_SILVER_INGOT.get(), 1)
-                .addIngredient(ModItems.CELESTIAL_SILVER_INGOT.get())
-                .addIngredient(ModItems.INFERIOR_LAVA_CRYSTAL.get())
-                .addCriterion("has_item", hasItem(ModItems.INFERIOR_LAVA_CRYSTAL.get())).build(consumer);
+        //Earth Celestial Silver Helmet Recipe
+        ShapedRecipeBuilder.shapedRecipe(ModItems.EARTH_CELESTIAL_SILVER_HELMET.get())
+                .key('#', ModItems.EARTH_CELESTIAL_SILVER_INGOT.get())
+                .patternLine("###")
+                .patternLine("# #")
+                .patternLine("   ")
+                .addCriterion("has_item", hasItem(ModItems.EARTH_CELESTIAL_SILVER_INGOT.get()))
+                .build(consumer);
 
-        //Water Infused Celestial Silver
-        ShapelessRecipeBuilder.shapelessRecipe(ModItems.WATER_CELESTIAL_SILVER_INGOT.get(), 1)
-                .addIngredient(ModItems.CELESTIAL_SILVER_INGOT.get())
-                .addIngredient(ModItems.INFERIOR_WATER_BEAD.get())
-                .addCriterion("has_item", hasItem(ModItems.INFERIOR_WATER_BEAD.get())).build(consumer);
+        //Earth Celestial Silver Chestplate Recipe
+        ShapedRecipeBuilder.shapedRecipe(ModItems.EARTH_CELESTIAL_SILVER_CHESTPLATE.get())
+                .key('#', ModItems.EARTH_CELESTIAL_SILVER_INGOT.get())
+                .patternLine("# #")
+                .patternLine("###")
+                .patternLine("###")
+                .addCriterion("has_item", hasItem(ModItems.EARTH_CELESTIAL_SILVER_INGOT.get()))
+                .build(consumer);
 
-        //Air Infused Celestial Silver
-        ShapelessRecipeBuilder.shapelessRecipe(ModItems.AIR_CELESTIAL_SILVER_INGOT.get(), 1)
-                .addIngredient(ModItems.CELESTIAL_SILVER_INGOT.get())
-                .addIngredient(ModItems.INFERIOR_WIND_ESSENCE.get())
-                .addCriterion("has_item", hasItem(ModItems.INFERIOR_WIND_ESSENCE.get())).build(consumer);
+        //Earth Celestial Silver Leggings Recipe
+        ShapedRecipeBuilder.shapedRecipe(ModItems.EARTH_CELESTIAL_SILVER_LEGGINGS.get())
+                .key('#', ModItems.EARTH_CELESTIAL_SILVER_INGOT.get())
+                .patternLine("###")
+                .patternLine("# #")
+                .patternLine("# #")
+                .addCriterion("has_item", hasItem(ModItems.EARTH_CELESTIAL_SILVER_INGOT.get()))
+                .build(consumer);
 
-        //Earth Infused Celestial Silver
-        ShapelessRecipeBuilder.shapelessRecipe(ModItems.EARTH_CELESTIAL_SILVER_INGOT.get(), 1)
-                .addIngredient(ModItems.CELESTIAL_SILVER_INGOT.get())
-                .addIngredient(ModItems.INFERIOR_ROCK.get())
-                .addCriterion("has_item", hasItem(ModItems.INFERIOR_ROCK.get())).build(consumer);
+        //Earth Celestial Silver Boots Recipe
+        ShapedRecipeBuilder.shapedRecipe(ModItems.EARTH_CELESTIAL_SILVER_BOOTS.get())
+                .key('#', ModItems.EARTH_CELESTIAL_SILVER_INGOT.get())
+                .patternLine("# #")
+                .patternLine("# #")
+                .patternLine("   ")
+                .addCriterion("has_item", hasItem(ModItems.EARTH_CELESTIAL_SILVER_INGOT.get()))
+                .build(consumer);
     }
 
     private static ResourceLocation modId(String path) {

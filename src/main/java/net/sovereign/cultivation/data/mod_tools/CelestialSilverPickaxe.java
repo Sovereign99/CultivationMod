@@ -1,4 +1,4 @@
-package net.sovereign.cultivation.setup.mod_tools;
+package net.sovereign.cultivation.data.mod_tools;
 
 import net.minecraft.item.IItemTier;
 import net.minecraft.item.Item;

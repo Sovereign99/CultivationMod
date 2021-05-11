@@ -4,6 +4,6 @@
     "item": "cultivation:celestial_silver_ore"
   },
   "result": "cultivation:celestial_silver_ingot",
-  "experience": 50.0,
-  "cookingtime": 800
+  "experience": 10.0,
+  "cookingtime": 300
 }

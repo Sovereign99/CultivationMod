@@ -47,10 +47,30 @@
   "item.cultivation.celestial_silver_leggings": "Celestial Silver Leggings",
   "item.cultivation.celestial_silver_boots": "Celestial Silver Boots",
 
-  "item.cultivation.lava_celestial_silver_ingot": "Lava-Infused Celestial Silver Ingot",
+  "item.cultivation.lava_celestial_silver_ingot": "Fire-Infused Celestial Silver Ingot",
   "item.cultivation.water_celestial_silver_ingot": "Water-Infused Celestial Silver Ingot",
   "item.cultivation.air_celestial_silver_ingot": "Air-Infused Celestial Silver Ingot",
   "item.cultivation.earth_celestial_silver_ingot": "Earth-Infused Celestial Silver Ingot",
+
+  "item.cultivation.lava_celestial_silver_helmet": "Fire-Infused Celestial Silver Helmet",
+  "item.cultivation.lava_celestial_silver_chestplate": "Fire-Infused Celestial Silver Chestplate",
+  "item.cultivation.lava_celestial_silver_leggings": "Fire-Infused Celestial Silver Leggings",
+  "item.cultivation.lava_celestial_silver_boots": "Fire-Infused Celestial Silver Boots",
+
+  "item.cultivation.water_celestial_silver_helmet": "Water-Infused Celestial Silver Helmet",
+  "item.cultivation.water_celestial_silver_chestplate": "Water-Infused Celestial Silver Chestplate",
+  "item.cultivation.water_celestial_silver_leggings": "Water-Infused Celestial Silver Leggings",
+  "item.cultivation.water_celestial_silver_boots": "Water-Infused Celestial Silver Boots",
+
+  "item.cultivation.air_celestial_silver_helmet": "Air-Infused Celestial Silver Helmet",
+  "item.cultivation.air_celestial_silver_chestplate": "Air-Infused Celestial Silver Chestplate",
+  "item.cultivation.air_celestial_silver_leggings": "Air-Infused Celestial Silver Leggings",
+  "item.cultivation.air_celestial_silver_boots": "Air-Infused Celestial Silver Boots",
+
+  "item.cultivation.earth_celestial_silver_helmet": "Earth-Infused Celestial Silver Helmet",
+  "item.cultivation.earth_celestial_silver_chestplate": "Earth-Infused Celestial Silver Chestplate",
+  "item.cultivation.earth_celestial_silver_leggings": "Earth-Infused Celestial Silver Leggings",
+  "item.cultivation.earth_celestial_silver_boots": "Earth-Infused Celestial Silver Boots",
 
   "item.cultivation.empyrean_steel_ingot": "Empyrean Steel Ingot"
 }

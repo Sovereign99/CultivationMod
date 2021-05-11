@@ -1,6 +1,10 @@
 {
   "replace": false,
   "values": [
-    "cultivation:celestial_silver_boots"
+    "cultivation:celestial_silver_boots",
+    "cultivation:lava_celestial_silver_boots",
+    "cultivation:water_celestial_silver_boots",
+    "cultivation:earth_celestial_silver_boots",
+    "cultivation:air_celestial_silver_boots"
   ]
 }
