@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "cultivation:celestial_silver_ingot"
+    "cultivation:celestial_silver_ingot",
+    "cultivation:lava_celestial_silver_ingot"
   ]
 }

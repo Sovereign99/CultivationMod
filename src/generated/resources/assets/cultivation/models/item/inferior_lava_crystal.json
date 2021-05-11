@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "cultivation:item/inferior_lava_crystal"
+  }
+}

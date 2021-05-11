@@ -107,5 +107,9 @@ public class ModItems {
 
     // Ghost Diamond
 
+    // Infused Metals
+    public static final RegistryObject<Item> LAVA_CELESTIAL_SILVER_INGOT = Registration.ITEMS.register("lava_celestial_silver_ingot",
+            () -> new Item(new Item.Properties().group(ItemGroup.MATERIALS)));
+
     static void register() {}
 }
