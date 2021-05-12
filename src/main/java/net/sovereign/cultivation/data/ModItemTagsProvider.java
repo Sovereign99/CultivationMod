@@ -77,6 +77,7 @@ public class ModItemTagsProvider extends ItemTagsProvider {
         getOrCreateBuilder(ModTags.Items.CHESTPLATE_SILVER).add(ModItems.LAVA_CELESTIAL_SILVER_CHESTPLATE.get());
         getOrCreateBuilder(ModTags.Items.LEGGINGS_SILVER).add(ModItems.LAVA_CELESTIAL_SILVER_LEGGINGS.get());
         getOrCreateBuilder(ModTags.Items.BOOTS_SILVER).add(ModItems.LAVA_CELESTIAL_SILVER_BOOTS.get());
+        getOrCreateBuilder(ModTags.Items.ENHANCEMENT_LAVA).add(ModItems.LAVA_CELESTIAL_SILVER_SWORD.get());
 
         getOrCreateBuilder(ModTags.Items.HELMET_SILVER).add(ModItems.WATER_CELESTIAL_SILVER_HELMET.get());
         getOrCreateBuilder(ModTags.Items.CHESTPLATE_SILVER).add(ModItems.WATER_CELESTIAL_SILVER_CHESTPLATE.get());

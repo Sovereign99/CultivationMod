@@ -42,6 +42,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         builder(itemGenerated, "lava_celestial_silver_chestplate");
         builder(itemGenerated, "lava_celestial_silver_leggings");
         builder(itemGenerated, "lava_celestial_silver_boots");
+        builder(itemGenerated, "lava_celestial_silver_sword");
 
         builder(itemGenerated, "inferior_water_bead");
         builder(itemGenerated, "basic_water_bead");

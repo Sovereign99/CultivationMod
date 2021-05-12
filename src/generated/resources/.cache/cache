@@ -54,6 +54,7 @@ d84f6e7d32ea82b96cd3196c96de8664c4d6bc74 assets/cultivation/models/item/lava_cel
 5b6edc8ec91237e7e1b829b5d7c0fadf40d3398e assets/cultivation/models/item/lava_celestial_silver_helmet.json
 a8485a949f2344609f49ff4eea042f10c5d15442 assets/cultivation/models/item/lava_celestial_silver_ingot.json
 891c9b32e826b1fbe659f3d9cbf39845d4fdbde3 assets/cultivation/models/item/lava_celestial_silver_leggings.json
+7326d9d9081893efcb20927a5eb67733ac403146 assets/cultivation/models/item/lava_celestial_silver_sword.json
 439d87b306752bbfbba0f298a547bf3dfeca5822 assets/cultivation/models/item/superior_celestial_ice.json
 d3ef74e0e49709b71ee4b51f19523074fb07cbed assets/cultivation/models/item/superior_ethereal_gale.json
 e0adffb52f51fbd4583eebb7993c6c7c8f6556ba assets/cultivation/models/item/superior_hell_bead.json
@@ -181,7 +182,7 @@ bade7c2290342dca93c1494fd44efbe8cfbac57f data/forge/tags/items/armor/silver/helm
 ad2c9aba492a043766d9b3f2d30dcde6fc2cc07b data/forge/tags/items/axe/silver.json
 30d682c563fc5ace7b02f311d30cc01480432730 data/forge/tags/items/enhancement/air.json
 b491be46a6583e96190da56f3dfac22c76db4523 data/forge/tags/items/enhancement/earth.json
-8eec18060ead0862813f21e359f20d4f9ffba51b data/forge/tags/items/enhancement/lava.json
+cc3ef2b1a4d46fcfe3c4eb0b51fa86e3ea6470a6 data/forge/tags/items/enhancement/lava.json
 cd696ee65ee6d4899d8e2b568f2c0353157b436e data/forge/tags/items/enhancement/water.json
 3dd98fcf70166cbfab8dc23d9f3c7692ea342765 data/forge/tags/items/hoe/silver.json
 6aca82e8ad81198ae376ca71b9429dcaa8ebf33b data/forge/tags/items/ingots.json

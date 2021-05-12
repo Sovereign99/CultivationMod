@@ -4,12 +4,14 @@ import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.*;
 import net.minecraftforge.fml.RegistryObject;
 import net.sovereign.cultivation.data.item_tier.ModItemTier;
+import net.sovereign.cultivation.data.mod_armors.LavaArmor;
 import net.sovereign.cultivation.data.mod_armors.ModArmorMaterial;
 import net.sovereign.cultivation.data.mod_armors.ModArmor;
 import net.sovereign.cultivation.data.mod_tools.ModAxeItem;
 import net.sovereign.cultivation.data.mod_tools.ModShovelItem;
 import net.sovereign.cultivation.data.mod_tools.ModPickaxeItem;
 import net.sovereign.cultivation.data.mod_tools.ModHoeItem;
+import net.sovereign.cultivation.data.mod_weapons.LavaSword;
 import net.sovereign.cultivation.data.mod_weapons.ModSwordItem;
 
 public class ModItems {
@@ -109,13 +111,15 @@ public class ModItems {
             () -> new ModArmor(ModArmorMaterial.CELESTIAL_SILVER, EquipmentSlotType.FEET));
 
     public static final RegistryObject<ArmorItem> LAVA_CELESTIAL_SILVER_HELMET = Registration.ITEMS.register("lava_celestial_silver_helmet",
-            () -> new ModArmor(ModArmorMaterial.LAVA_CELESTIAL_SILVER, EquipmentSlotType.HEAD));
+            () -> new LavaArmor(ModArmorMaterial.LAVA_CELESTIAL_SILVER, EquipmentSlotType.HEAD));
     public static final RegistryObject<ArmorItem> LAVA_CELESTIAL_SILVER_CHESTPLATE = Registration.ITEMS.register("lava_celestial_silver_chestplate",
-            () -> new ModArmor(ModArmorMaterial.LAVA_CELESTIAL_SILVER, EquipmentSlotType.CHEST));
+            () -> new LavaArmor(ModArmorMaterial.LAVA_CELESTIAL_SILVER, EquipmentSlotType.CHEST));
     public static final RegistryObject<ArmorItem> LAVA_CELESTIAL_SILVER_LEGGINGS = Registration.ITEMS.register("lava_celestial_silver_leggings",
-            () -> new ModArmor(ModArmorMaterial.LAVA_CELESTIAL_SILVER, EquipmentSlotType.LEGS));
+            () -> new LavaArmor(ModArmorMaterial.LAVA_CELESTIAL_SILVER, EquipmentSlotType.LEGS));
     public static final RegistryObject<ArmorItem> LAVA_CELESTIAL_SILVER_BOOTS = Registration.ITEMS.register("lava_celestial_silver_boots",
-            () -> new ModArmor(ModArmorMaterial.LAVA_CELESTIAL_SILVER, EquipmentSlotType.FEET));
+            () -> new LavaArmor(ModArmorMaterial.LAVA_CELESTIAL_SILVER, EquipmentSlotType.FEET));
+    public static final RegistryObject<LavaSword> LAVA_CELESTIAL_SILVER_SWORD = Registration.ITEMS.register("lava_celestial_silver_sword",
+            () -> new LavaSword(ModItemTier.CELESTIAL_SILVER, 3, -2.4F, new Item.Properties().group(ItemGroup.COMBAT)));
 
     public static final RegistryObject<ArmorItem> WATER_CELESTIAL_SILVER_HELMET = Registration.ITEMS.register("water_celestial_silver_helmet",
             () -> new ModArmor(ModArmorMaterial.WATER_CELESTIAL_SILVER, EquipmentSlotType.HEAD));
@@ -157,6 +161,7 @@ public class ModItems {
             () -> new Item(new Item.Properties().group(ItemGroup.MATERIALS).isImmuneToFire()));
     public static final RegistryObject<Item> EARTH_CELESTIAL_SILVER_INGOT = Registration.ITEMS.register("earth_celestial_silver_ingot",
             () -> new Item(new Item.Properties().group(ItemGroup.MATERIALS).isImmuneToFire()));
+
 
     static void register() {}
 }
