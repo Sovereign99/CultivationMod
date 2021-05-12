@@ -6,6 +6,7 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.GatherDataEvent;
 import net.sovereign.cultivation.CultivationMod;
+import net.sovereign.cultivation.crafting.recipe.ModRecipeProvider;
 import net.sovereign.cultivation.data.client.ModBlockStateProvider;
 import net.sovereign.cultivation.data.client.ModItemModelProvider;
 

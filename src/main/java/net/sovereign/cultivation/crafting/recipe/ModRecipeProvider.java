@@ -1,4 +1,4 @@
-package net.sovereign.cultivation.data;
+package net.sovereign.cultivation.crafting.recipe;
 
 import net.minecraft.data.*;
 import net.minecraft.item.Items;
