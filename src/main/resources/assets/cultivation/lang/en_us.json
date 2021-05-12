@@ -52,6 +52,7 @@
   "item.cultivation.water_celestial_silver_ingot": "Water-Infused Celestial Silver Ingot",
   "item.cultivation.air_celestial_silver_ingot": "Air-Infused Celestial Silver Ingot",
   "item.cultivation.earth_celestial_silver_ingot": "Earth-Infused Celestial Silver Ingot",
+  "item.cultivation.earth_celestial_silver_sword": "Earth-Infused Celestial Silver Sword",
 
   "item.cultivation.lava_celestial_silver_helmet": "Fire-Infused Celestial Silver Helmet",
   "item.cultivation.lava_celestial_silver_chestplate": "Fire-Infused Celestial Silver Chestplate",
@@ -63,16 +64,24 @@
   "item.cultivation.water_celestial_silver_chestplate": "Water-Infused Celestial Silver Chestplate",
   "item.cultivation.water_celestial_silver_leggings": "Water-Infused Celestial Silver Leggings",
   "item.cultivation.water_celestial_silver_boots": "Water-Infused Celestial Silver Boots",
+  "item.cultivation.water_celestial_silver_sword": "Water-Infused Celestial Silver Sword",
 
   "item.cultivation.air_celestial_silver_helmet": "Air-Infused Celestial Silver Helmet",
   "item.cultivation.air_celestial_silver_chestplate": "Air-Infused Celestial Silver Chestplate",
   "item.cultivation.air_celestial_silver_leggings": "Air-Infused Celestial Silver Leggings",
   "item.cultivation.air_celestial_silver_boots": "Air-Infused Celestial Silver Boots",
+  "item.cultivation.air_celestial_silver_sword": "Air-Infused Celestial Silver Sword",
 
   "item.cultivation.earth_celestial_silver_helmet": "Earth-Infused Celestial Silver Helmet",
   "item.cultivation.earth_celestial_silver_chestplate": "Earth-Infused Celestial Silver Chestplate",
   "item.cultivation.earth_celestial_silver_leggings": "Earth-Infused Celestial Silver Leggings",
   "item.cultivation.earth_celestial_silver_boots": "Earth-Infused Celestial Silver Boots",
 
-  "item.cultivation.empyrean_steel_ingot": "Empyrean Steel Ingot"
+  "item.cultivation.empyrean_steel_ingot": "Empyrean Steel Ingot",
+  "block.cultivation.empyrean_steel_block": "Block of Empyrean Steel",
+  "item.cultivation.empyrean_steel_helmet": "Empyrean Steel Helmet",
+  "item.cultivation.empyrean_steel_chestplate": "Empyrean Steel Chestplate",
+  "item.cultivation.empyrean_steel_leggings": "Empyrean Steel Leggings",
+  "item.cultivation.empyrean_steel_boots": "Empyrean Steel Boots",
+  "item.cultivation.empyrean_steel_sword": "Empyrean Steel Sword"
 }

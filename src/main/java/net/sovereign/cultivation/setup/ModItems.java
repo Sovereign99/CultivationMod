@@ -4,15 +4,12 @@ import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.*;
 import net.minecraftforge.fml.RegistryObject;
 import net.sovereign.cultivation.data.item_tier.ModItemTier;
-import net.sovereign.cultivation.data.mod_armors.LavaArmor;
-import net.sovereign.cultivation.data.mod_armors.ModArmorMaterial;
-import net.sovereign.cultivation.data.mod_armors.ModArmor;
+import net.sovereign.cultivation.data.mod_armors.*;
 import net.sovereign.cultivation.data.mod_tools.ModAxeItem;
 import net.sovereign.cultivation.data.mod_tools.ModShovelItem;
 import net.sovereign.cultivation.data.mod_tools.ModPickaxeItem;
 import net.sovereign.cultivation.data.mod_tools.ModHoeItem;
-import net.sovereign.cultivation.data.mod_weapons.LavaSword;
-import net.sovereign.cultivation.data.mod_weapons.ModSwordItem;
+import net.sovereign.cultivation.data.mod_weapons.*;
 
 public class ModItems {
     // Lava Crystals (Inferior, Basic, Enhanced, Superior)
@@ -24,6 +21,7 @@ public class ModItems {
             () -> new Item(new Item.Properties().group(ItemGroup.MATERIALS).isImmuneToFire()));
     public static final RegistryObject<Item> SUPERIOR_LAVA_CRYSTAL = Registration.ITEMS.register("superior_lava_crystal",
             () -> new Item(new Item.Properties().group(ItemGroup.MATERIALS).isImmuneToFire()));
+
     // Hell Bead (Inferior, Basic, Enhanced, Superior)
     public static final RegistryObject<Item> INFERIOR_HELL_BEAD = Registration.ITEMS.register("inferior_hell_bead",
             () -> new Item(new Item.Properties().group(ItemGroup.MATERIALS).isImmuneToFire()));
@@ -33,6 +31,7 @@ public class ModItems {
             () -> new Item(new Item.Properties().group(ItemGroup.MATERIALS).isImmuneToFire()));
     public static final RegistryObject<Item> SUPERIOR_HELL_BEAD = Registration.ITEMS.register("superior_hell_bead",
             () -> new Item(new Item.Properties().group(ItemGroup.MATERIALS).isImmuneToFire()));
+
     // Water Bead (Inferior, Basic, Enhanced, Superior)
     public static final RegistryObject<Item> INFERIOR_WATER_BEAD = Registration.ITEMS.register("inferior_water_bead",
             () -> new Item(new Item.Properties().group(ItemGroup.MATERIALS).isImmuneToFire()));
@@ -42,6 +41,7 @@ public class ModItems {
             () -> new Item(new Item.Properties().group(ItemGroup.MATERIALS).isImmuneToFire()));
     public static final RegistryObject<Item> SUPERIOR_WATER_BEAD = Registration.ITEMS.register("superior_water_bead",
             () -> new Item(new Item.Properties().group(ItemGroup.MATERIALS).isImmuneToFire()));
+
     // Celestial Ice (Inferior, Basic, Enhanced, Superior)
     public static final RegistryObject<Item> INFERIOR_CELESTIAL_ICE = Registration.ITEMS.register("inferior_celestial_ice",
             () -> new Item(new Item.Properties().group(ItemGroup.MATERIALS).isImmuneToFire()));
@@ -51,6 +51,7 @@ public class ModItems {
             () -> new Item(new Item.Properties().group(ItemGroup.MATERIALS).isImmuneToFire()));
     public static final RegistryObject<Item> SUPERIOR_CELESTIAL_ICE = Registration.ITEMS.register("superior_celestial_ice",
             () -> new Item(new Item.Properties().group(ItemGroup.MATERIALS).isImmuneToFire()));
+
     // Wind Essence (Inferior, Basic, Enhanced, Superior)
     public static final RegistryObject<Item> INFERIOR_WIND_ESSENCE = Registration.ITEMS.register("inferior_wind_essence",
             () -> new Item(new Item.Properties().group(ItemGroup.MATERIALS).isImmuneToFire()));
@@ -60,6 +61,7 @@ public class ModItems {
             () -> new Item(new Item.Properties().group(ItemGroup.MATERIALS).isImmuneToFire()));
     public static final RegistryObject<Item> SUPERIOR_WIND_ESSENCE = Registration.ITEMS.register("superior_wind_essence",
             () -> new Item(new Item.Properties().group(ItemGroup.MATERIALS).isImmuneToFire()));
+
     // Ethereal Gale (Inferior, Basic, Enhanced, Superior)
     public static final RegistryObject<Item> INFERIOR_ETHEREAL_GALE = Registration.ITEMS.register("inferior_ethereal_gale",
             () -> new Item(new Item.Properties().group(ItemGroup.MATERIALS).isImmuneToFire()));
@@ -69,6 +71,7 @@ public class ModItems {
             () -> new Item(new Item.Properties().group(ItemGroup.MATERIALS).isImmuneToFire()));
     public static final RegistryObject<Item> SUPERIOR_ETHEREAL_GALE = Registration.ITEMS.register("superior_ethereal_gale",
             () -> new Item(new Item.Properties().group(ItemGroup.MATERIALS).isImmuneToFire()));
+
     // Rock (Inferior, Basic, Enhanced, Superior)
     public static final RegistryObject<Item> INFERIOR_ROCK = Registration.ITEMS.register("inferior_rock",
             () -> new Item(new Item.Properties().group(ItemGroup.MATERIALS).isImmuneToFire()));
@@ -78,6 +81,7 @@ public class ModItems {
             () -> new Item(new Item.Properties().group(ItemGroup.MATERIALS).isImmuneToFire()));
     public static final RegistryObject<Item> SUPERIOR_ROCK = Registration.ITEMS.register("superior_rock",
             () -> new Item(new Item.Properties().group(ItemGroup.MATERIALS).isImmuneToFire()));
+
     // Immortal Rock (Inferior, Basic, Enhanced, Superior)
     public static final RegistryObject<Item> INFERIOR_IMMORTAL_ROCK = Registration.ITEMS.register("inferior_immortal_rock",
             () -> new Item(new Item.Properties().group(ItemGroup.MATERIALS).isImmuneToFire()));
@@ -87,6 +91,7 @@ public class ModItems {
             () -> new Item(new Item.Properties().group(ItemGroup.MATERIALS).isImmuneToFire()));
     public static final RegistryObject<Item> SUPERIOR_IMMORTAL_ROCK = Registration.ITEMS.register("superior_immortal_rock",
             () -> new Item(new Item.Properties().group(ItemGroup.MATERIALS).isImmuneToFire()));
+
     // Celestial Silver
     public static final RegistryObject<Item> CELESTIAL_SILVER_INGOT = Registration.ITEMS.register("celestial_silver_ingot",
             () -> new Item(new Item.Properties().group(ItemGroup.MATERIALS)));
@@ -119,37 +124,53 @@ public class ModItems {
     public static final RegistryObject<ArmorItem> LAVA_CELESTIAL_SILVER_BOOTS = Registration.ITEMS.register("lava_celestial_silver_boots",
             () -> new LavaArmor(ModArmorMaterial.LAVA_CELESTIAL_SILVER, EquipmentSlotType.FEET));
     public static final RegistryObject<LavaSword> LAVA_CELESTIAL_SILVER_SWORD = Registration.ITEMS.register("lava_celestial_silver_sword",
-            () -> new LavaSword(ModItemTier.CELESTIAL_SILVER, 3, -2.4F, new Item.Properties().group(ItemGroup.COMBAT)));
+            () -> new LavaSword(ModItemTier.CELESTIAL_SILVER, 3, -2.4F));
 
     public static final RegistryObject<ArmorItem> WATER_CELESTIAL_SILVER_HELMET = Registration.ITEMS.register("water_celestial_silver_helmet",
-            () -> new ModArmor(ModArmorMaterial.WATER_CELESTIAL_SILVER, EquipmentSlotType.HEAD));
+            () -> new WaterArmor(ModArmorMaterial.WATER_CELESTIAL_SILVER, EquipmentSlotType.HEAD));
     public static final RegistryObject<ArmorItem> WATER_CELESTIAL_SILVER_CHESTPLATE = Registration.ITEMS.register("water_celestial_silver_chestplate",
-            () -> new ModArmor(ModArmorMaterial.WATER_CELESTIAL_SILVER, EquipmentSlotType.CHEST));
+            () -> new WaterArmor(ModArmorMaterial.WATER_CELESTIAL_SILVER, EquipmentSlotType.CHEST));
     public static final RegistryObject<ArmorItem> WATER_CELESTIAL_SILVER_LEGGINGS = Registration.ITEMS.register("water_celestial_silver_leggings",
-            () -> new ModArmor(ModArmorMaterial.WATER_CELESTIAL_SILVER, EquipmentSlotType.LEGS));
+            () -> new WaterArmor(ModArmorMaterial.WATER_CELESTIAL_SILVER, EquipmentSlotType.LEGS));
     public static final RegistryObject<ArmorItem> WATER_CELESTIAL_SILVER_BOOTS = Registration.ITEMS.register("water_celestial_silver_boots",
-            () -> new ModArmor(ModArmorMaterial.WATER_CELESTIAL_SILVER, EquipmentSlotType.FEET));
+            () -> new WaterArmor(ModArmorMaterial.WATER_CELESTIAL_SILVER, EquipmentSlotType.FEET));
+    public static final RegistryObject<WaterSword> WATER_CELESTIAL_SILVER_SWORD = Registration.ITEMS.register("water_celestial_silver_sword",
+            () -> new WaterSword(ModItemTier.CELESTIAL_SILVER, 3, -2.4F));
 
     public static final RegistryObject<ArmorItem> EARTH_CELESTIAL_SILVER_HELMET = Registration.ITEMS.register("earth_celestial_silver_helmet",
-            () -> new ModArmor(ModArmorMaterial.EARTH_CELESTIAL_SILVER, EquipmentSlotType.HEAD));
+            () -> new EarthArmor(ModArmorMaterial.EARTH_CELESTIAL_SILVER, EquipmentSlotType.HEAD));
     public static final RegistryObject<ArmorItem> EARTH_CELESTIAL_SILVER_CHESTPLATE = Registration.ITEMS.register("earth_celestial_silver_chestplate",
-            () -> new ModArmor(ModArmorMaterial.EARTH_CELESTIAL_SILVER, EquipmentSlotType.CHEST));
+            () -> new EarthArmor(ModArmorMaterial.EARTH_CELESTIAL_SILVER, EquipmentSlotType.CHEST));
     public static final RegistryObject<ArmorItem> EARTH_CELESTIAL_SILVER_LEGGINGS = Registration.ITEMS.register("earth_celestial_silver_leggings",
-            () -> new ModArmor(ModArmorMaterial.EARTH_CELESTIAL_SILVER, EquipmentSlotType.LEGS));
+            () -> new EarthArmor(ModArmorMaterial.EARTH_CELESTIAL_SILVER, EquipmentSlotType.LEGS));
     public static final RegistryObject<ArmorItem> EARTH_CELESTIAL_SILVER_BOOTS = Registration.ITEMS.register("earth_celestial_silver_boots",
-            () -> new ModArmor(ModArmorMaterial.EARTH_CELESTIAL_SILVER, EquipmentSlotType.FEET));
+            () -> new EarthArmor(ModArmorMaterial.EARTH_CELESTIAL_SILVER, EquipmentSlotType.FEET));
+    public static final RegistryObject<EarthSword> EARTH_CELESTIAL_SILVER_SWORD = Registration.ITEMS.register("earth_celestial_silver_sword",
+            () -> new EarthSword(ModItemTier.CELESTIAL_SILVER, 3, -2.4F));
 
     public static final RegistryObject<ArmorItem> AIR_CELESTIAL_SILVER_HELMET = Registration.ITEMS.register("air_celestial_silver_helmet",
-            () -> new ModArmor(ModArmorMaterial.AIR_CELESTIAL_SILVER, EquipmentSlotType.HEAD));
+            () -> new AirArmor(ModArmorMaterial.AIR_CELESTIAL_SILVER, EquipmentSlotType.HEAD));
     public static final RegistryObject<ArmorItem> AIR_CELESTIAL_SILVER_CHESTPLATE = Registration.ITEMS.register("air_celestial_silver_chestplate",
-            () -> new ModArmor(ModArmorMaterial.AIR_CELESTIAL_SILVER, EquipmentSlotType.CHEST));
+            () -> new AirArmor(ModArmorMaterial.AIR_CELESTIAL_SILVER, EquipmentSlotType.CHEST));
     public static final RegistryObject<ArmorItem> AIR_CELESTIAL_SILVER_LEGGINGS = Registration.ITEMS.register("air_celestial_silver_leggings",
-            () -> new ModArmor(ModArmorMaterial.AIR_CELESTIAL_SILVER, EquipmentSlotType.LEGS));
+            () -> new AirArmor(ModArmorMaterial.AIR_CELESTIAL_SILVER, EquipmentSlotType.LEGS));
     public static final RegistryObject<ArmorItem> AIR_CELESTIAL_SILVER_BOOTS = Registration.ITEMS.register("air_celestial_silver_boots",
-            () -> new ModArmor(ModArmorMaterial.AIR_CELESTIAL_SILVER, EquipmentSlotType.FEET));
+            () -> new AirArmor(ModArmorMaterial.AIR_CELESTIAL_SILVER, EquipmentSlotType.FEET));
+    public static final RegistryObject<AirSword> AIR_CELESTIAL_SILVER_SWORD = Registration.ITEMS.register("air_celestial_silver_sword",
+            () -> new AirSword(ModItemTier.CELESTIAL_SILVER, 3, -2.4F));
     // Empyrean Steel
     public static final RegistryObject<Item> EMPYREAN_STEEL_INGOT = Registration.ITEMS.register("empyrean_steel_ingot",
             () -> new Item(new Item.Properties().group(ItemGroup.MATERIALS)));
+    public static final RegistryObject<ArmorItem> EMPYREAN_STEEL_HELMET = Registration.ITEMS.register("empyrean_steel_helmet",
+            () -> new ModArmor(ModArmorMaterial.EMPYREAN_STEEL, EquipmentSlotType.HEAD));
+    public static final RegistryObject<ArmorItem> EMPYREAN_STEEL_CHESTPLATE = Registration.ITEMS.register("empyrean_steel_chestplate",
+            () -> new ModArmor(ModArmorMaterial.EMPYREAN_STEEL, EquipmentSlotType.CHEST));
+    public static final RegistryObject<ArmorItem> EMPYREAN_STEEL_LEGGINGS = Registration.ITEMS.register("empyrean_steel_leggings",
+            () -> new ModArmor(ModArmorMaterial.EMPYREAN_STEEL, EquipmentSlotType.LEGS));
+    public static final RegistryObject<ArmorItem> EMPYREAN_STEEL_BOOTS = Registration.ITEMS.register("empyrean_steel_boots",
+            () -> new ModArmor(ModArmorMaterial.EMPYREAN_STEEL, EquipmentSlotType.FEET));
+    public static final RegistryObject<AirSword> EMPYREAN_STEEL_SWORD = Registration.ITEMS.register("empyrean_steel_sword",
+            () -> new AirSword(ModItemTier.EMPYREAN_STEEL, 4, -2.4F));
     // Ghost Diamond
 
     // Infused Metals

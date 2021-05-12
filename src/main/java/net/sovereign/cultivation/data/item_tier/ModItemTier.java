@@ -13,6 +13,10 @@ public enum ModItemTier implements IItemTier {
 
     CELESTIAL_SILVER(2500, 10.0F, 5.0F, 4, 20, () -> {
         return Ingredient.fromTag(ModTags.Items.INGOTS_SILVER);
+    }),
+
+    EMPYREAN_STEEL(2800, 12.0F, 5.0F, 5, 25, () -> {
+        return Ingredient.fromTag(ModTags.Items.INGOTS_STEEL);
     });
 
     private final int maxUses;

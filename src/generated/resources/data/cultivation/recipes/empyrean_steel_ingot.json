@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "cultivation:empyrean_steel_block"
+    }
+  ],
+  "result": {
+    "item": "cultivation:empyrean_steel_ingot",
+    "count": 9
+  }
+}

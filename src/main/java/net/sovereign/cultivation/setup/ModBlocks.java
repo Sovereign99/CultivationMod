@@ -17,18 +17,24 @@ import java.util.function.Supplier;
 public class ModBlocks {
     public static final RegistryObject<Block> CELESTIAL_SILVER_ORE = register("celestial_silver_ore", () ->
             new Block(AbstractBlock.Properties.create(Material.ROCK)
-                .hardnessAndResistance(50, 10)
-                .harvestLevel(3)
+                .hardnessAndResistance(25.0F, 1200.0F)
                 .sound(SoundType.STONE)
                 .setRequiresTool()
                 .harvestTool(ToolType.PICKAXE)));
 
     public static final RegistryObject<Block> CELESTIAL_SILVER_BLOCK = register("celestial_silver_block", () ->
             new Block(AbstractBlock.Properties.create(Material.IRON)
-                .hardnessAndResistance(3, 10)
+                .hardnessAndResistance(15.0F, 600.0F)
                 .sound(SoundType.METAL)
                 .setRequiresTool()
                 .harvestTool(ToolType.PICKAXE)));
+
+    public static final RegistryObject<Block> EMPYREAN_STEEL_BLOCK = register("empyrean_steel_block", () ->
+            new Block(AbstractBlock.Properties.create(Material.IRON)
+                    .hardnessAndResistance(20.0F, 600.0F)
+                    .sound(SoundType.METAL)
+                    .setRequiresTool()
+                    .harvestTool(ToolType.PICKAXE)));
 
     public static final RegistryObject<MysticForgeBlock> MYSTIC_FORGE = register("mystic_forge", () ->
             new MysticForgeBlock(AbstractBlock.Properties.create(Material.IRON)

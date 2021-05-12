@@ -217,6 +217,16 @@ public class ModRecipeProvider extends RecipeProvider {
                 .addCriterion("has_item", hasItem(ModItems.LAVA_CELESTIAL_SILVER_INGOT.get()))
                 .build(consumer);
 
+        //Lava Celestial Silver Sword Recipe
+        ShapedRecipeBuilder.shapedRecipe(ModItems.LAVA_CELESTIAL_SILVER_SWORD.get())
+                .key('#', ModItems.LAVA_CELESTIAL_SILVER_INGOT.get())
+                .key('/', Items.STICK)
+                .patternLine(" # ")
+                .patternLine(" # ")
+                .patternLine(" / ")
+                .addCriterion("has_item", hasItem(ModItems.LAVA_CELESTIAL_SILVER_INGOT.get()))
+                .build(consumer);
+
         //Water Infused Celestial Silver
         ShapelessRecipeBuilder.shapelessRecipe(ModItems.WATER_CELESTIAL_SILVER_INGOT.get(), 1)
                 .addIngredient(ModItems.CELESTIAL_SILVER_INGOT.get())
@@ -295,6 +305,16 @@ public class ModRecipeProvider extends RecipeProvider {
                 .patternLine("# #")
                 .patternLine("# #")
                 .patternLine("   ")
+                .addCriterion("has_item", hasItem(ModItems.WATER_CELESTIAL_SILVER_INGOT.get()))
+                .build(consumer);
+
+        //Water Celestial Silver Sword Recipe
+        ShapedRecipeBuilder.shapedRecipe(ModItems.WATER_CELESTIAL_SILVER_SWORD.get())
+                .key('#', ModItems.WATER_CELESTIAL_SILVER_INGOT.get())
+                .key('/', Items.STICK)
+                .patternLine(" # ")
+                .patternLine(" # ")
+                .patternLine(" / ")
                 .addCriterion("has_item", hasItem(ModItems.WATER_CELESTIAL_SILVER_INGOT.get()))
                 .build(consumer);
 
@@ -379,6 +399,16 @@ public class ModRecipeProvider extends RecipeProvider {
                 .addCriterion("has_item", hasItem(ModItems.AIR_CELESTIAL_SILVER_INGOT.get()))
                 .build(consumer);
 
+        //Air Celestial Silver Sword Recipe
+        ShapedRecipeBuilder.shapedRecipe(ModItems.AIR_CELESTIAL_SILVER_SWORD.get())
+                .key('#', ModItems.AIR_CELESTIAL_SILVER_INGOT.get())
+                .key('/', Items.STICK)
+                .patternLine(" # ")
+                .patternLine(" # ")
+                .patternLine(" / ")
+                .addCriterion("has_item", hasItem(ModItems.AIR_CELESTIAL_SILVER_INGOT.get()))
+                .build(consumer);
+
         //Earth Infused Celestial Silver
         ShapelessRecipeBuilder.shapelessRecipe(ModItems.EARTH_CELESTIAL_SILVER_INGOT.get(), 1)
                 .addIngredient(ModItems.CELESTIAL_SILVER_INGOT.get())
@@ -459,6 +489,80 @@ public class ModRecipeProvider extends RecipeProvider {
                 .patternLine("   ")
                 .addCriterion("has_item", hasItem(ModItems.EARTH_CELESTIAL_SILVER_INGOT.get()))
                 .build(consumer);
+
+        //Earth Celestial Silver Sword Recipe
+        ShapedRecipeBuilder.shapedRecipe(ModItems.EARTH_CELESTIAL_SILVER_SWORD.get())
+                .key('#', ModItems.EARTH_CELESTIAL_SILVER_INGOT.get())
+                .key('/', Items.STICK)
+                .patternLine(" # ")
+                .patternLine(" # ")
+                .patternLine(" / ")
+                .addCriterion("has_item", hasItem(ModItems.EARTH_CELESTIAL_SILVER_INGOT.get()))
+                .build(consumer);
+
+        /*
+        EMPYREAN STEEL
+         */
+        //Storage block to ingot
+        ShapelessRecipeBuilder.shapelessRecipe(ModItems.EMPYREAN_STEEL_INGOT.get(), 9)
+                .addIngredient(ModBlocks.EMPYREAN_STEEL_BLOCK.get()).addCriterion("has_item",
+                hasItem(ModItems.EMPYREAN_STEEL_INGOT.get())).build(consumer);
+
+        //Ingot to storage block
+        ShapedRecipeBuilder.shapedRecipe(ModBlocks.EMPYREAN_STEEL_BLOCK.get())
+                .key('#', ModItems.EMPYREAN_STEEL_INGOT.get())
+                .patternLine("###")
+                .patternLine("###")
+                .patternLine("###")
+                .addCriterion("has_item", hasItem(ModItems.EMPYREAN_STEEL_INGOT.get()))
+                .build(consumer);
+
+        //Empyrean Steel Helmet Recipe
+        ShapedRecipeBuilder.shapedRecipe(ModItems.EMPYREAN_STEEL_HELMET.get())
+                .key('#', ModItems.EMPYREAN_STEEL_INGOT.get())
+                .patternLine("###")
+                .patternLine("# #")
+                .patternLine("   ")
+                .addCriterion("has_item", hasItem(ModItems.EMPYREAN_STEEL_INGOT.get()))
+                .build(consumer);
+
+        //Empyrean Steel Chestplate Recipe
+        ShapedRecipeBuilder.shapedRecipe(ModItems.EMPYREAN_STEEL_CHESTPLATE.get())
+                .key('#', ModItems.EMPYREAN_STEEL_INGOT.get())
+                .patternLine("# #")
+                .patternLine("###")
+                .patternLine("###")
+                .addCriterion("has_item", hasItem(ModItems.EMPYREAN_STEEL_INGOT.get()))
+                .build(consumer);
+
+        //Empyrean Steel Leggings Recipe
+        ShapedRecipeBuilder.shapedRecipe(ModItems.EMPYREAN_STEEL_LEGGINGS.get())
+                .key('#', ModItems.EMPYREAN_STEEL_INGOT.get())
+                .patternLine("###")
+                .patternLine("# #")
+                .patternLine("# #")
+                .addCriterion("has_item", hasItem(ModItems.EMPYREAN_STEEL_INGOT.get()))
+                .build(consumer);
+
+        //Empyrean Steel Boots Recipe
+        ShapedRecipeBuilder.shapedRecipe(ModItems.EMPYREAN_STEEL_BOOTS.get())
+                .key('#', ModItems.EMPYREAN_STEEL_INGOT.get())
+                .patternLine("# #")
+                .patternLine("# #")
+                .patternLine("   ")
+                .addCriterion("has_item", hasItem(ModItems.EMPYREAN_STEEL_INGOT.get()))
+                .build(consumer);
+
+        //Empyrean Steel Sword Recipe
+        ShapedRecipeBuilder.shapedRecipe(ModItems.EMPYREAN_STEEL_SWORD.get())
+                .key('#', ModItems.EMPYREAN_STEEL_INGOT.get())
+                .key('/', Items.STICK)
+                .patternLine(" # ")
+                .patternLine(" # ")
+                .patternLine(" / ")
+                .addCriterion("has_item", hasItem(ModItems.EMPYREAN_STEEL_INGOT.get()))
+                .build(consumer);
+
     }
 
     private static ResourceLocation modId(String path) {

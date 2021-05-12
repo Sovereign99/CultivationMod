@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "cultivation:item/air_celestial_silver_sword"
+  }
+}

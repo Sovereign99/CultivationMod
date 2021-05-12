@@ -15,6 +15,7 @@ public class ModItemModelProvider extends ItemModelProvider {
     protected void registerModels() {
         withExistingParent("celestial_silver_block", modLoc("block/celestial_silver_block"));
         withExistingParent("celestial_silver_ore", modLoc("block/celestial_silver_ore"));
+        withExistingParent("empyrean_steel_block", modLoc("block/empyrean_steel_block"));
 
         ModelFile itemGenerated = getExistingFile(mcLoc("item/generated"));
 
@@ -57,6 +58,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         builder(itemGenerated, "water_celestial_silver_chestplate");
         builder(itemGenerated, "water_celestial_silver_leggings");
         builder(itemGenerated, "water_celestial_silver_boots");
+        builder(itemGenerated, "water_celestial_silver_sword");
 
         builder(itemGenerated, "inferior_rock");
         builder(itemGenerated, "basic_rock");
@@ -71,6 +73,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         builder(itemGenerated, "earth_celestial_silver_chestplate");
         builder(itemGenerated, "earth_celestial_silver_leggings");
         builder(itemGenerated, "earth_celestial_silver_boots");
+        builder(itemGenerated, "earth_celestial_silver_sword");
 
         builder(itemGenerated, "inferior_wind_essence");
         builder(itemGenerated, "basic_wind_essence");
@@ -85,8 +88,14 @@ public class ModItemModelProvider extends ItemModelProvider {
         builder(itemGenerated, "air_celestial_silver_chestplate");
         builder(itemGenerated, "air_celestial_silver_leggings");
         builder(itemGenerated, "air_celestial_silver_boots");
+        builder(itemGenerated, "air_celestial_silver_sword");
 
         builder(itemGenerated, "empyrean_steel_ingot");
+        builder(itemGenerated, "empyrean_steel_helmet");
+        builder(itemGenerated, "empyrean_steel_chestplate");
+        builder(itemGenerated, "empyrean_steel_leggings");
+        builder(itemGenerated, "empyrean_steel_boots");
+        builder(itemGenerated, "empyrean_steel_sword");
     }
 
     private void builder(ModelFile itemGenerated, String name) {

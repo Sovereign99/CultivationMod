@@ -31,7 +31,7 @@ public enum ModArmorMaterial implements IArmorMaterial {
             new int[]{5, 8, 10, 5},
             22,
             SoundEvents.ITEM_ARMOR_EQUIP_IRON,
-            4.2F,
+            4.0F,
             0.1F,
             () -> {
                 return Ingredient.fromTag(ModTags.Items.INGOTS_SILVER);
@@ -42,7 +42,7 @@ public enum ModArmorMaterial implements IArmorMaterial {
             new int[]{5, 8, 10, 5},
             22,
             SoundEvents.ITEM_ARMOR_EQUIP_IRON,
-            4.2F,
+            4.0F,
             0.1F,
             () -> {
                 return Ingredient.fromTag(ModTags.Items.INGOTS_SILVER);
@@ -50,10 +50,10 @@ public enum ModArmorMaterial implements IArmorMaterial {
 
     EARTH_CELESTIAL_SILVER(CultivationMod.MOD_ID + ":" + "earth_celestial_silver_armor",
             43,
-            new int[]{5, 8, 10, 5},
+            new int[]{6, 9, 11, 6},
             22,
             SoundEvents.ITEM_ARMOR_EQUIP_IRON,
-            4.2F,
+            4.5F,
             0.1F,
             () -> {
                 return Ingredient.fromTag(ModTags.Items.INGOTS_SILVER);
@@ -61,11 +61,22 @@ public enum ModArmorMaterial implements IArmorMaterial {
 
     AIR_CELESTIAL_SILVER(CultivationMod.MOD_ID + ":" + "air_celestial_silver_armor",
             43,
-            new int[]{5, 8, 10, 5},
+            new int[]{4, 7, 9, 4},
             22,
             SoundEvents.ITEM_ARMOR_EQUIP_IRON,
-            4.2F,
+            3.5F,
             0.1F,
+            () -> {
+                return Ingredient.fromTag(ModTags.Items.INGOTS_SILVER);
+            }),
+
+    EMPYREAN_STEEL(CultivationMod.MOD_ID + ":" + "empyrean_steel_armor",
+            45,
+            new int[]{7, 10, 12, 7},
+            25,
+            SoundEvents.ITEM_ARMOR_EQUIP_IRON,
+            5.0F,
+            0.2F,
             () -> {
                 return Ingredient.fromTag(ModTags.Items.INGOTS_SILVER);
             });
