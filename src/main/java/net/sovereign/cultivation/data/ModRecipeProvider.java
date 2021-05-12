@@ -80,6 +80,16 @@ public class ModRecipeProvider extends RecipeProvider {
                 .addCriterion("has_item", hasItem(ModItems.CELESTIAL_SILVER_INGOT.get()))
                 .build(consumer);
 
+        //Hoe recipe
+        ShapedRecipeBuilder.shapedRecipe(ModItems.CELESTIAL_SILVER_HOE.get())
+                .key('#', ModItems.CELESTIAL_SILVER_INGOT.get())
+                .key('/', Items.STICK)
+                .patternLine("## ")
+                .patternLine(" / ")
+                .patternLine(" / ")
+                .addCriterion("has_item", hasItem(ModItems.CELESTIAL_SILVER_INGOT.get()))
+                .build(consumer);
+
         //Celestial Silver Helmet Recipe
         ShapedRecipeBuilder.shapedRecipe(ModItems.CELESTIAL_SILVER_HELMET.get())
                 .key('#', ModItems.CELESTIAL_SILVER_INGOT.get())

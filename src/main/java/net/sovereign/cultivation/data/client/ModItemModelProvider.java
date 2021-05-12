@@ -23,6 +23,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         builder(itemGenerated, "celestial_silver_pickaxe");
         builder(itemGenerated, "celestial_silver_axe");
         builder(itemGenerated, "celestial_silver_shovel");
+        builder(itemGenerated, "celestial_silver_hoe");
         builder(itemGenerated, "celestial_silver_helmet");
         builder(itemGenerated, "celestial_silver_chestplate");
         builder(itemGenerated, "celestial_silver_leggings");

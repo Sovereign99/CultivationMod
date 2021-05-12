@@ -31,6 +31,7 @@ public class ModTags {
         public static final ITag.INamedTag<Item> PICKAXE_SILVER = forge("pickaxe/silver");
         public static final ITag.INamedTag<Item> AXE_SILVER = forge("axe/silver");
         public static final ITag.INamedTag<Item> SHOVEL_SILVER = forge("shovel/silver");
+        public static final ITag.INamedTag<Item> HOE_SILVER = forge("hoe/silver");
         public static final ITag.INamedTag<Item> HELMET_SILVER = forge("armor/silver/helmet");
         public static final ITag.INamedTag<Item> CHESTPLATE_SILVER = forge("armor/silver/chestplate");
         public static final ITag.INamedTag<Item> LEGGINGS_SILVER = forge("armor/silver/leggings");

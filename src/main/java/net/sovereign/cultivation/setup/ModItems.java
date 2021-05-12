@@ -3,12 +3,14 @@ package net.sovereign.cultivation.setup;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.*;
 import net.minecraftforge.fml.RegistryObject;
+import net.sovereign.cultivation.data.item_tier.ModItemTier;
 import net.sovereign.cultivation.data.mod_armors.ModArmorMaterial;
 import net.sovereign.cultivation.data.mod_armors.ModArmor;
-import net.sovereign.cultivation.data.mod_tools.CelestialSilverAxe;
-import net.sovereign.cultivation.data.mod_tools.CelestialSilverPickaxe;
-import net.sovereign.cultivation.data.mod_tools.CelestialSilverShovel;
-import net.sovereign.cultivation.data.mod_weapons.CelestialSilverSword;
+import net.sovereign.cultivation.data.mod_tools.ModAxeItem;
+import net.sovereign.cultivation.data.mod_tools.ModShovelItem;
+import net.sovereign.cultivation.data.mod_tools.ModPickaxeItem;
+import net.sovereign.cultivation.data.mod_tools.ModHoeItem;
+import net.sovereign.cultivation.data.mod_weapons.ModSwordItem;
 
 public class ModItems {
     // Lava Crystals (Inferior, Basic, Enhanced, Superior)
@@ -86,14 +88,16 @@ public class ModItems {
     // Celestial Silver
     public static final RegistryObject<Item> CELESTIAL_SILVER_INGOT = Registration.ITEMS.register("celestial_silver_ingot",
             () -> new Item(new Item.Properties().group(ItemGroup.MATERIALS)));
-    public static final RegistryObject<SwordItem> CELESTIAL_SILVER_SWORD = Registration.ITEMS.register("celestial_silver_sword",
-            CelestialSilverSword::new);
-    public static final RegistryObject<PickaxeItem> CELESTIAL_SILVER_PICKAXE = Registration.ITEMS.register("celestial_silver_pickaxe",
-            CelestialSilverPickaxe::new);
-    public static final RegistryObject<AxeItem> CELESTIAL_SILVER_AXE = Registration.ITEMS.register("celestial_silver_axe",
-            CelestialSilverAxe::new);
-    public static final RegistryObject<ShovelItem> CELESTIAL_SILVER_SHOVEL = Registration.ITEMS.register("celestial_silver_shovel",
-            CelestialSilverShovel::new);
+    public static final RegistryObject<ModSwordItem> CELESTIAL_SILVER_SWORD = Registration.ITEMS.register("celestial_silver_sword", () ->
+            new ModSwordItem(ModItemTier.CELESTIAL_SILVER, 3, -2.4F, new Item.Properties().group(ItemGroup.COMBAT)));
+    public static final RegistryObject<PickaxeItem> CELESTIAL_SILVER_PICKAXE = Registration.ITEMS.register("celestial_silver_pickaxe", () ->
+            new ModPickaxeItem(ModItemTier.CELESTIAL_SILVER, 2, -2.8F, new Item.Properties().group(ItemGroup.TOOLS)));
+    public static final RegistryObject<AxeItem> CELESTIAL_SILVER_AXE = Registration.ITEMS.register("celestial_silver_axe", () ->
+            new ModAxeItem(ModItemTier.CELESTIAL_SILVER, 5.2F, -2.5F, new Item.Properties().group(ItemGroup.TOOLS)));
+    public static final RegistryObject<ShovelItem> CELESTIAL_SILVER_SHOVEL = Registration.ITEMS.register("celestial_silver_shovel", () ->
+            new ModShovelItem(ModItemTier.CELESTIAL_SILVER, 1.5F, -2.8F, new Item.Properties().group(ItemGroup.TOOLS)));
+    public static final RegistryObject<ModHoeItem> CELESTIAL_SILVER_HOE = Registration.ITEMS.register("celestial_silver_hoe", () ->
+            new ModHoeItem(ModItemTier.CELESTIAL_SILVER, -4, -2.8F, new Item.Properties().group(ItemGroup.TOOLS)));
 
     public static final RegistryObject<ArmorItem> CELESTIAL_SILVER_HELMET = Registration.ITEMS.register("celestial_silver_helmet",
             () -> new ModArmor(ModArmorMaterial.CELESTIAL_SILVER, EquipmentSlotType.HEAD));
