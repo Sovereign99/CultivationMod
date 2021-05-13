@@ -6,4 +6,8 @@ public interface ICultivation {
     public void setCultivationAmount(float amount);
 
     public float getCultivationAmount();
+
+    public int getStrength();
+    public int getAgility();
+    public int getArmor();
 }

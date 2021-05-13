@@ -26,4 +26,24 @@ public class Cultivation implements ICultivation {
     public float getCultivationAmount() {
         return this.cultivationAmount;
     }
+
+    @Override
+    public int getStrength() {
+        int strMod = (int) (cultivationAmount / 1000) + (int) ((cultivationAmount / 1000) % 2) + 1;
+        if(strMod >= 1) {
+            return strMod;
+        }
+
+        return 1;
+    }
+
+    @Override
+    public int getAgility() {
+        return 0;
+    }
+
+    @Override
+    public int getArmor() {
+        return 0;
+    }
 }
