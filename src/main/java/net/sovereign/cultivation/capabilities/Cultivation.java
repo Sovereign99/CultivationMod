@@ -3,47 +3,71 @@ package net.sovereign.cultivation.capabilities;
 
 public class Cultivation implements ICultivation {
 
-    private float cultivationAmount = 0.0F;
+    private double cultivationAmount;
+    private int timer;
+
+    public Cultivation() {
+        this.cultivationAmount = 0.0;
+        this.timer = 0;
+    }
 
     @Override
-    public void decreaseCultivationAmount(float amount) {
+    public void decreaseCultivationAmount(double amount) {
         this.cultivationAmount -= amount;
 
         if(cultivationAmount < 0.0F) this.cultivationAmount = 0.0F;
     }
 
     @Override
-    public void increaseCultivationAmount(float amount) {
+    public void increaseCultivationAmount(double amount) {
         this.cultivationAmount += amount;
     }
 
     @Override
-    public void setCultivationAmount(float amount) {
+    public void setCultivationAmount(double amount) {
         this.cultivationAmount = amount;
     }
 
     @Override
-    public float getCultivationAmount() {
+    public double getCultivationAmount() {
         return this.cultivationAmount;
     }
 
     @Override
-    public int getStrength() {
-        int strMod = (int) (cultivationAmount / 1000) + (int) ((cultivationAmount / 1000) % 2) + 1;
-        if(strMod >= 1) {
-            return strMod;
-        }
-
-        return 1;
+    public double getStrength() {
+        double strMod = cultivationAmount * 0.1;
+        return Math.max(strMod, 1);
     }
 
     @Override
-    public int getAgility() {
-        return 0;
+    public double getAgility() {
+        double agiMod = cultivationAmount * 0.08;
+        return Math.max(agiMod, 1);
     }
 
     @Override
-    public int getArmor() {
-        return 0;
+    public double getArmor() {
+        double resMod = cultivationAmount * 0.03;
+        return Math.max(resMod, 1);
+    }
+
+    @Override
+    public void copy(ICultivation cultivation) {
+        this.setCultivationAmount(cultivation.getCultivationAmount());
+    }
+
+    @Override
+    public void advTimer() {
+        this.timer++;
+    }
+
+    @Override
+    public int getTimer() {
+        return this.timer;
+    }
+
+    @Override
+    public void resetTimer() {
+        this.timer = 0;
     }
 }

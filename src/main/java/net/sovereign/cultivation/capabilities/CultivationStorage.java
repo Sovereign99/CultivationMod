@@ -11,7 +11,7 @@ public class CultivationStorage implements Capability.IStorage<ICultivation> {
     @Override
     public INBT writeNBT(Capability<ICultivation> capability, ICultivation instance, Direction side) {
         CompoundNBT tag = new CompoundNBT();
-        tag.putFloat("cultivation", instance.getCultivationAmount());
+        tag.putDouble("cultivation", instance.getCultivationAmount());
         return tag;
     }
 

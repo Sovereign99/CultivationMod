@@ -1,13 +1,19 @@
 package net.sovereign.cultivation.capabilities;
 
 public interface ICultivation {
-    public void decreaseCultivationAmount(float amount);
-    public void increaseCultivationAmount(float amount);
-    public void setCultivationAmount(float amount);
+    public void decreaseCultivationAmount(double amount);
+    public void increaseCultivationAmount(double amount);
+    public void setCultivationAmount(double amount);
 
-    public float getCultivationAmount();
+    public double getCultivationAmount();
 
-    public int getStrength();
-    public int getAgility();
-    public int getArmor();
+    public double getStrength();
+    public double getAgility();
+    public double getArmor();
+
+    public void copy(ICultivation cultivation);
+
+    public void advTimer();
+    public int getTimer();
+    public void resetTimer();
 }
