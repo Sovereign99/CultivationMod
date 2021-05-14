@@ -3,7 +3,6 @@ package net.sovereign.cultivation;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.common.capabilities.CapabilityManager;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.InterModComms;
@@ -15,9 +14,6 @@ import net.minecraftforge.fml.event.lifecycle.InterModProcessEvent;
 import net.minecraftforge.fml.event.server.FMLServerStartingEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.sovereign.cultivation.capabilities.Cultivation;
-import net.sovereign.cultivation.capabilities.CultivationFactory;
-import net.sovereign.cultivation.capabilities.CultivationStorage;
-import net.sovereign.cultivation.capabilities.ICultivation;
 import net.sovereign.cultivation.handlers.CapabilityHandler;
 import net.sovereign.cultivation.handlers.EventHandler;
 import net.sovereign.cultivation.setup.Registration;
@@ -54,7 +50,7 @@ public class CultivationMod {
     private void setup(final FMLCommonSetupEvent event)
     {
         // some preinit code
-        CapabilityManager.INSTANCE.register(ICultivation.class, new CultivationStorage(), new CultivationFactory());
+        Cultivation.register();
         MinecraftForge.EVENT_BUS.register(new CapabilityHandler());
         MinecraftForge.EVENT_BUS.register(new EventHandler());
         LOGGER.info("HELLO FROM PREINIT");
