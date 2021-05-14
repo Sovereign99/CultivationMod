@@ -35,20 +35,17 @@ public class Cultivation implements ICultivation {
 
     @Override
     public double getStrength() {
-        double strMod = cultivationAmount * 0.1;
-        return Math.max(strMod, 1);
+        return (cultivationAmount / 100) * 0.1;
     }
 
     @Override
     public double getAgility() {
-        double agiMod = cultivationAmount * 0.08;
-        return Math.max(agiMod, 1);
+        return (cultivationAmount / 100) * 0.06;
     }
 
     @Override
     public double getArmor() {
-        double resMod = cultivationAmount * 0.03;
-        return Math.max(resMod, 1);
+        return (cultivationAmount / 100) * 0.04;
     }
 
     @Override

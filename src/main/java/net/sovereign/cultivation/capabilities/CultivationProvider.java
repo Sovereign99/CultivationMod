@@ -10,7 +10,6 @@ import net.minecraftforge.common.util.LazyOptional;
 public class CultivationProvider implements ICapabilitySerializable<INBT> {
     @CapabilityInject(ICultivation.class)
     public static final Capability<ICultivation> CULTIVATION_CAP = null;
-
     private LazyOptional<ICultivation> instance = LazyOptional.of(Cultivation::new);
 
     @Override

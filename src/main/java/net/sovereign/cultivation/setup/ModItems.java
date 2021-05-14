@@ -96,7 +96,7 @@ public class ModItems {
     public static final RegistryObject<Item> CELESTIAL_SILVER_INGOT = Registration.ITEMS.register("celestial_silver_ingot",
             () -> new Item(new Item.Properties().group(ItemGroup.MATERIALS)));
     public static final RegistryObject<ModSwordItem> CELESTIAL_SILVER_SWORD = Registration.ITEMS.register("celestial_silver_sword", () ->
-            new ModSwordItem(ModItemTier.CELESTIAL_SILVER, 3, -2.4F, new Item.Properties().group(ItemGroup.COMBAT)));
+            new ModSwordItem(ModItemTier.CELESTIAL_SILVER, 3, -2.4F));
     public static final RegistryObject<PickaxeItem> CELESTIAL_SILVER_PICKAXE = Registration.ITEMS.register("celestial_silver_pickaxe", () ->
             new ModPickaxeItem(ModItemTier.CELESTIAL_SILVER, 2, -2.8F, new Item.Properties().group(ItemGroup.TOOLS)));
     public static final RegistryObject<AxeItem> CELESTIAL_SILVER_AXE = Registration.ITEMS.register("celestial_silver_axe", () ->
@@ -169,8 +169,8 @@ public class ModItems {
             () -> new ModArmor(ModArmorMaterial.EMPYREAN_STEEL, EquipmentSlotType.LEGS));
     public static final RegistryObject<ArmorItem> EMPYREAN_STEEL_BOOTS = Registration.ITEMS.register("empyrean_steel_boots",
             () -> new ModArmor(ModArmorMaterial.EMPYREAN_STEEL, EquipmentSlotType.FEET));
-    public static final RegistryObject<AirSword> EMPYREAN_STEEL_SWORD = Registration.ITEMS.register("empyrean_steel_sword",
-            () -> new AirSword(ModItemTier.EMPYREAN_STEEL, 4, -2.4F));
+    public static final RegistryObject<ModSwordItem> EMPYREAN_STEEL_SWORD = Registration.ITEMS.register("empyrean_steel_sword",
+            () -> new ModSwordItem(ModItemTier.EMPYREAN_STEEL, 4, -2.4F));
     // Ghost Diamond
 
     // Infused Metals

@@ -112,15 +112,27 @@ public class EventHandler {
         }
     }
 
+    // Player jumps higher based on cultivation
+    @SubscribeEvent
+    public void onPlayerJump(LivingEvent.LivingJumpEvent event) {
+        if (event.getEntity() instanceof PlayerEntity) {
+            PlayerEntity player = (PlayerEntity) event.getEntity();
+            ICultivation cultivation = player.getCapability(CultivationProvider.CULTIVATION_CAP).orElse(new Cultivation());
+            double base = player.getMotion().getY();
+            double newJump = 0.008 * (cultivation.getAgility() + cultivation.getStrength()) * base;
+            player.setMotion(player.getMotion().x, newJump, player.getMotion().z);
+        }
+    }
+
     // Applies attribute modifiers based on cultivation
     public void applyModifiers (PlayerEntity player) {
         if(player != null) {
             ICultivation cultivation = player.getCapability(CultivationProvider.CULTIVATION_CAP).orElse(new Cultivation());
-            double speed = cultivation.getAgility() * 0.6;
-            double atkSpeed = cultivation.getAgility() * 0.4;
+            double speed = cultivation.getAgility() * 0.02;
+            double atkSpeed = cultivation.getAgility() * 0.01;
             double str = cultivation.getStrength();
-            double armor = cultivation.getArmor();
-            double res = (cultivation.getArmor() + cultivation.getStrength()) * 0.2;
+            double armor = cultivation.getArmor() * 0.02;
+            double res = (cultivation.getArmor() + cultivation.getStrength()) * 0.02;
             AttributeModifier speedMod = new AttributeModifier("cultivation.speed_mod", speed, AttributeModifier.Operation.ADDITION);
             AttributeModifier atkSpeedMod = new AttributeModifier("cultivation.atk_speed_mod", atkSpeed, AttributeModifier.Operation.ADDITION);
             AttributeModifier strMod = new AttributeModifier("cultivation.str_mod", str, AttributeModifier.Operation.ADDITION);
