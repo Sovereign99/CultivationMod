@@ -1,5 +1,7 @@
 package net.sovereign.cultivation.capabilities;
 
+import net.minecraft.entity.player.ServerPlayerEntity;
+
 public interface ICultivation {
     public void decreaseCultivationAmount(double amount);
     public void increaseCultivationAmount(double amount);
@@ -11,9 +13,9 @@ public interface ICultivation {
     public double getAgility();
     public double getArmor();
 
-    public void copy(ICultivation cultivation);
-
     public void advTimer();
     public int getTimer();
     public void resetTimer();
+
+    public void sync(ServerPlayerEntity player);
 }

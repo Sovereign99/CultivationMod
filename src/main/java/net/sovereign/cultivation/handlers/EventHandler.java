@@ -6,6 +6,7 @@ import net.minecraft.entity.EntityType;
 import net.minecraft.entity.ai.attributes.AttributeModifier;
 import net.minecraft.entity.ai.attributes.Attributes;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.nbt.INBT;
 import net.minecraft.util.Util;
 import net.minecraft.util.text.Color;
@@ -14,6 +15,7 @@ import net.minecraft.util.text.TextFormatting;
 import net.minecraftforge.client.event.RenderGameOverlayEvent;
 import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.common.capabilities.ICapabilityProvider;
+import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.event.entity.living.LivingDeathEvent;
 import net.minecraftforge.event.entity.living.LivingEvent;
 import net.minecraftforge.event.entity.living.LivingFallEvent;
@@ -25,14 +27,19 @@ import net.sovereign.cultivation.CultivationMod;
 import net.sovereign.cultivation.capabilities.Cultivation;
 import net.sovereign.cultivation.capabilities.ICultivation;
 import net.sovereign.cultivation.setup.gui.CultivationGui;
+import net.sovereign.cultivation.setup.network.CultivationPacket;
+import net.sovereign.cultivation.setup.network.PacketHandler;
 
 @Mod.EventBusSubscriber(modid = CultivationMod.MOD_ID)
 public class EventHandler {
 
     @SubscribeEvent
     public void onPlayerLogIn(PlayerEvent.PlayerLoggedInEvent event) {
-        PlayerEntity player = event.getPlayer();
+        ServerPlayerEntity player = (ServerPlayerEntity) event.getPlayer();
         ICultivation cultivation = player.getCapability(Cultivation.CULTIVATION_CAP).orElse(new Cultivation());
+        if(!player.world.isRemote) {
+            player.getCapability(Cultivation.CULTIVATION_CAP).ifPresent(cap -> cap.sync(player));
+        }
         StringTextComponent text = new StringTextComponent("Welcome. Your cultivation is: " + (int) cultivation.getCultivationAmount());
         text.getStyle().setColor(Color.fromTextFormatting(TextFormatting.GOLD));
         player.sendMessage(text, Util.DUMMY_UUID);
@@ -47,8 +54,8 @@ public class EventHandler {
     // TODO: Messages are temporary. Will change notification system later
     @SubscribeEvent
     public void onPlayerKillEntity(LivingDeathEvent event) {
-        if(event.getSource().getTrueSource() instanceof PlayerEntity) {
-            PlayerEntity player = (PlayerEntity) event.getSource().getTrueSource();
+        if(event.getSource().getTrueSource() instanceof ServerPlayerEntity) {
+            ServerPlayerEntity player = (ServerPlayerEntity) event.getSource().getTrueSource();
             if(!player.world.isRemote) {
                 ICultivation cultivation = player.getCapability(Cultivation.CULTIVATION_CAP).orElse(new Cultivation());
                 Entity target = event.getEntity();
@@ -66,6 +73,8 @@ public class EventHandler {
                     cultivation.increaseCultivationAmount(increase);
                     player.sendMessage(new StringTextComponent("Your cultivation has increased by: " + increase), Util.DUMMY_UUID);
                 }
+
+                player.getCapability(Cultivation.CULTIVATION_CAP).ifPresent(cap -> cap.sync(player));
             }
         }
     }
@@ -79,14 +88,19 @@ public class EventHandler {
         copyCapability(Cultivation.CULTIVATION_CAP, original, clone);
 
         // No need to change if returning from End
-        if (!event.isWasDeath()) return;
+        if (event.isWasDeath()) {
+            clone.getCapability(Cultivation.CULTIVATION_CAP).ifPresent(data -> {
+                data.setCultivationAmount(data.getCultivationAmount() * 0.8);
+            });
 
-        clone.getCapability(Cultivation.CULTIVATION_CAP).ifPresent(data -> {
-            data.setCultivationAmount(data.getCultivationAmount() * 0.8);
-        });
+            ICultivation cultivation = clone.getCapability(Cultivation.CULTIVATION_CAP).orElse(new Cultivation());
+            clone.sendMessage(new StringTextComponent("Your cultivation has fallen: " + (int) cultivation.getCultivationAmount()), Util.DUMMY_UUID);
+        }
 
-        ICultivation cultivation = clone.getCapability(Cultivation.CULTIVATION_CAP).orElse(new Cultivation());
-        clone.sendMessage(new StringTextComponent("Welcome. Your cultivation is: " + (int) cultivation.getCultivationAmount()), Util.DUMMY_UUID);
+        ServerPlayerEntity player = (ServerPlayerEntity) event.getPlayer();
+        if(!player.world.isRemote) {
+            player.getCapability(Cultivation.CULTIVATION_CAP).ifPresent(cap -> cap.sync(player));
+        }
     }
 
     // Applies modifiers every 20 ticks, resets timer
@@ -129,7 +143,7 @@ public class EventHandler {
         if (event.getEntity() instanceof PlayerEntity) {
             PlayerEntity player = (PlayerEntity) event.getEntity();
             ICultivation cultivation = player.getCapability(Cultivation.CULTIVATION_CAP).orElse(new Cultivation());
-            double jump = 0.05 * ((cultivation.getAgility()  * 0.06) + (cultivation.getStrength() * 0.08));
+            double jump = 0.03 * ((cultivation.getAgility()  * 0.06) + (cultivation.getStrength() * 0.08));
             player.addVelocity(0.0, jump, 0.0);
             player.velocityChanged=true;
         }
@@ -139,9 +153,9 @@ public class EventHandler {
     public void applyModifiers (PlayerEntity player) {
         if(player != null) {
             ICultivation cultivation = player.getCapability(Cultivation.CULTIVATION_CAP).orElse(new Cultivation());
-            double speed = cultivation.getAgility() * 0.02;
+            double speed = cultivation.getAgility() * 0.008;
             double atkSpeed = cultivation.getAgility() * 0.01;
-            double str = cultivation.getStrength() * 0.03;
+            double str = cultivation.getStrength();
             double armor = cultivation.getArmor() * 0.02;
             double res = (cultivation.getArmor() + cultivation.getStrength()) * 0.02;
             AttributeModifier speedMod = new AttributeModifier("cultivation.speed_mod", speed, AttributeModifier.Operation.ADDITION);

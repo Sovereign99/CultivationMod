@@ -20,10 +20,10 @@ public class CultivationGui extends GuiUtils {
             mc.textureManager.bindTexture(BAR);
             
             ICultivation cultivation = mc.player.getCapability(Cultivation.CULTIVATION_CAP).orElse(new Cultivation());
-            float oneUnit = (float) (1000 / BAR_WIDTH);
+            float oneUnit = (float) 0.1;
             int currentWidth = (int) (oneUnit * (cultivation.getCultivationAmount() % 1000));
-            drawTexturedModalRect(event.getMatrixStack(), 0, 0, 0, 0, WIDTH, HEIGHT, 0);
-            drawTexturedModalRect(event.getMatrixStack(), 1, 0, 1, HEIGHT, currentWidth, HEIGHT, 1);
+            drawTexturedModalRect(event.getMatrixStack(), 4, 4, 0, 0, WIDTH, HEIGHT, 0);
+            drawTexturedModalRect(event.getMatrixStack(), 5, 4, 1, HEIGHT, currentWidth, HEIGHT, 1);
         }
     }
 

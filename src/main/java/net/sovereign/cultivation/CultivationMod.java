@@ -17,7 +17,7 @@ import net.sovereign.cultivation.capabilities.Cultivation;
 import net.sovereign.cultivation.handlers.CapabilityHandler;
 import net.sovereign.cultivation.handlers.EventHandler;
 import net.sovereign.cultivation.setup.Registration;
-import net.sovereign.cultivation.setup.gui.CultivationGui;
+import net.sovereign.cultivation.setup.network.PacketHandler;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -48,10 +48,10 @@ public class CultivationMod {
         MinecraftForge.EVENT_BUS.register(this);
     }
 
-    private void setup(final FMLCommonSetupEvent event)
-    {
+    private void setup(final FMLCommonSetupEvent event) {
         // some preinit code
         Cultivation.register();
+        PacketHandler.register();
         MinecraftForge.EVENT_BUS.register(new CapabilityHandler());
         MinecraftForge.EVENT_BUS.register(new EventHandler());
         LOGGER.info("HELLO FROM PREINIT");
@@ -63,14 +63,12 @@ public class CultivationMod {
         LOGGER.info("Got game settings {}", event.getMinecraftSupplier().get().gameSettings);
     }
 
-    private void enqueueIMC(final InterModEnqueueEvent event)
-    {
+    private void enqueueIMC(final InterModEnqueueEvent event) {
         // some example code to dispatch IMC to another mod
         InterModComms.sendTo(CultivationMod.MOD_ID, "helloworld", () -> { LOGGER.info("Hello world from the MDK"); return "Hello world";});
     }
 
-    private void processIMC(final InterModProcessEvent event)
-    {
+    private void processIMC(final InterModProcessEvent event) {
         // some example code to receive and process InterModComms from other mods
         LOGGER.info("Got IMC {}", event.getIMCStream().
                 map(m->m.getMessageSupplier().get()).

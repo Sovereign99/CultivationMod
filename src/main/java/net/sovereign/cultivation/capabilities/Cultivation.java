@@ -2,6 +2,7 @@ package net.sovereign.cultivation.capabilities;
 
 
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.nbt.INBT;
 import net.minecraft.util.Direction;
@@ -9,6 +10,8 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.common.capabilities.*;
 import net.minecraftforge.common.util.LazyOptional;
 import net.sovereign.cultivation.CultivationMod;
+import net.sovereign.cultivation.setup.network.CultivationPacket;
+import net.sovereign.cultivation.setup.network.PacketHandler;
 import org.jetbrains.annotations.Nullable;
 
 
@@ -67,11 +70,6 @@ public class Cultivation implements ICultivation, ICapabilitySerializable<Compou
     }
 
     @Override
-    public void copy(ICultivation cultivation) {
-        this.setCultivationAmount(cultivation.getCultivationAmount());
-    }
-
-    @Override
     public void advTimer() {
         this.timer++;
     }
@@ -86,6 +84,13 @@ public class Cultivation implements ICultivation, ICapabilitySerializable<Compou
         this.timer = 0;
     }
 
+    @Override
+    public void sync(ServerPlayerEntity player) {
+        if (player instanceof ServerPlayerEntity) {
+            PacketHandler.sendTo(new CultivationPacket(getCultivationAmount()), player);
+        }
+    }
+
     public static boolean attach(ICapabilityProvider entity) {
         if(!(entity instanceof PlayerEntity)) {
             return false;
@@ -96,7 +101,7 @@ public class Cultivation implements ICultivation, ICapabilitySerializable<Compou
                 return false;
             }
         } catch (NullPointerException exception){
-            CultivationMod.LOGGER.error("Failed to get capabilities from ", entity);
+            CultivationMod.LOGGER.error("Failed to get capabilities");
             return false;
         }
 
@@ -124,7 +129,7 @@ public class Cultivation implements ICultivation, ICapabilitySerializable<Compou
         CapabilityManager.INSTANCE.register(ICultivation.class, new Storage(), Cultivation::new);
     }
 
-    private static class Storage implements Capability.IStorage<ICultivation> {
+    public static class Storage implements Capability.IStorage<ICultivation> {
 
         @Nullable
         @Override
