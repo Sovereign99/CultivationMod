@@ -15,9 +15,8 @@ public class WaterArmor extends ModArmor{
 
     @Override
     public void onArmorTick(ItemStack stack, World world, PlayerEntity player) {
-        player.addPotionEffect(new EffectInstance(Effects.WATER_BREATHING, 1, 2, false, false));
+        player.addPotionEffect(new EffectInstance(Effects.WATER_BREATHING, 1, 1, false, false));
         player.addPotionEffect(new EffectInstance(Effects.DOLPHINS_GRACE, 1, 1, false, false));
         player.addPotionEffect(new EffectInstance(Effects.REGENERATION, 1, 1, false, false));
-        player.addPotionEffect(new EffectInstance(Effects.NIGHT_VISION, 1, 1, false, false));
     }
 }

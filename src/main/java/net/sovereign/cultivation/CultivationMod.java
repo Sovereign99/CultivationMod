@@ -17,6 +17,7 @@ import net.sovereign.cultivation.capabilities.Cultivation;
 import net.sovereign.cultivation.handlers.CapabilityHandler;
 import net.sovereign.cultivation.handlers.EventHandler;
 import net.sovereign.cultivation.setup.Registration;
+import net.sovereign.cultivation.setup.gui.CultivationGui;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 

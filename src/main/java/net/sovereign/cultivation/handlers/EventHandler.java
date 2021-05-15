@@ -11,6 +11,7 @@ import net.minecraft.util.Util;
 import net.minecraft.util.text.Color;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TextFormatting;
+import net.minecraftforge.client.event.RenderGameOverlayEvent;
 import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.common.capabilities.ICapabilityProvider;
 import net.minecraftforge.event.entity.living.LivingDeathEvent;
@@ -23,9 +24,11 @@ import net.minecraftforge.fml.common.Mod;
 import net.sovereign.cultivation.CultivationMod;
 import net.sovereign.cultivation.capabilities.Cultivation;
 import net.sovereign.cultivation.capabilities.ICultivation;
+import net.sovereign.cultivation.setup.gui.CultivationGui;
 
 @Mod.EventBusSubscriber(modid = CultivationMod.MOD_ID)
 public class EventHandler {
+
     @SubscribeEvent
     public void onPlayerLogIn(PlayerEvent.PlayerLoggedInEvent event) {
         PlayerEntity player = event.getPlayer();
@@ -33,6 +36,11 @@ public class EventHandler {
         StringTextComponent text = new StringTextComponent("Welcome. Your cultivation is: " + (int) cultivation.getCultivationAmount());
         text.getStyle().setColor(Color.fromTextFormatting(TextFormatting.GOLD));
         player.sendMessage(text, Util.DUMMY_UUID);
+    }
+
+    @SubscribeEvent
+    public void onRenderGameOverlay(RenderGameOverlayEvent.Post event) {
+        CultivationGui.cultivationOverlay(event);
     }
 
     // Gain cultivation progress on kills
