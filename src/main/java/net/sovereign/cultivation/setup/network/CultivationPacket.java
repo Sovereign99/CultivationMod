@@ -33,5 +33,4 @@ public class CultivationPacket {
             ctx.get().setPacketHandled(true);
         }
     }
-
 }

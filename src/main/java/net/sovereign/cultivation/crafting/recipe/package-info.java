@@ -1,1 +1,0 @@
-package net.sovereign.cultivation.crafting.recipe;

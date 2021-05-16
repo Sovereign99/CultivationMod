@@ -39,7 +39,7 @@ public class Cultivation implements ICultivation, ICapabilitySerializable<Compou
         are only worth 10,000, but I do plan on adding custom entities worth more */
             // Mortal levels
         subLevels.add(new CultivationSubLevel(0, "Soldier", 0, 3440));
-        subLevels.add(new CultivationSubLevel(1, "Knight", 3640, 6289));
+        subLevels.add(new CultivationSubLevel(1, "Knight", 3440, 6289));
         subLevels.add(new CultivationSubLevel(2, "Count", 6289, 10867));
             // Immortal levels
         subLevels.add(new CultivationSubLevel(3, "Duke", 10867, 18780));
@@ -54,9 +54,7 @@ public class Cultivation implements ICultivation, ICapabilitySerializable<Compou
     // Subtract the given amount from the total cultivation. Will not go below 0
     @Override
     public void decreaseCultivationAmount(double amount) {
-        this.cultivationAmount -= amount;
-
-        if(cultivationAmount < 0.0) this.cultivationAmount = 0.0;
+        this.cultivationAmount = Math.max(cultivationAmount - amount, 0);
     }
 
     // Increase total cultivation by the given amount
