@@ -82,7 +82,7 @@ public class Cultivation implements ICultivation, ICapabilitySerializable<Compou
     // Called every time cultivation changes
     public void checkSubLevel() {
         for(int i = subLevels.size() - 1; i >= 0; i--) {
-            if(cultivationAmount > subLevels.get(i).getLevelStart()) {
+            if(cultivationAmount >= subLevels.get(i).getLevelStart()) {
                 this.currentSubLevel = subLevels.get(i);
                 currentSubLevel.checkRank();
                 return;

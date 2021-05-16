@@ -20,12 +20,10 @@ public class CultivationGui extends GuiUtils {
             if (event.getType() == RenderGameOverlayEvent.ElementType.TEXT) {
                 mc.textureManager.bindTexture(BAR);
                 FontRenderer font = mc.fontRenderer;
-
                 ICultivation cultivation = mc.player.getCapability(Cultivation.CULTIVATION_CAP).orElse(new Cultivation());
                 cultivation.checkSubLevel();
                 Cultivation.CultivationSubLevel level = cultivation.getSubLevel();
-                float oneUnit = (float) (BAR_WIDTH / level.round(level.getDiff()));
-                int currentWidth = (int) (oneUnit * level.round(level.getProgress()));
+                int currentWidth = (int) (100 * (level.getProgress() / level.getDiff()));
                 drawTexturedModalRect(event.getMatrixStack(), 4, 15, 0, 0, WIDTH, HEIGHT, 0);
                 drawTexturedModalRect(event.getMatrixStack(), 5, 15, 1, HEIGHT, currentWidth, HEIGHT, 1);
                 font.drawStringWithShadow(event.getMatrixStack(),
