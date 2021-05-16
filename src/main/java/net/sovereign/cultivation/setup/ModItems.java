@@ -98,13 +98,13 @@ public class ModItems {
     public static final RegistryObject<ModSwordItem> CELESTIAL_SILVER_SWORD = Registration.ITEMS.register("celestial_silver_sword", () ->
             new ModSwordItem(ModItemTier.CELESTIAL_SILVER, 3, -2.4F));
     public static final RegistryObject<PickaxeItem> CELESTIAL_SILVER_PICKAXE = Registration.ITEMS.register("celestial_silver_pickaxe", () ->
-            new ModPickaxeItem(ModItemTier.CELESTIAL_SILVER, 2, -2.8F, new Item.Properties().group(ItemGroup.TOOLS)));
+            new ModPickaxeItem(ModItemTier.CELESTIAL_SILVER, 2, -2.8F));
     public static final RegistryObject<AxeItem> CELESTIAL_SILVER_AXE = Registration.ITEMS.register("celestial_silver_axe", () ->
-            new ModAxeItem(ModItemTier.CELESTIAL_SILVER, 5.2F, -2.5F, new Item.Properties().group(ItemGroup.TOOLS)));
+            new ModAxeItem(ModItemTier.CELESTIAL_SILVER, 5.2F, -2.5F));
     public static final RegistryObject<ShovelItem> CELESTIAL_SILVER_SHOVEL = Registration.ITEMS.register("celestial_silver_shovel", () ->
-            new ModShovelItem(ModItemTier.CELESTIAL_SILVER, 1.5F, -2.8F, new Item.Properties().group(ItemGroup.TOOLS)));
+            new ModShovelItem(ModItemTier.CELESTIAL_SILVER, 1.5F, -2.8F));
     public static final RegistryObject<ModHoeItem> CELESTIAL_SILVER_HOE = Registration.ITEMS.register("celestial_silver_hoe", () ->
-            new ModHoeItem(ModItemTier.CELESTIAL_SILVER, -4, -2.8F, new Item.Properties().group(ItemGroup.TOOLS)));
+            new ModHoeItem(ModItemTier.CELESTIAL_SILVER, -4, -2.8F));
 
     public static final RegistryObject<ArmorItem> CELESTIAL_SILVER_HELMET = Registration.ITEMS.register("celestial_silver_helmet",
             () -> new ModArmor(ModArmorMaterial.CELESTIAL_SILVER, EquipmentSlotType.HEAD));

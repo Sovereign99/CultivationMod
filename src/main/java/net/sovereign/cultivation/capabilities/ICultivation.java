@@ -9,6 +9,9 @@ public interface ICultivation {
 
     public double getCultivationAmount();
 
+    public void checkSubLevel();
+    public Cultivation.CultivationSubLevel getSubLevel();
+
     public double getStrength();
     public double getAgility();
     public double getArmor();
