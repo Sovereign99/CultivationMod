@@ -102,5 +102,10 @@ public class ModItemTagsProvider extends ItemTagsProvider {
         getOrCreateBuilder(ModTags.Items.LEGGINGS_STEEL).add(ModItems.EMPYREAN_STEEL_LEGGINGS.get());
         getOrCreateBuilder(ModTags.Items.BOOTS_STEEL).add(ModItems.EMPYREAN_STEEL_BOOTS.get());
         getOrCreateBuilder(ModTags.Items.SWORDS_STEEL).add(ModItems.EMPYREAN_STEEL_SWORD.get());
+
+        getOrCreateBuilder(ModTags.Items.INGOTS_STEEL).add(ModItems.LAVA_EMPYREAN_STEEL_INGOT.get());
+        getOrCreateBuilder(ModTags.Items.INGOTS_STEEL).add(ModItems.WATER_EMPYREAN_STEEL_INGOT.get());
+        getOrCreateBuilder(ModTags.Items.INGOTS_STEEL).add(ModItems.AIR_EMPYREAN_STEEL_INGOT.get());
+        getOrCreateBuilder(ModTags.Items.INGOTS_STEEL).add(ModItems.EARTH_EMPYREAN_STEEL_INGOT.get());
     }
 }

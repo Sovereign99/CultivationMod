@@ -183,6 +183,15 @@ public class ModItems {
     public static final RegistryObject<Item> EARTH_CELESTIAL_SILVER_INGOT = Registration.ITEMS.register("earth_celestial_silver_ingot",
             () -> new Item(new Item.Properties().group(ItemGroup.MATERIALS).isImmuneToFire()));
 
+    public static final RegistryObject<Item> LAVA_EMPYREAN_STEEL_INGOT = Registration.ITEMS.register("lava_empyrean_steel_ingot",
+            () -> new Item(new Item.Properties().group(ItemGroup.MATERIALS).isImmuneToFire()));
+    public static final RegistryObject<Item> WATER_EMPYREAN_STEEL_INGOT = Registration.ITEMS.register("water_empyrean_steel_ingot",
+            () -> new Item(new Item.Properties().group(ItemGroup.MATERIALS).isImmuneToFire()));
+    public static final RegistryObject<Item> AIR_EMPYREAN_STEEL_INGOT = Registration.ITEMS.register("air_empyrean_steel_ingot",
+            () -> new Item(new Item.Properties().group(ItemGroup.MATERIALS).isImmuneToFire()));
+    public static final RegistryObject<Item> EARTH_EMPYREAN_STEEL_INGOT = Registration.ITEMS.register("earth_empyrean_steel_ingot",
+            () -> new Item(new Item.Properties().group(ItemGroup.MATERIALS).isImmuneToFire()));
+
 
     static void register() {}
 }

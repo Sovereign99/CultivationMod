@@ -1,6 +1,10 @@
 {
   "replace": false,
   "values": [
-    "cultivation:empyrean_steel_ingot"
+    "cultivation:empyrean_steel_ingot",
+    "cultivation:lava_empyrean_steel_ingot",
+    "cultivation:water_empyrean_steel_ingot",
+    "cultivation:air_empyrean_steel_ingot",
+    "cultivation:earth_empyrean_steel_ingot"
   ]
 }

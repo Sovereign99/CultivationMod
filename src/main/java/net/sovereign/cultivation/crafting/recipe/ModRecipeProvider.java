@@ -18,6 +18,9 @@ public class ModRecipeProvider extends RecipeProvider {
 
     @Override
     protected void registerRecipes(@NotNull Consumer<IFinishedRecipe> consumer) {
+        /*
+        * CELESTIAL STEEL
+        * */
         //Storage block to ingot
         ShapelessRecipeBuilder.shapelessRecipe(ModItems.CELESTIAL_SILVER_INGOT.get(), 9)
                 .addIngredient(ModBlocks.CELESTIAL_SILVER_BLOCK.get()).addCriterion("has_item",
@@ -561,6 +564,46 @@ public class ModRecipeProvider extends RecipeProvider {
                 .patternLine(" # ")
                 .patternLine(" / ")
                 .addCriterion("has_item", hasItem(ModItems.EMPYREAN_STEEL_INGOT.get()))
+                .build(consumer);
+
+        // Inferior Hell Bead
+        ShapedRecipeBuilder.shapedRecipe(ModItems.INFERIOR_HELL_BEAD.get())
+                .key('#', Items.NETHER_BRICKS)
+                .key('/', ModItems.SUPERIOR_LAVA_CRYSTAL.get())
+                .patternLine(" # ")
+                .patternLine("#/#")
+                .patternLine(" # ")
+                .addCriterion("has_item", hasItem(ModItems.EMPYREAN_STEEL_INGOT.get()))
+                .build(consumer);
+
+        // Basic Hell Bead
+        ShapedRecipeBuilder.shapedRecipe(ModItems.BASIC_HELL_BEAD.get())
+                .key('#', ModItems.INFERIOR_HELL_BEAD.get())
+                .key('/', ModItems.LAVA_EMPYREAN_STEEL_INGOT.get())
+                .patternLine(" # ")
+                .patternLine("/#/")
+                .patternLine(" # ")
+                .addCriterion("has_item", hasItem(ModItems.INFERIOR_HELL_BEAD.get()))
+                .build(consumer);
+
+        // Enhanced Hell Bead
+        ShapedRecipeBuilder.shapedRecipe(ModItems.ENHANCED_HELL_BEAD.get())
+                .key('#', Items.NETHER_BRICKS)
+                .key('/', ModItems.LAVA_EMPYREAN_STEEL_INGOT.get())
+                .patternLine(" / ")
+                .patternLine("###")
+                .patternLine(" / ")
+                .addCriterion("has_item", hasItem(ModItems.BASIC_HELL_BEAD.get()))
+                .build(consumer);
+
+        // Superior Hell Bead
+        ShapedRecipeBuilder.shapedRecipe(ModItems.SUPERIOR_HELL_BEAD.get())
+                .key('#', Items.NETHER_BRICKS)
+                .key('/', ModItems.LAVA_EMPYREAN_STEEL_INGOT.get())
+                .patternLine(" # ")
+                .patternLine("///")
+                .patternLine(" # ")
+                .addCriterion("has_item", hasItem(ModItems.ENHANCED_HELL_BEAD.get()))
                 .build(consumer);
 
     }
