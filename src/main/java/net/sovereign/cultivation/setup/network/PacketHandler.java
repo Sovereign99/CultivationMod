@@ -22,6 +22,11 @@ public class PacketHandler {
                 CultivationPacket::encode,
                 CultivationPacket::decode,
                 CultivationPacket.Handler::handle);
+        HANDLER.registerMessage(2,
+                AffinityPacket.class,
+                AffinityPacket::encode,
+                AffinityPacket::decode,
+                AffinityPacket.Handler::handle);
     }
 
     public static void sendTo(Object msg, ServerPlayerEntity player) {

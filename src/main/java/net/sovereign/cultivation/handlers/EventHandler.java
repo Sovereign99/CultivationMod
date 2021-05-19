@@ -21,6 +21,7 @@ import net.minecraftforge.eventbus.api.EventPriority;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.sovereign.cultivation.CultivationMod;
+import net.sovereign.cultivation.capabilities.Affinity;
 import net.sovereign.cultivation.capabilities.Cultivation;
 import net.sovereign.cultivation.capabilities.ICultivation;
 import net.sovereign.cultivation.setup.gui.CultivationGui;
@@ -33,6 +34,7 @@ public class EventHandler {
         ServerPlayerEntity player = (ServerPlayerEntity) event.getPlayer();
         if(!player.world.isRemote) {
             player.getCapability(Cultivation.CULTIVATION_CAP).ifPresent(cap -> cap.sync(player));
+            player.getCapability(Affinity.AFFINITY_CAP).ifPresent(cap -> cap.sync(player));
         }
     }
 
@@ -68,21 +70,23 @@ public class EventHandler {
     public void onPlayerClone(PlayerEvent.Clone event) {
         PlayerEntity clone = event.getPlayer();
         PlayerEntity original = event.getOriginal();
-
         copyCapability(Cultivation.CULTIVATION_CAP, original, clone);
+        copyCapability(Affinity.AFFINITY_CAP, original, clone);
 
         // No need to change if returning from End
         if (event.isWasDeath()) {
             clone.getCapability(Cultivation.CULTIVATION_CAP).ifPresent(cap -> cap.setCultivationAmount(cap.getCultivationAmount() * 0.8));
 
             ICultivation cultivation = clone.getCapability(Cultivation.CULTIVATION_CAP).orElse(new Cultivation());
-            clone.sendMessage(new StringTextComponent("Your cultivation has fallen: " + (int) cultivation.getCultivationAmount()), Util.DUMMY_UUID);
+            ICultivation oldCultivation = original.getCapability(Cultivation.CULTIVATION_CAP).orElse(new Cultivation());
+            clone.sendMessage(new StringTextComponent("Your cultivation has fallen by: " + (int)(oldCultivation.getCultivationAmount() - cultivation.getCultivationAmount())), Util.DUMMY_UUID);
             cultivation.checkSubLevel();
         }
 
         ServerPlayerEntity player = (ServerPlayerEntity) event.getPlayer();
         if(!player.world.isRemote) {
             player.getCapability(Cultivation.CULTIVATION_CAP).ifPresent(cap -> cap.sync(player));
+            player.getCapability(Affinity.AFFINITY_CAP).ifPresent(cap -> cap.sync(player));
         }
     }
 
@@ -92,6 +96,7 @@ public class EventHandler {
         ServerPlayerEntity player = (ServerPlayerEntity) event.getPlayer();
         if(!player.world.isRemote) {
             player.getCapability(Cultivation.CULTIVATION_CAP).ifPresent(cap -> cap.sync(player));
+            player.getCapability(Affinity.AFFINITY_CAP).ifPresent(cap -> cap.sync(player));
         }
     }
 
@@ -99,12 +104,14 @@ public class EventHandler {
     // Also makes sure sub level is matched with total cultivation
     @SubscribeEvent
     public void onPlayerUpdate(LivingEvent.LivingUpdateEvent event) {
-        if(event.getEntity() instanceof PlayerEntity) {
-            PlayerEntity player = (PlayerEntity) event.getEntity();
+        if(event.getEntity() instanceof ServerPlayerEntity) {
+            ServerPlayerEntity player = (ServerPlayerEntity) event.getEntity();
             ICultivation cultivation = player.getCapability(Cultivation.CULTIVATION_CAP).orElse(new Cultivation());
             cultivation.advTimer();
             if (cultivation.getTimer() % 20 == 0) {
                 if (!player.world.isRemote) {
+                    player.getCapability(Cultivation.CULTIVATION_CAP).ifPresent(cap -> cap.sync(player));
+                    player.getCapability(Affinity.AFFINITY_CAP).ifPresent(cap -> cap.sync(player));
                     applyModifiers(player);
                 }
 
@@ -201,6 +208,7 @@ public class EventHandler {
         }
     }
 
+    // Used in PlayerClone event. Copies capability from one entity to another
     private static <T> void copyCapability(Capability<T> capability, ICapabilityProvider original, ICapabilityProvider clone) {
         original.getCapability(capability).ifPresent(dataOriginal ->
                 clone.getCapability(capability).ifPresent(dataClone -> {

@@ -13,6 +13,7 @@ import net.minecraftforge.fml.event.lifecycle.InterModEnqueueEvent;
 import net.minecraftforge.fml.event.lifecycle.InterModProcessEvent;
 import net.minecraftforge.fml.event.server.FMLServerStartingEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.sovereign.cultivation.capabilities.Affinity;
 import net.sovereign.cultivation.capabilities.Cultivation;
 import net.sovereign.cultivation.handlers.CapabilityHandler;
 import net.sovereign.cultivation.handlers.EventHandler;
@@ -21,7 +22,6 @@ import net.sovereign.cultivation.setup.network.PacketHandler;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import java.util.UUID;
 import java.util.stream.Collectors;
 
 // The value here should match an entry in the META-INF/mods.toml file
@@ -51,6 +51,7 @@ public class CultivationMod {
     private void setup(final FMLCommonSetupEvent event) {
         // some preinit code
         Cultivation.register();
+        Affinity.register();
         PacketHandler.register();
         MinecraftForge.EVENT_BUS.register(new CapabilityHandler());
         MinecraftForge.EVENT_BUS.register(new EventHandler());
