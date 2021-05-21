@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " # ",
+    "/#/",
+    " # "
+  ],
+  "key": {
+    "#": {
+      "item": "cultivation:inferior_immortal_rock"
+    },
+    "/": {
+      "item": "cultivation:earth_empyrean_steel_ingot"
+    }
+  },
+  "result": {
+    "item": "cultivation:basic_immortal_rock"
+  }
+}

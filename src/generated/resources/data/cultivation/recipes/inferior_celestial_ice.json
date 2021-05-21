@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " # ",
+    "#/#",
+    " # "
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:packed_ice"
+    },
+    "/": {
+      "item": "cultivation:superior_water_bead"
+    }
+  },
+  "result": {
+    "item": "cultivation:inferior_celestial_ice"
+  }
+}

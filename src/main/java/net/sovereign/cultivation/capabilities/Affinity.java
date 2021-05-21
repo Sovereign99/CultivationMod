@@ -21,12 +21,15 @@ public class Affinity implements IAffinity, ICapabilitySerializable<CompoundNBT>
     public static Capability<IAffinity> AFFINITY_CAP = null;
     public static ResourceLocation NAME = new ResourceLocation(CultivationMod.MOD_ID, "affinity");
     public static String NBT_AFFINITY = "Affinity";
+    public static String NBT_ORBED = "Orb";
     private final LazyOptional<IAffinity> holder = LazyOptional.of(() -> this);
 
     private int affinity;
+    private boolean orbed;
 
     public Affinity() {
         affinity = 0;
+        orbed = false;
     }
 
 
@@ -39,7 +42,23 @@ public class Affinity implements IAffinity, ICapabilitySerializable<CompoundNBT>
     // Affinities are, in order, fire, water, earth, air, light, dark
     @Override
     public void assignAffinity() {
-        this.affinity = new Random().nextInt(7);
+        Random rand = new Random();
+        int a = rand.nextInt(100);
+        if (a < 17) {
+            affinity = 1;
+        } else if (a < 33) {
+            affinity = 2;
+        } else if (a < 51) {
+            affinity = 3;
+        } else if (a < 69) {
+            affinity = 4;
+        } else if (a < 79) {
+            affinity = 5;
+        } else if (a < 89) {
+            affinity = 6;
+        } else {
+            affinity = 0;
+        }
     }
 
     // Sets affinity to no affinity
@@ -51,6 +70,14 @@ public class Affinity implements IAffinity, ICapabilitySerializable<CompoundNBT>
     @Override
     public void setAffinity(int affinity) {
         this.affinity = affinity;
+    }
+
+    public boolean getOrbed() {
+        return orbed;
+    }
+
+    public void setOrbed(boolean orbed) {
+        this.orbed = orbed;
     }
 
     public String getAffinityName() {
@@ -73,7 +100,7 @@ public class Affinity implements IAffinity, ICapabilitySerializable<CompoundNBT>
 
     public void sync(ServerPlayerEntity player) {
         if (player != null) {
-            PacketHandler.sendTo(new AffinityPacket(getAffinity()), player);
+            PacketHandler.sendTo(new AffinityPacket(serializeNBT()), player);
         }
     }
 
@@ -105,12 +132,14 @@ public class Affinity implements IAffinity, ICapabilitySerializable<CompoundNBT>
     public CompoundNBT serializeNBT() {
         CompoundNBT nbt = new CompoundNBT();
         nbt.putInt(NBT_AFFINITY, affinity);
+        nbt.putBoolean(NBT_ORBED, orbed);
         return nbt;
     }
 
     @Override
     public void deserializeNBT(CompoundNBT nbt) {
         affinity = nbt.getInt(NBT_AFFINITY);
+        orbed = nbt.getBoolean(NBT_ORBED);
     }
 
     public static void register() {

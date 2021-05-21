@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " # ",
+    "#/#",
+    " # "
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:obsidian"
+    },
+    "/": {
+      "item": "cultivation:superior_rock"
+    }
+  },
+  "result": {
+    "item": "cultivation:inferior_immortal_rock"
+  }
+}

@@ -7,6 +7,7 @@ import net.minecraft.entity.ai.attributes.AttributeModifier;
 import net.minecraft.entity.ai.attributes.Attributes;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.ServerPlayerEntity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.INBT;
 import net.minecraft.util.Util;
 import net.minecraft.util.text.StringTextComponent;
@@ -21,10 +22,12 @@ import net.minecraftforge.eventbus.api.EventPriority;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.sovereign.cultivation.CultivationMod;
-import net.sovereign.cultivation.capabilities.Affinity;
-import net.sovereign.cultivation.capabilities.Cultivation;
-import net.sovereign.cultivation.capabilities.ICultivation;
+import net.sovereign.cultivation.capabilities.*;
+import net.sovereign.cultivation.setup.ModItems;
 import net.sovereign.cultivation.setup.gui.CultivationGui;
+import net.sovereign.cultivation.techniques.TechModifiers;
+import net.sovereign.cultivation.techniques.Technique;
+import net.sovereign.cultivation.techniques.Techniques;
 
 @Mod.EventBusSubscriber(modid = CultivationMod.MOD_ID)
 public class EventHandler {
@@ -35,6 +38,7 @@ public class EventHandler {
         if(!player.world.isRemote) {
             player.getCapability(Cultivation.CULTIVATION_CAP).ifPresent(cap -> cap.sync(player));
             player.getCapability(Affinity.AFFINITY_CAP).ifPresent(cap -> cap.sync(player));
+            player.getCapability(Tech.TECH_CAP).ifPresent(cap -> cap.sync(player));
         }
     }
 
@@ -50,14 +54,16 @@ public class EventHandler {
             ServerPlayerEntity player = (ServerPlayerEntity) event.getSource().getTrueSource();
             if(!player.world.isRemote) {
                 ICultivation cultivation = player.getCapability(Cultivation.CULTIVATION_CAP).orElse(new Cultivation());
+                ITech tech = player.getCapability(Tech.TECH_CAP).orElse(new Tech());
+                tech.setTech(1);
                 Entity target = event.getEntity();
                 EntityClassification classification = target.getType().getClassification();
-                if (classification.getPeacefulCreature()) {
-                    cultivation.increaseCultivationAmount(15.0);
+                if (target.getType() == EntityType.ENDER_DRAGON || target.getType() == EntityType.WITHER) {
+                    cultivation.increaseCultivationAmount(10000.0);
                 } else if (classification.getName().equals("monster") || target.getType() == EntityType.IRON_GOLEM) {
                     cultivation.increaseCultivationAmount(100.0);
-                } else if (target.getType() == EntityType.ENDER_DRAGON || target.getType() == EntityType.WITHER) {
-                    cultivation.increaseCultivationAmount(10000.0);
+                } else if (classification.getPeacefulCreature()) {
+                    cultivation.increaseCultivationAmount(15.0);
                 }
                 cultivation.checkSubLevel();
                 player.getCapability(Cultivation.CULTIVATION_CAP).ifPresent(cap -> cap.sync(player));
@@ -72,6 +78,7 @@ public class EventHandler {
         PlayerEntity original = event.getOriginal();
         copyCapability(Cultivation.CULTIVATION_CAP, original, clone);
         copyCapability(Affinity.AFFINITY_CAP, original, clone);
+        copyCapability(Tech.TECH_CAP, original, clone);
 
         // No need to change if returning from End
         if (event.isWasDeath()) {
@@ -87,6 +94,7 @@ public class EventHandler {
         if(!player.world.isRemote) {
             player.getCapability(Cultivation.CULTIVATION_CAP).ifPresent(cap -> cap.sync(player));
             player.getCapability(Affinity.AFFINITY_CAP).ifPresent(cap -> cap.sync(player));
+            player.getCapability(Tech.TECH_CAP).ifPresent(cap -> cap.sync(player));
         }
     }
 
@@ -97,6 +105,7 @@ public class EventHandler {
         if(!player.world.isRemote) {
             player.getCapability(Cultivation.CULTIVATION_CAP).ifPresent(cap -> cap.sync(player));
             player.getCapability(Affinity.AFFINITY_CAP).ifPresent(cap -> cap.sync(player));
+            player.getCapability(Tech.TECH_CAP).ifPresent(cap -> cap.sync(player));
         }
     }
 
@@ -107,16 +116,22 @@ public class EventHandler {
         if(event.getEntity() instanceof ServerPlayerEntity) {
             ServerPlayerEntity player = (ServerPlayerEntity) event.getEntity();
             ICultivation cultivation = player.getCapability(Cultivation.CULTIVATION_CAP).orElse(new Cultivation());
+            IAffinity affinity = player.getCapability(Affinity.AFFINITY_CAP).orElse(new Affinity());
             cultivation.advTimer();
+            cultivation.checkSubLevel();
             if (cultivation.getTimer() % 20 == 0) {
                 if (!player.world.isRemote) {
                     player.getCapability(Cultivation.CULTIVATION_CAP).ifPresent(cap -> cap.sync(player));
                     player.getCapability(Affinity.AFFINITY_CAP).ifPresent(cap -> cap.sync(player));
+                    player.getCapability(Tech.TECH_CAP).ifPresent(cap -> cap.sync(player));
                     applyModifiers(player);
+                    if (cultivation.getSubLevel().getLevelName().equals("Knight") && !affinity.getOrbed()) {
+                        player.inventory.addItemStackToInventory(new ItemStack(ModItems.AFFINITY_ORB.get()));
+                        affinity.setOrbed(true);
+                    }
                 }
 
                 cultivation.resetTimer();
-                cultivation.checkSubLevel();
             }
         }
     }
@@ -157,11 +172,21 @@ public class EventHandler {
     public void applyModifiers (PlayerEntity player) {
         if(player != null) {
             ICultivation cultivation = player.getCapability(Cultivation.CULTIVATION_CAP).orElse(new Cultivation());
-            double speed = cultivation.getAgility() * 0.008;
-            double atkSpeed = cultivation.getAgility() * 0.01;
-            double str = cultivation.getStrength();
-            double armor = cultivation.getArmor() * 0.02;
-            double res = (cultivation.getArmor() + cultivation.getStrength()) * 0.02;
+            ITech tech = player.getCapability(Tech.TECH_CAP).orElse(new Tech());
+            Technique technique = Techniques.getTechByIndex(tech.getTech());
+            IAffinity affinity = player.getCapability(Affinity.AFFINITY_CAP).orElse(new Affinity());
+            int affinityType = affinity.getAffinity();
+            int techniqueAffinity = technique.getAffinity();
+            TechModifiers modifiers = technique.getModifiers();
+            if (techniqueAffinity != affinityType) {
+                modifiers.multiply(0.5);
+            }
+
+            double speed = (cultivation.getAgility() * 0.008) * modifiers.agility;
+            double atkSpeed = (cultivation.getAgility() * 0.01) * modifiers.agility;
+            double str = (cultivation.getStrength()) * modifiers.strength;
+            double armor = (cultivation.getArmor() * 0.02) + modifiers.armor;
+            double res = ((cultivation.getArmor() + cultivation.getStrength()) * 0.008);
             AttributeModifier speedMod = new AttributeModifier("cultivation.speed_mod", speed, AttributeModifier.Operation.ADDITION);
             AttributeModifier atkSpeedMod = new AttributeModifier("cultivation.atk_speed_mod", atkSpeed, AttributeModifier.Operation.ADDITION);
             AttributeModifier strMod = new AttributeModifier("cultivation.str_mod", str, AttributeModifier.Operation.ADDITION);

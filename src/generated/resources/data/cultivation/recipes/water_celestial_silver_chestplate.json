@@ -1,15 +1,13 @@
 {
-  "type": "minecraft:crafting_shaped",
-  "pattern": [
-    "# #",
-    "###",
-    "###"
-  ],
-  "key": {
-    "#": {
-      "item": "cultivation:water_celestial_silver_ingot"
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "cultivation:celestial_silver_chestplate"
+    },
+    {
+      "item": "cultivation:inferior_water_bead"
     }
-  },
+  ],
   "result": {
     "item": "cultivation:water_celestial_silver_chestplate"
   }

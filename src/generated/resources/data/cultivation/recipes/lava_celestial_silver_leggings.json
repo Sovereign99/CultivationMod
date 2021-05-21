@@ -1,15 +1,13 @@
 {
-  "type": "minecraft:crafting_shaped",
-  "pattern": [
-    "###",
-    "# #",
-    "# #"
-  ],
-  "key": {
-    "#": {
-      "item": "cultivation:lava_celestial_silver_ingot"
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "cultivation:celestial_silver_leggings"
+    },
+    {
+      "item": "cultivation:inferior_lava_crystal"
     }
-  },
+  ],
   "result": {
     "item": "cultivation:lava_celestial_silver_leggings"
   }

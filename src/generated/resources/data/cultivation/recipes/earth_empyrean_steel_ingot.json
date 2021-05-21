@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "cultivation:empyrean_steel_ingot"
+    },
+    {
+      "item": "cultivation:inferior_immortal_rock"
+    }
+  ],
+  "result": {
+    "item": "cultivation:earth_empyrean_steel_ingot"
+  }
+}

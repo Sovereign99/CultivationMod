@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "cultivation:empyrean_steel_ingot"
+    },
+    {
+      "item": "cultivation:inferior_hell_bead"
+    }
+  ],
+  "result": {
+    "item": "cultivation:lava_empyrean_steel_ingot"
+  }
+}

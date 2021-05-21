@@ -3,6 +3,7 @@ package net.sovereign.cultivation.setup;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.*;
 import net.minecraftforge.fml.RegistryObject;
+import net.sovereign.cultivation.data.affinity_items.AffinityOrb;
 import net.sovereign.cultivation.data.item_tier.ModItemTier;
 import net.sovereign.cultivation.data.mod_armors.*;
 import net.sovereign.cultivation.data.mod_tools.ModAxeItem;
@@ -91,6 +92,10 @@ public class ModItems {
             () -> new Item(new Item.Properties().group(ItemGroup.MATERIALS).isImmuneToFire()));
     public static final RegistryObject<Item> SUPERIOR_IMMORTAL_ROCK = Registration.ITEMS.register("superior_immortal_rock",
             () -> new Item(new Item.Properties().group(ItemGroup.MATERIALS).isImmuneToFire()));
+
+    // Affinity items
+    public static final RegistryObject<Item> AFFINITY_ORB = Registration.ITEMS.register("affinity_orb",
+            AffinityOrb::new);
 
     // Celestial Silver
     public static final RegistryObject<Item> CELESTIAL_SILVER_INGOT = Registration.ITEMS.register("celestial_silver_ingot",

@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "cultivation:empyrean_steel_ingot"
+    },
+    {
+      "item": "cultivation:inferior_ethereal_gale"
+    }
+  ],
+  "result": {
+    "item": "cultivation:air_empyrean_steel_ingot"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " # ",
+    "/#/",
+    " # "
+  ],
+  "key": {
+    "#": {
+      "item": "cultivation:inferior_ethereal_gale"
+    },
+    "/": {
+      "item": "cultivation:air_empyrean_steel_ingot"
+    }
+  },
+  "result": {
+    "item": "cultivation:basic_ethereal_gale"
+  }
+}

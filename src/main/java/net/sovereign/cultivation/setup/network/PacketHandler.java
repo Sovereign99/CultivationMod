@@ -27,6 +27,11 @@ public class PacketHandler {
                 AffinityPacket::encode,
                 AffinityPacket::decode,
                 AffinityPacket.Handler::handle);
+        HANDLER.registerMessage(3,
+                TechPacket.class,
+                TechPacket::encode,
+                TechPacket::decode,
+                TechPacket.Handler::handle);
     }
 
     public static void sendTo(Object msg, ServerPlayerEntity player) {

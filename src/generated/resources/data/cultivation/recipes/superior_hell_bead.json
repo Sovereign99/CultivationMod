@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " # ",
+    "///",
+    " # "
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:nether_bricks"
+    },
+    "/": {
+      "item": "cultivation:lava_empyrean_steel_ingot"
+    }
+  },
+  "result": {
+    "item": "cultivation:superior_hell_bead"
+  }
+}

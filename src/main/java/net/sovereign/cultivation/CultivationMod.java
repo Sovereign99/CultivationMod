@@ -15,10 +15,12 @@ import net.minecraftforge.fml.event.server.FMLServerStartingEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.sovereign.cultivation.capabilities.Affinity;
 import net.sovereign.cultivation.capabilities.Cultivation;
+import net.sovereign.cultivation.capabilities.Tech;
 import net.sovereign.cultivation.handlers.CapabilityHandler;
 import net.sovereign.cultivation.handlers.EventHandler;
 import net.sovereign.cultivation.setup.Registration;
 import net.sovereign.cultivation.setup.network.PacketHandler;
+import net.sovereign.cultivation.techniques.Techniques;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -50,8 +52,10 @@ public class CultivationMod {
 
     private void setup(final FMLCommonSetupEvent event) {
         // some preinit code
+        Techniques.init();
         Cultivation.register();
         Affinity.register();
+        Tech.register();
         PacketHandler.register();
         MinecraftForge.EVENT_BUS.register(new CapabilityHandler());
         MinecraftForge.EVENT_BUS.register(new EventHandler());

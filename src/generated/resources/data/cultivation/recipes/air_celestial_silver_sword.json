@@ -1,18 +1,13 @@
 {
-  "type": "minecraft:crafting_shaped",
-  "pattern": [
-    " # ",
-    " # ",
-    " / "
-  ],
-  "key": {
-    "#": {
-      "item": "cultivation:air_celestial_silver_ingot"
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "cultivation:celestial_silver_sword"
     },
-    "/": {
-      "item": "minecraft:stick"
+    {
+      "item": "cultivation:inferior_wind_essence"
     }
-  },
+  ],
   "result": {
     "item": "cultivation:air_celestial_silver_sword"
   }

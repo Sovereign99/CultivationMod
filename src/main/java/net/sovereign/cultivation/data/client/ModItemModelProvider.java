@@ -18,13 +18,16 @@ public class ModItemModelProvider extends ItemModelProvider {
         withExistingParent("empyrean_steel_block", modLoc("block/empyrean_steel_block"));
 
         ModelFile itemGenerated = getExistingFile(mcLoc("item/generated"));
+        ModelFile itemHandheld = getExistingFile(mcLoc("item/handheld"));
+
+        builder(itemGenerated, "affinity_orb");
 
         builder(itemGenerated, "celestial_silver_ingot");
-        builder(itemGenerated, "celestial_silver_sword");
-        builder(itemGenerated, "celestial_silver_pickaxe");
-        builder(itemGenerated, "celestial_silver_axe");
-        builder(itemGenerated, "celestial_silver_shovel");
-        builder(itemGenerated, "celestial_silver_hoe");
+        builder(itemHandheld, "celestial_silver_sword");
+        builder(itemHandheld, "celestial_silver_pickaxe");
+        builder(itemHandheld, "celestial_silver_axe");
+        builder(itemHandheld, "celestial_silver_shovel");
+        builder(itemHandheld, "celestial_silver_hoe");
         builder(itemGenerated, "celestial_silver_helmet");
         builder(itemGenerated, "celestial_silver_chestplate");
         builder(itemGenerated, "celestial_silver_leggings");
@@ -39,11 +42,12 @@ public class ModItemModelProvider extends ItemModelProvider {
         builder(itemGenerated, "enhanced_hell_bead");
         builder(itemGenerated, "superior_hell_bead");
         builder(itemGenerated, "lava_celestial_silver_ingot");
+        builder(itemGenerated, "lava_empyrean_steel_ingot");
         builder(itemGenerated, "lava_celestial_silver_helmet");
         builder(itemGenerated, "lava_celestial_silver_chestplate");
         builder(itemGenerated, "lava_celestial_silver_leggings");
         builder(itemGenerated, "lava_celestial_silver_boots");
-        builder(itemGenerated, "lava_celestial_silver_sword");
+        builder(itemHandheld, "lava_celestial_silver_sword");
 
         builder(itemGenerated, "inferior_water_bead");
         builder(itemGenerated, "basic_water_bead");
@@ -54,11 +58,12 @@ public class ModItemModelProvider extends ItemModelProvider {
         builder(itemGenerated, "enhanced_celestial_ice");
         builder(itemGenerated, "superior_celestial_ice");
         builder(itemGenerated, "water_celestial_silver_ingot");
+        builder(itemGenerated, "water_empyrean_steel_ingot");
         builder(itemGenerated, "water_celestial_silver_helmet");
         builder(itemGenerated, "water_celestial_silver_chestplate");
         builder(itemGenerated, "water_celestial_silver_leggings");
         builder(itemGenerated, "water_celestial_silver_boots");
-        builder(itemGenerated, "water_celestial_silver_sword");
+        builder(itemHandheld, "water_celestial_silver_sword");
 
         builder(itemGenerated, "inferior_rock");
         builder(itemGenerated, "basic_rock");
@@ -69,11 +74,12 @@ public class ModItemModelProvider extends ItemModelProvider {
         builder(itemGenerated, "enhanced_immortal_rock");
         builder(itemGenerated, "superior_immortal_rock");
         builder(itemGenerated, "earth_celestial_silver_ingot");
+        builder(itemGenerated, "earth_empyrean_steel_ingot");
         builder(itemGenerated, "earth_celestial_silver_helmet");
         builder(itemGenerated, "earth_celestial_silver_chestplate");
         builder(itemGenerated, "earth_celestial_silver_leggings");
         builder(itemGenerated, "earth_celestial_silver_boots");
-        builder(itemGenerated, "earth_celestial_silver_sword");
+        builder(itemHandheld, "earth_celestial_silver_sword");
 
         builder(itemGenerated, "inferior_wind_essence");
         builder(itemGenerated, "basic_wind_essence");
@@ -84,18 +90,19 @@ public class ModItemModelProvider extends ItemModelProvider {
         builder(itemGenerated, "enhanced_ethereal_gale");
         builder(itemGenerated, "superior_ethereal_gale");
         builder(itemGenerated, "air_celestial_silver_ingot");
+        builder(itemGenerated, "air_empyrean_steel_ingot");
         builder(itemGenerated, "air_celestial_silver_helmet");
         builder(itemGenerated, "air_celestial_silver_chestplate");
         builder(itemGenerated, "air_celestial_silver_leggings");
         builder(itemGenerated, "air_celestial_silver_boots");
-        builder(itemGenerated, "air_celestial_silver_sword");
+        builder(itemHandheld, "air_celestial_silver_sword");
 
         builder(itemGenerated, "empyrean_steel_ingot");
         builder(itemGenerated, "empyrean_steel_helmet");
         builder(itemGenerated, "empyrean_steel_chestplate");
         builder(itemGenerated, "empyrean_steel_leggings");
         builder(itemGenerated, "empyrean_steel_boots");
-        builder(itemGenerated, "empyrean_steel_sword");
+        builder(itemHandheld, "empyrean_steel_sword");
     }
 
     private void builder(ModelFile itemGenerated, String name) {

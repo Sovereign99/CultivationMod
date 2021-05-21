@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " # ",
+    "///",
+    " # "
+  ],
+  "key": {
+    "#": {
+      "item": "cultivation:enhanced_celestial_ice"
+    },
+    "/": {
+      "item": "cultivation:water_empyrean_steel_ingot"
+    }
+  },
+  "result": {
+    "item": "cultivation:superior_celestial_ice"
+  }
+}

@@ -26,7 +26,7 @@ public enum ModItemTier implements IItemTier {
     private final int enchantability;
     private final LazyValue<Ingredient> repairMaterial;
 
-    private ModItemTier(int maxUses, float efficiency, float attackDamage, int harvestLevel, int enchantability, Supplier<Ingredient> repairMaterial) {
+    ModItemTier(int maxUses, float efficiency, float attackDamage, int harvestLevel, int enchantability, Supplier<Ingredient> repairMaterial) {
         this.maxUses = maxUses;
         this.efficiency = efficiency;
         this.attackDamage = attackDamage;

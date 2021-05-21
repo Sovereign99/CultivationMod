@@ -35,6 +35,8 @@
   "item.cultivation.enhanced_immortal_rock": "Enhanced Immortal Rock",
   "item.cultivation.superior_immortal_rock": "Superior Immortal Rock",
 
+  "item.cultivation.affinity_orb": "Affinity Orb",
+
   "item.cultivation.celestial_silver_ingot": "Celestial Silver Ingot",
   "block.cultivation.celestial_silver_ore": "Celestial Silver Ore",
   "block.cultivation.celestial_silver_block": "Block of Celestial Silver",
@@ -52,7 +54,10 @@
   "item.cultivation.water_celestial_silver_ingot": "Water-Infused Celestial Silver Ingot",
   "item.cultivation.air_celestial_silver_ingot": "Air-Infused Celestial Silver Ingot",
   "item.cultivation.earth_celestial_silver_ingot": "Earth-Infused Celestial Silver Ingot",
-  "item.cultivation.earth_celestial_silver_sword": "Earth-Infused Celestial Silver Sword",
+  "item.cultivation.lava_empyrean_steel_ingot": "Fire-Infused Empyrean Steel Ingot",
+  "item.cultivation.water_empyrean_steel_ingot": "Water-Infused Empyrean Steel Ingot",
+  "item.cultivation.air_empyrean_steel_ingot": "Air-Infused Empyrean Steel Ingot",
+  "item.cultivation.earth_empyrean_steel_ingot": "Earth-Infused Empyrean Steel Ingot",
 
   "item.cultivation.lava_celestial_silver_helmet": "Fire-Infused Celestial Silver Helmet",
   "item.cultivation.lava_celestial_silver_chestplate": "Fire-Infused Celestial Silver Chestplate",
@@ -76,6 +81,7 @@
   "item.cultivation.earth_celestial_silver_chestplate": "Earth-Infused Celestial Silver Chestplate",
   "item.cultivation.earth_celestial_silver_leggings": "Earth-Infused Celestial Silver Leggings",
   "item.cultivation.earth_celestial_silver_boots": "Earth-Infused Celestial Silver Boots",
+  "item.cultivation.earth_celestial_silver_sword": "Earth-Infused Celestial Silver Sword",
 
   "item.cultivation.empyrean_steel_ingot": "Empyrean Steel Ingot",
   "block.cultivation.empyrean_steel_block": "Block of Empyrean Steel",
