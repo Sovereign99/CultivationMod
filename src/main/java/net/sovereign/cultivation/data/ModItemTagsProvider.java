@@ -57,6 +57,15 @@ public class ModItemTagsProvider extends ItemTagsProvider {
         getOrCreateBuilder(ModTags.Items.ENHANCEMENT_EARTH).add(ModItems.SUPERIOR_IMMORTAL_ROCK.get());
 
         getOrCreateBuilder(ModTags.Items.AFFINITY).add(ModItems.AFFINITY_ORB.get());
+        getOrCreateBuilder(ModTags.Items.AFFINITY).add(ModItems.EMPTY_CORE.get());
+        getOrCreateBuilder(ModTags.Items.AFFINITY).add(ModItems.MAGMATIC_EMBRYO.get());
+        getOrCreateBuilder(ModTags.Items.AFFINITY).add(ModItems.HEART_OF_THE_DEPTHS.get());
+        getOrCreateBuilder(ModTags.Items.AFFINITY).add(ModItems.TEAR_OF_STONE.get());
+        getOrCreateBuilder(ModTags.Items.AFFINITY).add(ModItems.EYE_OF_STORMS.get());
+        getOrCreateBuilder(ModTags.Items.AFFINITY).add(ModItems.HEAVENLY_LIGHT.get());
+        getOrCreateBuilder(ModTags.Items.AFFINITY).add(ModItems.VOID_CORE.get());
+
+        getOrCreateBuilder(ModTags.Items.PILL).add(ModItems.GREATER_HEAL_PILL.get());
 
         getOrCreateBuilder(ModTags.Items.INGOTS_SILVER).add(ModItems.CELESTIAL_SILVER_INGOT.get());
         getOrCreateBuilder(ModTags.Items.INGOTS_SILVER).add(ModItems.LAVA_CELESTIAL_SILVER_INGOT.get());

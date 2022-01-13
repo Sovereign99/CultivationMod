@@ -25,8 +25,11 @@ public class Affinity implements IAffinity, ICapabilitySerializable<CompoundNBT>
     private final LazyOptional<IAffinity> holder = LazyOptional.of(() -> this);
 
     private int affinity;
+    //Whether player has used the Affinity Orb
     private boolean orbed;
 
+    // There are 6 possible elemental affinities, as well as no affinity (0)
+    // Affinities are, in order, fire, water, earth, air, light, dark
     public Affinity() {
         affinity = 0;
         orbed = false;
@@ -36,29 +39,6 @@ public class Affinity implements IAffinity, ICapabilitySerializable<CompoundNBT>
     @Override
     public int getAffinity() {
         return this.affinity;
-    }
-
-    // There are 6 possible elemental affinities, as well as no affinity (0)
-    // Affinities are, in order, fire, water, earth, air, light, dark
-    @Override
-    public void assignAffinity() {
-        Random rand = new Random();
-        int a = rand.nextInt(100);
-        if (a < 17) {
-            affinity = 1;
-        } else if (a < 33) {
-            affinity = 2;
-        } else if (a < 51) {
-            affinity = 3;
-        } else if (a < 69) {
-            affinity = 4;
-        } else if (a < 79) {
-            affinity = 5;
-        } else if (a < 89) {
-            affinity = 6;
-        } else {
-            affinity = 0;
-        }
     }
 
     // Sets affinity to no affinity
@@ -151,7 +131,7 @@ public class Affinity implements IAffinity, ICapabilitySerializable<CompoundNBT>
         @Override
         public INBT writeNBT(Capability<IAffinity> capability, IAffinity instance, Direction side) {
             if (instance instanceof Affinity) {
-                return ((Affinity) instance).serializeNBT();
+                return instance.serializeNBT();
             }
 
             return new CompoundNBT();
@@ -160,7 +140,7 @@ public class Affinity implements IAffinity, ICapabilitySerializable<CompoundNBT>
         @Override
         public void readNBT(Capability<IAffinity> capability, IAffinity instance, Direction side, INBT nbt) {
             if (instance instanceof Affinity) {
-                ((Affinity) instance).deserializeNBT((CompoundNBT) nbt);
+                instance.deserializeNBT((CompoundNBT) nbt);
             }
         }
     }

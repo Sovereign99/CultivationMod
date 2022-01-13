@@ -3,7 +3,7 @@ package net.sovereign.cultivation.setup;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.*;
 import net.minecraftforge.fml.RegistryObject;
-import net.sovereign.cultivation.data.affinity_items.AffinityOrb;
+import net.sovereign.cultivation.data.affinity_items.AffinityItems;
 import net.sovereign.cultivation.data.item_tier.ModItemTier;
 import net.sovereign.cultivation.data.mod_armors.*;
 import net.sovereign.cultivation.data.mod_tools.ModAxeItem;
@@ -11,6 +11,7 @@ import net.sovereign.cultivation.data.mod_tools.ModShovelItem;
 import net.sovereign.cultivation.data.mod_tools.ModPickaxeItem;
 import net.sovereign.cultivation.data.mod_tools.ModHoeItem;
 import net.sovereign.cultivation.data.mod_weapons.*;
+import net.sovereign.cultivation.data.pills.Pills;
 
 public class ModItems {
     // Lava Crystals (Inferior, Basic, Enhanced, Superior)
@@ -95,7 +96,25 @@ public class ModItems {
 
     // Affinity items
     public static final RegistryObject<Item> AFFINITY_ORB = Registration.ITEMS.register("affinity_orb",
-            AffinityOrb::new);
+            () -> AffinityItems.AFFINITY_ORB);
+    public static final RegistryObject<Item> EMPTY_CORE = Registration.ITEMS.register("empty_core",
+            () -> AffinityItems.EMPTY_CORE);
+    public static final RegistryObject<Item> MAGMATIC_EMBRYO = Registration.ITEMS.register("magmatic_embryo",
+            () -> AffinityItems.MAGMATIC_EMBRYO);
+    public static final RegistryObject<Item> HEART_OF_THE_DEPTHS = Registration.ITEMS.register("heart_of_the_depths",
+            () -> AffinityItems.HEART_OF_THE_DEPTHS);
+    public static final RegistryObject<Item> TEAR_OF_STONE = Registration.ITEMS.register("tear_of_stone",
+            () -> AffinityItems.TEAR_OF_STONE);
+    public static final RegistryObject<Item> EYE_OF_STORMS = Registration.ITEMS.register("eye_of_storms",
+            () -> AffinityItems.EYE_OF_STORMS);
+    public static final RegistryObject<Item> HEAVENLY_LIGHT = Registration.ITEMS.register("heavenly_light",
+            () -> AffinityItems.HEAVENLY_LIGHT);
+    public static final RegistryObject<Item> VOID_CORE = Registration.ITEMS.register("void_core",
+            () -> AffinityItems.VOID_CORE);
+
+    // Pills
+    public static final RegistryObject<Item> GREATER_HEAL_PILL = Registration.ITEMS.register("greater_heal_pill",
+            () -> Pills.GREATER_HEAL);
 
     // Celestial Silver
     public static final RegistryObject<Item> CELESTIAL_SILVER_INGOT = Registration.ITEMS.register("celestial_silver_ingot",

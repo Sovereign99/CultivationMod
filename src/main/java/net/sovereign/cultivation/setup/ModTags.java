@@ -24,6 +24,8 @@ public class ModTags {
 
         public static final ITag.INamedTag<Item> AFFINITY = forge("affinity");
 
+        public static final ITag.INamedTag<Item> PILL = forge("pill");
+
         public static final ITag.INamedTag<Item> ENHANCEMENT_LAVA = forge("enhancement/lava");
         public static final ITag.INamedTag<Item> ENHANCEMENT_WATER = forge("enhancement/water");
         public static final ITag.INamedTag<Item> ENHANCEMENT_AIR = forge("enhancement/air");

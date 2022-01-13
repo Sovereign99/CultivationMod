@@ -29,6 +29,8 @@ import net.sovereign.cultivation.techniques.TechModifiers;
 import net.sovereign.cultivation.techniques.Technique;
 import net.sovereign.cultivation.techniques.Techniques;
 
+import java.util.Objects;
+
 @Mod.EventBusSubscriber(modid = CultivationMod.MOD_ID)
 public class EventHandler {
 
@@ -55,7 +57,6 @@ public class EventHandler {
             if(!player.world.isRemote) {
                 ICultivation cultivation = player.getCapability(Cultivation.CULTIVATION_CAP).orElse(new Cultivation());
                 ITech tech = player.getCapability(Tech.TECH_CAP).orElse(new Tech());
-                tech.setTech(1);
                 Entity target = event.getEntity();
                 EntityClassification classification = target.getType().getClassification();
                 if (target.getType() == EntityType.ENDER_DRAGON || target.getType() == EntityType.WITHER) {
@@ -116,7 +117,6 @@ public class EventHandler {
         if(event.getEntity() instanceof ServerPlayerEntity) {
             ServerPlayerEntity player = (ServerPlayerEntity) event.getEntity();
             ICultivation cultivation = player.getCapability(Cultivation.CULTIVATION_CAP).orElse(new Cultivation());
-            IAffinity affinity = player.getCapability(Affinity.AFFINITY_CAP).orElse(new Affinity());
             cultivation.advTimer();
             cultivation.checkSubLevel();
             if (cultivation.getTimer() % 20 == 0) {
@@ -125,10 +125,6 @@ public class EventHandler {
                     player.getCapability(Affinity.AFFINITY_CAP).ifPresent(cap -> cap.sync(player));
                     player.getCapability(Tech.TECH_CAP).ifPresent(cap -> cap.sync(player));
                     applyModifiers(player);
-                    if (cultivation.getSubLevel().getLevelName().equals("Knight") && !affinity.getOrbed()) {
-                        player.inventory.addItemStackToInventory(new ItemStack(ModItems.AFFINITY_ORB.get()));
-                        affinity.setOrbed(true);
-                    }
                 }
 
                 cultivation.resetTimer();
@@ -176,7 +172,7 @@ public class EventHandler {
             Technique technique = Techniques.getTechByIndex(tech.getTech());
             IAffinity affinity = player.getCapability(Affinity.AFFINITY_CAP).orElse(new Affinity());
             int affinityType = affinity.getAffinity();
-            int techniqueAffinity = technique.getAffinity();
+            int techniqueAffinity = Objects.requireNonNull(technique).getAffinity();
             TechModifiers modifiers = technique.getModifiers();
             if (techniqueAffinity != affinityType) {
                 modifiers.multiply(0.5);
@@ -194,42 +190,42 @@ public class EventHandler {
             AttributeModifier resMod = new AttributeModifier("cultivation.res_mod", res, AttributeModifier.Operation.ADDITION);
 
             // Remove existing modifiers
-            for (AttributeModifier mod : player.getAttribute(Attributes.MOVEMENT_SPEED).getModifierListCopy()) {
+            for (AttributeModifier mod : Objects.requireNonNull(player.getAttribute(Attributes.MOVEMENT_SPEED)).getModifierListCopy()) {
                 if (mod.getName().equals("cultivation.speed_mod")) {
-                    player.getAttribute(Attributes.MOVEMENT_SPEED).removeModifier(mod);
+                    Objects.requireNonNull(player.getAttribute(Attributes.MOVEMENT_SPEED)).removeModifier(mod);
                 }
             }
 
-            for (AttributeModifier mod : player.getAttribute(Attributes.ATTACK_SPEED).getModifierListCopy()) {
+            for (AttributeModifier mod : Objects.requireNonNull(player.getAttribute(Attributes.ATTACK_SPEED)).getModifierListCopy()) {
                 if (mod.getName().equals("cultivation.atk_speed_mod")) {
-                    player.getAttribute(Attributes.ATTACK_SPEED).removeModifier(mod);
+                    Objects.requireNonNull(player.getAttribute(Attributes.ATTACK_SPEED)).removeModifier(mod);
                 }
             }
 
-            for (AttributeModifier mod : player.getAttribute(Attributes.ATTACK_DAMAGE).getModifierListCopy()) {
+            for (AttributeModifier mod : Objects.requireNonNull(player.getAttribute(Attributes.ATTACK_DAMAGE)).getModifierListCopy()) {
                 if (mod.getName().equals("cultivation.str_mod")) {
-                    player.getAttribute(Attributes.ATTACK_DAMAGE).removeModifier(mod);
+                    Objects.requireNonNull(player.getAttribute(Attributes.ATTACK_DAMAGE)).removeModifier(mod);
                 }
             }
 
-            for (AttributeModifier mod : player.getAttribute(Attributes.ARMOR).getModifierListCopy()) {
+            for (AttributeModifier mod : Objects.requireNonNull(player.getAttribute(Attributes.ARMOR)).getModifierListCopy()) {
                 if (mod.getName().equals("cultivation.armor_mod")) {
-                    player.getAttribute(Attributes.ARMOR).removeModifier(mod);
+                    Objects.requireNonNull(player.getAttribute(Attributes.ARMOR)).removeModifier(mod);
                 }
             }
 
-            for (AttributeModifier mod : player.getAttribute(Attributes.ARMOR_TOUGHNESS).getModifierListCopy()) {
+            for (AttributeModifier mod : Objects.requireNonNull(player.getAttribute(Attributes.ARMOR_TOUGHNESS)).getModifierListCopy()) {
                 if (mod.getName().equals("cultivation.res_mod")) {
-                    player.getAttribute(Attributes.ARMOR_TOUGHNESS).removeModifier(mod);
+                    Objects.requireNonNull(player.getAttribute(Attributes.ARMOR_TOUGHNESS)).removeModifier(mod);
                 }
             }
 
             // Apply new modifiers
-            player.getAttribute(Attributes.MOVEMENT_SPEED).applyPersistentModifier(speedMod);
-            player.getAttribute(Attributes.ATTACK_SPEED).applyPersistentModifier(atkSpeedMod);
-            player.getAttribute(Attributes.ATTACK_DAMAGE).applyPersistentModifier(strMod);
-            player.getAttribute(Attributes.ARMOR).applyPersistentModifier(armorMod);
-            player.getAttribute(Attributes.ARMOR_TOUGHNESS).applyPersistentModifier(resMod);
+            Objects.requireNonNull(player.getAttribute(Attributes.MOVEMENT_SPEED)).applyPersistentModifier(speedMod);
+            Objects.requireNonNull(player.getAttribute(Attributes.ATTACK_SPEED)).applyPersistentModifier(atkSpeedMod);
+            Objects.requireNonNull(player.getAttribute(Attributes.ATTACK_DAMAGE)).applyPersistentModifier(strMod);
+            Objects.requireNonNull(player.getAttribute(Attributes.ARMOR)).applyPersistentModifier(armorMod);
+            Objects.requireNonNull(player.getAttribute(Attributes.ARMOR_TOUGHNESS)).applyPersistentModifier(resMod);
         }
     }
 
