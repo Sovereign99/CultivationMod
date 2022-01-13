@@ -15,9 +15,9 @@ public class AirArmor extends ModArmor{
 
     @Override
     public void onArmorTick(ItemStack stack, World world, PlayerEntity player) {
-        player.addPotionEffect(new EffectInstance(Effects.SPEED, 1, 2, false, false));
+        player.addPotionEffect(new EffectInstance(Effects.SPEED, 1, 1, false, false));
         player.addPotionEffect(new EffectInstance(Effects.WEAKNESS, 1, 2, false, false));
         player.addPotionEffect(new EffectInstance(Effects.HASTE, 1, 2, false, false));
-        player.addPotionEffect(new EffectInstance(Effects.JUMP_BOOST, 1, 2, false, false));
+        player.addPotionEffect(new EffectInstance(Effects.JUMP_BOOST, 1, 1, false, false));
     }
 }

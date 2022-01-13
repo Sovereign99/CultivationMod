@@ -115,6 +115,8 @@ public class ModItems {
     // Pills
     public static final RegistryObject<Item> GREATER_HEAL_PILL = Registration.ITEMS.register("greater_heal_pill",
             () -> Pills.GREATER_HEAL);
+    public static final RegistryObject<Item> HIGHGOD_PILL = Registration.ITEMS.register("highgod_pill",
+            () -> Pills.HIGHGOD);
 
     // Celestial Silver
     public static final RegistryObject<Item> CELESTIAL_SILVER_INGOT = Registration.ITEMS.register("celestial_silver_ingot",

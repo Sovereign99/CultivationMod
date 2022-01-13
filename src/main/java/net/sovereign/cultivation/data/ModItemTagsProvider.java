@@ -66,6 +66,7 @@ public class ModItemTagsProvider extends ItemTagsProvider {
         getOrCreateBuilder(ModTags.Items.AFFINITY).add(ModItems.VOID_CORE.get());
 
         getOrCreateBuilder(ModTags.Items.PILL).add(ModItems.GREATER_HEAL_PILL.get());
+        getOrCreateBuilder(ModTags.Items.PILL).add(ModItems.HIGHGOD_PILL.get());
 
         getOrCreateBuilder(ModTags.Items.INGOTS_SILVER).add(ModItems.CELESTIAL_SILVER_INGOT.get());
         getOrCreateBuilder(ModTags.Items.INGOTS_SILVER).add(ModItems.LAVA_CELESTIAL_SILVER_INGOT.get());

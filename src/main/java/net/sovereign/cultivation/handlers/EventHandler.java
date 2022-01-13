@@ -7,7 +7,6 @@ import net.minecraft.entity.ai.attributes.AttributeModifier;
 import net.minecraft.entity.ai.attributes.Attributes;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.ServerPlayerEntity;
-import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.INBT;
 import net.minecraft.util.Util;
 import net.minecraft.util.text.StringTextComponent;
@@ -23,7 +22,6 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.sovereign.cultivation.CultivationMod;
 import net.sovereign.cultivation.capabilities.*;
-import net.sovereign.cultivation.setup.ModItems;
 import net.sovereign.cultivation.setup.gui.CultivationGui;
 import net.sovereign.cultivation.techniques.TechModifiers;
 import net.sovereign.cultivation.techniques.Technique;
@@ -99,7 +97,7 @@ public class EventHandler {
         }
     }
 
-    // Restores cultivation upn respawning
+    // Restores cultivation upon respawning
     @SubscribeEvent
     public void onRespawn(PlayerEvent.PlayerRespawnEvent event) {
         ServerPlayerEntity player = (ServerPlayerEntity) event.getPlayer();

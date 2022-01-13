@@ -4,6 +4,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Rarity;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
 import net.minecraft.world.World;
@@ -18,7 +19,7 @@ public class AffinityItem extends Item {
     private final boolean orb;
 
     private AffinityItem(AffinityItem.Builder builder) {
-        super(new Item.Properties().group(ItemGroup.MISC));
+        super(new Item.Properties().group(ItemGroup.MISC).maxStackSize(1).isImmuneToFire().rarity(Rarity.EPIC));
         this.affinity = builder.affinity;
         this.orb = builder.orb;
     }
@@ -32,12 +33,14 @@ public class AffinityItem extends Item {
     }
 
     @Override
-    public @NotNull ActionResult<ItemStack> onItemRightClick(@NotNull World worldIn, PlayerEntity playerIn, @NotNull Hand handIn) {
-        IAffinity affinity = playerIn.getCapability(Affinity.AFFINITY_CAP).orElse(new Affinity());
-        if(!affinity.getOrbed()) {
-            affinity.setAffinity(this.getAffinity());
-            affinity.setOrbed(this.getOrb());
-            playerIn.inventory.deleteStack(playerIn.getHeldItemMainhand());
+    public @NotNull ActionResult<ItemStack> onItemRightClick(@NotNull World worldIn, @NotNull PlayerEntity playerIn, @NotNull Hand handIn) {
+        if(!worldIn.isRemote) {
+            IAffinity affinity = playerIn.getCapability(Affinity.AFFINITY_CAP).orElse(new Affinity());
+            if (!affinity.getOrbed()) {
+                affinity.setAffinity(this.getAffinity());
+                affinity.setOrbed(this.getOrb());
+                playerIn.inventory.deleteStack(playerIn.getHeldItemMainhand());
+            }
         }
 
         return super.onItemRightClick(worldIn, playerIn, handIn);
